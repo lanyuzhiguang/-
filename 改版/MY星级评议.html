@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+     <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="icon/iconfont.css"/>
+    <style type="text/css">
+    	/*公共*/
+     *{
+     	padding: 0;
+     	margin: 0;
+     	font-family: "苹方";
+     }
+     p{
+     	margin: 0;
+     } 
+     body{
+     	background: #FFFFFF;
+     }
+    .clearfix:after{
+    	content: '';
+    	display: block;
+    	clear: both;
+    }
+    .clearfix{
+    	zoom: 1;
+    }
+    .fll{
+    	float: left;
+    }
+    .flr{
+    	float: right;
+    }
+   	/*我的滑动开始*/
+   	.myslip .swiper-container:nth-of-type(1){
+   		padding-top: 1.117647rem;
+	   	background: #FFFFFF;
+	   	height: 2.823529rem;
+	   	border-bottom: 1px solid #E8E8E8;
+   	}
+    .myslip .swiper-container:nth-of-type(2){
+	   	background: #FFFFFF;
+	   	position: relative;
+    }
+    .myslip .swiper-container:nth-of-type(2):after{
+	   	content: '';
+	   	width: 100%;
+	   	border-bottom:0.588235rem solid #F7F7F7 ;
+	   	position: absolute;
+	   	bottom: 0;
+	   	left: 0;
+    }
+    .swiper-slide-thumb-active{
+   		
+   		/*border-radius:0.235294rem;*/
+   		font-weight: 700;
+   		position: relative;
+    }
+    .swiper-slide-thumb-active:after{
+	   	content: '';
+	   	width: 2.470588rem;
+	   	height: 2px;
+	   	background:#CE0000 ;
+	   	border-radius:2px;
+	   	position: absolute;
+	   	bottom: 0;
+	   	left:0 ;
+	   	right: 0;
+	   	margin: 0 auto;
+    } 
+    .myslip .swiper-container:nth-of-type(2) .swiper-slide{
+    	padding-top: 1.058823rem;
+    	background: #FFFFFF;	
+    }
+    .myslip .swiper-container:nth-of-type(1) .swiper-wrapper{
+   		padding: 0 0.352941rem;
+    }
+    .myslip .swiper-container:nth-of-type(1) .swiper-slide{
+   	   width: auto !important;
+   	   padding: 0 0.352941rem;
+   	   font-size: 0.823529rem;
+   	   font-family: '苹方中等';
+   	   color: #333333;
+    }
+    /*我的滑动结束*/
+    /*end*/
+     .wrap{
+     	background: #FFFFFF;
+     	overflow-x: hidden;
+     }
+     .headerimg{
+     	width: 1.294117rem;
+     	height: 1.294117rem;
+     }
+     .mui-bar-nav{
+     	background: linear-gradient(#D50F0A, #E32A1D);
+     	font-size:1.058823rem;
+     	/*background: transparent;*/
+     }
+     .mui-bar{
+     	box-shadow: 0 0 0 0 #000000;
+     	-webkit-box-shadow: 0 0 0 0 #000000;
+     }
+     .mui-bar .mui-icon{
+     	font-size:1.764705rem;
+     }
+     /*header结束*/
+    /*头部*/
+   .wrap-header{
+   	background: url("../exam/img/discussheader.png")no-repeat;
+   	background-size: 100%,100%;
+   	height:8.823529rem;
+   	padding: 0.705882rem;
+   	position: relative;
+	display: flex;
+	display:-webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    -webkit-justify-content: space-between;
+    -moz-justify-content:space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+     -webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+   }
+   .wrap-header-title{
+   		margin-top:2.647058rem;
+   		width: 6.823529rem;
+   		font-size: 0.941176rem;
+   		color: #FFFFFF;
+   		font-weight: 700;
+   		position: relative;
+   }
+    .wrap-header-title p{
+   		font-size: 0.941176rem;
+   		color: #FFFFFF;
+   		font-weight: 700;
+    }
+    .sideborder:after{
+    	content: '';
+    	width: 1px;
+    	height: 1.764705rem;
+    	position: absolute;
+    	top: 0;
+    	bottom: 0;
+    	right: 0;
+    	margin: auto 0;
+    	background: #FFFFFF;	
+    }
+    .wrap-header-title .title-num{
+    	font-size: 0.705882rem;
+    	color: #ffde00;
+    	line-height: 1;
+    	font-family: '苹方';
+    	padding-top: 0.588235rem;
+    }
+    .icon-star{
+    	color: #9B9B9B;
+    	font-size: 0.588235rem;
+    }
+    .okstart{
+    	color: #ffde00;
+    }
+    /*头部END*/
+    /*名次*/
+    .three-people{
+    	/*height: 11rem;*/
+    	background:#f7f7f7;
+    	padding-top:1.764705rem;
+    	padding-bottom: 0.588235rem;
+    	
+    }
+    .three-people-content{
+    	background: #FFFFFF;
+    	margin: 0 0.705882rem;
+    	border-radius: 0.235294rem;
+    	height: 9.529411rem;
+    	padding: 0 1.647058rem;
+    	position: relative;
+    }
+    .people-one{
+    	width: 8.058823rem;
+    	background: #FFFFFF;
+    	
+    }
+    .people-two{
+    	height: 8.647058rem;
+    	background: #FFFFFF;
+    	position: relative;
+    }
+    .people-two img{
+    	margin-top: 0.529411rem;
+    	width: 2.941176rem;
+    	height: 2.941176rem;
+    	border-radius: 50%;
+    	
+    }
+    .twopeople-rank{
+    	width: 2.882352rem;
+    	padding: 0.117647rem 0;
+    	border-radius: 0.411764rem;
+    	background: #EDEDED;
+    	font-size: 0.705882rem;
+    	line-height:0.705882rem;
+    	font-weight: 700;
+    	color: #999999;
+    	font-family: '苹方';
+    	position: absolute;
+    	top:2.705882rem;
+    }
+    .twopeople-name{
+    	font-family: '苹方中等';
+    	line-height: 1.647058rem;
+    	font-size: 0.705882rem;
+    	color: #333333;
+    }
+    .twopeople-score{
+    	font-family: '苹方粗体';
+    	line-height: 0.941176rem;
+    	font-size: 0.764705rem;
+    	font-weight: 700;
+    	color: #f09034;
+    }
+    .people-one{
+    	position: absolute;
+    	top:-0.882352rem;
+    	right: 0;
+    	left: 0;
+    	margin:0 auto;
+    	width: 7.529411rem;
+    	box-shadow:0 -0.28rem 0.3rem 1px rgba(200,200,200,0.2);
+    	border-radius: 0.235294rem;
+    	height: 7.411764rem;
+    }
+    .people-one img{
+    	margin-top: 1.058823rem;
+    	width: 3.352941rem;
+    	height: 3.352941rem;
+    	border-radius: 50%;
+    }
+    .onepeople-rank{
+    	width: 3.294117rem;
+    	padding: 0.17647rem 0;
+    	font-size: 0.764705rem;
+    	line-height: 0.764705rem;
+    	font-weight:700;
+    	color: #a3510f;
+    	font-family: '苹方';
+    	position: absolute;
+    	top: 3.529411rem;
+    	left: 0;
+    	right: 0;
+    	margin: 0 auto;
+    	background: #fdc127;
+    	border-radius: 0.5rem;
+    }
+    .onepeople-name{
+    	font-family: '苹方中等';
+    	line-height: 1.647058rem;
+    	font-size:0.823529rem;
+    	color: #333333;
+    }
+    .onepeople-score{
+    	font-family: '苹方粗体';
+    	line-height: 0.941176rem;
+    	font-size: 0.882352rem;
+    	font-weight: 700;
+    	color: #f09034;
+    	padding: 0;
+    }
+    .three-people-title{
+    	text-align: center;
+    	font-size: 0.882352rem;
+    	font-weight: 700;
+    	color: #f09034;
+    	position: absolute;
+    	bottom: 0.882352rem;
+    	left: 0;
+    	right: 0;
+    	margin: 0 auto;
+    }
+    /*contet公共样式*/
+   	.threecont-title{
+   		font-size: 0.941176rem;
+   		color: #333333;
+   		font-weight: 700;
+   		padding-left: 0.352941rem;
+   	}
+   	.threecont-header{
+   		text-align: left;
+   		padding-top: 1.058823rem;
+   	}
+    /*内容1*/
+   	.content-one{
+   		padding: 0.882352rem 0.705882rem;
+   		padding-bottom: 0;
+   		border-bottom:0.588235rem solid #F7F7F7;
+   	}
+   	.send-word{
+   		height: 3.823529rem;
+   		background: url("../exam/img/sendword.png")no-repeat;
+   		background-size:100%,100%;
+   		font-weight: 700;
+   		color: #4b92c6;
+   		position: relative;
+   		padding-top: 0.705882rem;
+   	}
+   	.send-content{
+   		text-align: left;
+   		font-size: 0.705882rem;
+   		font-family: '苹方';
+   		line-height: 1.5;
+   		padding-left: 3.411764rem;
+   		padding-right: 1.058823rem;
+   		box-sizing: border-box;
+   		height:2.17647rem;
+   	}
+   	.send-word .send-time{
+   		font-size: 0.588235rem;
+   		position: absolute;
+   		right: 1.058823rem;
+   		bottom:0.470588rem;
+   	}
+   	/*积分图*/
+   	.content-one .threecont-header img{
+   		width: 1.058823rem;
+   		height: 1.058823rem;
+   	}
+   	.integral-content{
+   		padding-top: 1rem;
+   		padding-bottom: 1.17647rem;
+   	}
+   	#integral{
+   		width: 100%;
+   		height:8rem;
+   	}
+   	/*内容2*/
+   	.content-two{
+   		padding: 0 0.705882rem;
+   		border-bottom:0.588235rem solid #F7F7F7;	
+   	}
+   	.content-two .threecont-header img{
+   		width:0.823529rem;
+   		height: 1.058823rem;
+   	}
+    .swiper-slide-header img{
+    	width: 1.117647rem;
+    	height: 1.17647rem;
+    }
+    .swiper-slide-header .title{
+    	font-weight: 500;
+    	font-family: '苹方中等';
+    	font-size: 0.823529rem;
+    	color: #333333;
+    	padding-left: 0.588235rem;
+    }
+    .slide-header-left{
+    	font-weight: 500;
+    	font-family: '苹方中等';
+    	font-size: 0.823529rem;
+    	color: #CE0000;
+    }
+    .see-detail{
+    	display: inline-block;
+    	width: 4.705882rem;
+    	height: 1.294117rem;
+    	border: 1px solid #ea3827;
+    	border-radius: 0.647058rem;
+    	background: #fffbfb;
+    	margin-left: 2.588235rem;
+    }
+    /*content-twoEND*/
+    .study-content{
+    	width:18.058823rem;
+    	height: 14.117647rem;
+    }
+    /*content-three*/
+   .content-three{
+   		padding: 0 0.705882rem;
+   		margin-bottom: 2.941176rem;	
+   }
+   .content-three .threecont-header img{
+   		width:1rem;
+   		height: 1rem;
+   	}
+   	.three-class-content{
+   		height: 6.764705rem;
+   	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title" id="muiTitle">星级评议</h1>
+	</header>
+	<div class="wrap">
+		<div class="wrap-header">
+			<div class="wrap-header-title sideborder"><p>个人排名</p><p class="title-num ranking">NO1</p></div>
+			<div class="wrap-header-title sideborder">
+				<p>星级评议</p>
+				<div class="start">
+				 <span class="iconfont icon-star okstart"></span>
+				 <span class="iconfont icon-star okstart"></span>
+				 <span class="iconfont icon-star okstart"></span>
+				 <span class="iconfont icon-star okstart"></span>
+				 <span class="iconfont icon-star"></span>
+			   </div>
+			</div>
+			<div class="wrap-header-title"><p>累计积分</p><p class="title-num score">1233</p></div>
+		</div> 
+	    <div class="three-people">
+	    	<div class="three-people-content clearfix">
+	    		<div class="people-two fll">
+	    			<img src="../exam/img/red1.jpg"/>
+	    			<div class="twopeople-rank">NO2</div>
+	    			<p class="twopeople-name">李晨</p>
+	    			<p class="twopeople-score">780</p>	
+	    		</div>
+		    	<div class="people-one">
+		    		<img src="../exam/img/red1.jpg"/>
+	    			<div class="onepeople-rank">NO1</div>
+	    			<p class="onepeople-name">李晨</p>
+	    			<p class="onepeople-score">780</p>
+		    	</div>
+		    	<div class="people-two flr">
+	    			<img src="../exam/img/red1.jpg"/>
+	    			<div class="twopeople-rank">NO3</div>
+	    			<p class="twopeople-name">李晨</p>
+	    			<p class="twopeople-score">780</p>
+	    		</div>
+	    		<div class="three-people-title">积分排名</div>
+	    	</div>
+	    </div>
+        <div class="content-one">
+        	<div class="send-word">
+        		<div class="send-content">2000年第一颗北斗试验卫星上天算起，18年来中国先后发射了包括4颗试</div>
+        		<div class="send-time">2018年12月5日</div>
+        	</div>
+        	<div class="threecont-wrap">
+    			<div class="threecont-header">
+        			<img src="../exam/img/integral.png"/>
+        			<span class="threecont-title">积分分布图</span>
+    			</div>
+    			<div class="integral-content">
+    				<div id="integral"></div>
+    			</div>
+        	</div>
+        </div>
+        <div class="content-two">
+        	<div class="threecont-wrap">
+    			<div class="threecont-header">
+        			<img src="../exam/img/studylv.png"/>
+        			<span class="threecont-title">学习完成率</span>
+    			</div>
+    			<div class="myslip">
+		    	<div class="swiper-container myslip2">
+			        <div class="swiper-wrapper swiper-wrapper-myslip2 navlist">
+			            <div class="swiper-slide myslip2-slide myslip2item navitem">学习积分</div>
+			        </div>
+		    	</div>
+		    	<div class="swiper-container myslip1">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide swiper-slide-item">     			
+	            		<div class="clearfix swiper-slide-header">
+            				<div class="fll">
+            					<img src="../exam/img/jifen.png"/>
+            				   <span class="title">学习积分:</span><span class="title">126</span>
+            				</div>
+            				<div class="flr slide-header-left">
+            					<span>排名:</span><span>1</span>
+            				    <span class="see-detail">查看详情</span>
+            				</div>
+	            		</div>
+	            		<div class="swiper-slide-content">
+	            			<div id="study" class="study-content"></div>
+	            		</div>
+		        </div>
+	    	</div>
+		    </div>
+        	</div>
+        </div>
+	</div>
+		   <div class="content-three">
+        	<div class="threecont-wrap">
+    			<div class="threecont-header">
+        			<img src="../exam/img/peixun.png"/>
+        			<span class="threecont-title">三会一课完成率</span>
+    			</div>
+    			<div class="myslip">
+		    	<div class="swiper-container myslip4">
+			        <div class="swiper-wrapper swiper-wrapper-myslip2 navlist">
+			            <div class="swiper-slide myslip2-slide myslip2item navitem">支部党员大会</div>
+			        </div>
+		    	</div>
+		    	<div class="swiper-container myslip3">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide swiper-slide-item">     			
+	            		<div class="clearfix swiper-slide-header">
+            				<div class="flr slide-header-left">
+            				    <span class="see-detail">查看详情</span>
+            				</div>
+	            		</div>
+	            		<div class="swiper-slide-content">
+	            			<div class="three-class-content" id="threeone"></div>
+	            		</div>
+		        </div>
+	    	</div>
+		    </div>
+        	</div>
+        </div>
+	</div>
+	
+	</div>    
+	    <script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+		<script src="../js/jquery.marquee.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script type="text/javascript">
+			var myslip2 = new Swiper('.myslip2', {
+		      	 spaceBetween: 10,
+			      slidesPerView:'auto',
+			      freeMode: true,
+			      watchSlidesVisibility: true,
+			      watchSlidesProgress: true,  
+			    });
+			    var myslip1 = new Swiper('.myslip1', {
+			     spaceBetween: 10,
+			      thumbs: {
+			        swiper: myslip2
+			      }
+			    });
+			    var myslip4 = new Swiper('.myslip4', {
+		      	 spaceBetween: 10,
+			      slidesPerView:'auto',
+			      freeMode: true,
+			      watchSlidesVisibility: true,
+			      watchSlidesProgress: true,  
+			    });
+			    var myslip3 = new Swiper('.myslip3', {
+			     spaceBetween: 10,
+			      thumbs: {
+			        swiper: myslip4
+			      }
+			    });
+		</script>
+		<script type="text/javascript">
+			var integral = echarts.init(document.getElementById('integral'));
+			var integraloption = {
+				color:['#4fa8e2', '#fdd727','#ea3827'],
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        left: 0,
+			        bottom:0,
+			        data:[ '互动','评论','心得']
+			    },
+			    textStyle:{
+			    	fontSize:"0.823529rem",
+			    	fontFamily:"苹方",
+			    	color:"#333333"
+			    },
+			    
+			    series : [
+			        {
+			            name: '积分',
+			            type: 'pie',
+			            radius : '60%',
+			            center: ['50%', '40%'],
+			            data:[
+			                {value:235, name:'互动'},
+			                {value:274, name:'评论'},
+			                {value:310, name:'心得'},
+			            ],
+			        }
+			    ]
+			};
+				        integral.setOption(integraloption);
+		</script>
+		<script type="text/javascript">
+			var study = echarts.init(document.getElementById('study'));
+			// 指定图表的配置项和数据
+	        var studyoption = {
+	            tooltip: {},
+	            
+	            xAxis: {
+	                data: ["音频学习","视频学习","学习心得",],
+	                axisLabel: {
+			            textStyle:{
+				    	fontSize:"0.764705rem",
+				    	fontFamily:"苹方",
+				    	color:"#333333"
+				        },
+				     },
+				    axisLine:{
+				    	show:true,
+				     	symbol:['none', 'arrow'],
+				     	axisLabel:{
+				     		show:false,
+				     		inside:true
+				     	}
+				    }
+	            },
+	            yAxis: {
+	            	axisLabel: {
+			            textStyle:{
+				    	fontSize:"0.529411rem",
+				    	fontFamily:"苹方",
+				    	color:"#333333"
+				    },
+        			},
+	            },
+	            series: [{
+	                name: '积分',
+	                type: 'bar',
+	                data: [5, 20, 36,],
+	                center: ['10%', '30%'],
+	                itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 1, color: '#ff9a84'},
+                            {offset: 0, color: '#ea3827'}
+                        ]
+                    )
+                },
+            },
+	            }]
+	        }
+	
+	        // 使用刚指定的配置项和数据显示图表。
+	        study.setOption(studyoption);
+		</script>
+		<script type="text/javascript">
+			var threeone = echarts.init(document.getElementById('threeone'));
+			var threeoneoption = {
+				title : {
+			        text: '2018年三会一课完成情况',
+			        x:'center',
+			        bottom:0,
+			        textStyle:{
+			    	fontSize:"0.764705rem",
+			    	fontFamily:"苹方",
+			    	color:"#333333"
+			    },
+			    },
+				color:['#ea3827','#fdd727',],
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			    	orient: 'vertical',
+			        left: 0,
+			        bottom:0,
+			        data:[ '已完成','未完成']
+			    },
+			    textStyle:{
+			    	fontSize:"0.823529rem",
+			    	fontFamily:"苹方",
+			    	color:"#333333"
+			    },
+			    
+			    series : [
+			        {
+			            name: '支部党员大会',
+			            type: 'pie',
+			            radius : '60%',
+			            center: ['50%', '40%'],
+			            data:[
+			                {value:70, name:'已完成'},
+			                {value:30, name:'未完成'},
+			            ],
+			        }
+			    ]
+			};
+				        threeone.setOption(threeoneoption);
+		</script>
+	</body>
+</html>
