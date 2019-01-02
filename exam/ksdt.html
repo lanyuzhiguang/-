@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/stylescore.css">
+		<link href="../iconfont/logo/iconfont.css" rel="stylesheet" />
+		<!--<script src="../js/rem.js"></script>-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				box-sizing: border-box;
+			}
+			body{
+				background:#f5f6f1;
+			}
+			.timeToggle{
+				display: flex;
+				justify-content: space-between;
+				background: #E57674;
+				color: white;
+				align-items: center;
+				position: relative;
+			}
+			.slideCon{
+				width: 100%;
+				background: white;
+				padding: 0.5rem 1rem;
+				position: absolute;
+				top: 100%;
+				color: #999;
+			}
+			.slideCon ul{
+				width: 100%;
+				display: flex;
+				justify-content: flex-start;
+				flex-wrap:wrap;
+			}
+			.slideCon ul li{
+				width: 2rem;
+				height: 2rem;
+				border: 1px dashed #bbb;
+				text-align: center;
+				line-height: 2rem;
+				margin: 0.24rem;
+				border-radius: 0.2rem;
+			}
+			.slideCon ul li.active{
+				background: #D43D3D;
+				border: 1px solid #D43D3D;
+				color: white;
+			}
+			.timeLeft{
+				display: flex;
+				align-items: center;
+				margin-left: 1rem;
+			}
+			.timeLeft img{
+				width: 1.4rem;
+				margin-right: 0.5rem;
+			}
+			.timeLeft p{
+				color: white;
+				margin-top: 0.7rem;
+				font-size: 0.8rem;
+			}
+			.timeRight{
+				display: flex;
+				align-items: center;
+				margin-right: 1rem;
+				font-size: 0.8rem;
+			}
+			.timeRight img{
+				height: 0.4rem;
+				transform: rotate(90deg);
+				transition: 0.5s;
+			}
+			.content{
+				font-size: 0.8rem;
+				margin-bottom: 4.76rem;
+			}
+			.subjectName{
+				width: 100%;
+				background: white;
+				padding: 1rem;
+			}
+			.list{
+				padding: 0 1rem;
+				margin-top: 0.8rem;
+			}
+			.list li{
+				display: flex;
+				align-items: center;
+				border: 1px solid #dce3e5;
+				border-radius: 0.2rem;
+				margin-top: 0.35rem;
+				background: white;
+			}
+			.list li.active{
+				border: 1px solid #D61D1D;
+			}
+			.list li.active .option p{
+				background:#D61D1D;
+				color: white;
+			}
+			.list li .option{
+				width: 3rem;
+				padding: 0.4rem 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.list li .option p{
+				background: #dce3e5;
+				width: 1.5rem;
+				height: 1.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				margin: 0;
+			}
+			.multiSelection .list li .option p{
+				border-radius: 10%;
+			}
+			.list li .optionCon{
+				width: 100%;
+				border-left: 1px solid #ccc;
+				padding: 0.5rem 0 0.5rem 0.8rem;
+			}
+			footer{
+				padding: 0.8rem 1rem;
+				background: white;
+				width: 100%;
+				position: fixed;
+				bottom: 0;
+				display: flex;
+				justify-content: space-around;
+			}
+			footer button,footer button:enabled:active{
+				padding: 0.6rem 0;
+				color: white;
+				font-size: 0.8rem;
+				background: #4496EC;
+				border: none;
+			}
+			.completion,.multiSelection,.singleElection,.judge{
+				display: none;
+			}
+			.completion>div:first-of-type,.multiSelection>div:first-of-type,.singleElection>div:first-of-type,.judge>div:first-of-type{
+				font-size: 0.85rem;
+			}
+			textarea{
+				width: 100%;
+				background: #F1F1F1;
+				border: none;
+				height: 6rem;
+				margin-top: 1.1rem;
+				font-size: 0.8rem;
+			}
+			textarea::-webkit-input-placeholder{
+				font-size: 0.8rem;
+			}
+			.slideCon{
+				/*min-height: 12rem;*/
+				display: none;
+			}
+			.modalBox{
+				position: absolute;
+				top: 0;
+				z-index: 99;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.4);
+				display: none;
+			}
+			.modalcon{
+				width: 17.2rem;
+				height: 10rem;
+				border-radius: 0.2rem;
+				overflow: hidden;
+				padding-bottom: 1.2rem;
+				background: white;
+				border-radius: 0.1rem;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			.modalHeader{
+				height: 2.1rem;
+				line-height: 2.1rem;
+				background: #f4f4f4;
+				display: flex;
+				border-bottom: 1px solid #D5D5D5;
+			}
+			.modalHeader .placeFlex{
+				flex: 1;
+			}
+			.modalTitle{
+				flex: 5;
+				font-size: 0.94rem;
+				text-align: center;
+			}
+			.modalClose{
+				flex: 1;
+				font-size: 1.94rem;
+			}
+			.modalTxt{
+				text-align: center;
+				font-size: 0.82rem;
+				padding: 1.35rem 2.47rem;
+				height: 4.94rem;
+			}
+			.modalFooter{
+				text-align: center;
+			}
+			.modalFooter button,.modalFooter button:active{
+				border-radius: 0.1rem;
+				background: white;
+				border: 1px solid #cbcbcb;
+				font-size: 0.82rem;
+				padding: 0.5rem 1.4rem;
+			}
+			.modalFooter .blueBtn,.modalFooter .blueBtn:active{
+				border: none;
+				background: #419EDC;
+				color: white;
+				margin-right: 0.6rem;
+			}
+			.mui-icon-left-nav{
+				color: white;
+			}
+			.mui-bar-nav{background: #D61D1D;}
+		</style>
+	</head>
+	<body>
+		<div class="modalBox">
+			<div class="modalcon">
+				<div class="modalHeader">
+					<div class="placeFlex">
+						
+					</div>
+					<div class="modalTitle">
+						提示
+					</div>
+					<div class="modalClose">
+						×
+					</div>
+				</div>
+				<div class="modalTxt">
+					返回将自动提交试卷，请问是否确认提交？
+				</div>
+				<div class="modalFooter">
+					<button class="blueBtn">确认</button>
+					<button>返回</button>
+				</div>
+			</div>
+		</div>
+		<div style="height: 2.8rem;"></div>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">十九大人民代表大会</h1>
+		</header>
+		<div class="timeToggle">
+			<div class="timeLeft">
+				<img src="img/clock.png"/>
+				<p>剩余时间：<span class="answerTime">20分13秒</span></p>
+			</div>
+			<div class="timeRight">
+				<span><span class="num"></span>/<span class="totalNum">20</span></span>
+				<img src="img/topimg.png"/>
+			</div>
+			<div class="slideCon">
+				<ul>
+					<!--<li class="active">1</li>-->
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="singleElection">
+				<div class="subjectName">
+					<span class="num">1</span>、<span class="subjectname">考勤请假属于哪个套件？</span>（单选题，<span class="subjectScore">2</span>分）
+				</div>
+				<div class="list">
+					<ul class="itemList">
+						<li>
+							<div class="option">
+								<p>A</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+						<li>
+							<div class="option">
+								<p>B</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+						<li>
+							<div class="option">
+								<p>C</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+						<li>
+							<div class="option">
+								<p>D</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="multiSelection">
+				<div class="subjectName">
+					<span class="num">2</span>、<span class="subjectname">考勤请假属于哪个套件？</span>（多选题，<span class="subjectScore">2</span>分）
+				</div>
+				<div class="list">
+					<ul class="itemList">
+						<li>
+							<div class="option">
+								<p>A</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+						<li>
+							<div class="option">
+								<p>B</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+						<li>
+							<div class="option">
+								<p>C</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+						<li>
+							<div class="option">
+								<p>D</p>
+							</div>
+							<div class="optionCon">
+								移动办公
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="judge">
+				<div class="subjectName">
+					<span class="num">1</span>、<span class="subjectname">考勤请假属于哪个套件？</span>（判断题，<span class="subjectScore">2</span>分）
+				</div>
+				<div class="list">
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="completion">
+				<div class="subjectName">
+					<span class="num">1</span>、<span class="subjectname">考勤请假属于哪个套件？</span>（填空题，<span class="subjectScore">2</span>分）
+					<div class="textareaText">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<button class="nextBtn">下一题</button>
+		</footer>
+	</body>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/mui.pullToRefresh.js"></script>
+	<script src="../js/mui.pullToRefresh.material.js"></script>
+	<script>
+//		$(".timeRight").on("click",function(){
+//				if ($(".timeRight img").attr("style")) {
+//					$(".timeRight img").removeAttr("style");
+//				} else{
+//					$(".timeRight img").attr("style","transform: rotate(0deg);transition: 0.5s;");
+//				}
+//				$(".slideCon").slideToggle(800);
+//				for (var a = 0;a<answerArr.length;a++) {
+//					if (answerArr[a] != 0) {
+//						$(".slideCon ul li").eq(a).addClass("active");
+//					}
+//				}
+//			})
+		mui.init();
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			var data = self.data.examPaper.examQuestions;
+			var datas = self.data.examPaper;
+			var userName = self.userName;
+			var answerTime = self.data.examPaper.answerTime;
+			$(".mui-title").text(userName);
+			$(".totalNum").text(data.length);
+			var time = answerTime*60*1000;
+			var answerArr = [];
+			var answerIdArr = [];
+			var jsonObj = {};
+			setInterval(function(){
+				var minutes = parseInt(time / 1000 / 60);
+				var seconds = parseInt(time/1000%60);
+				$(".answerTime").text(minutes+"分"+seconds+"秒");
+				if (time<=1000) {
+					time = 0;
+					osg.ajax("/app/appExam/submitExamRecord",{
+						recordId:recordId,
+						keyMap:keyMap
+					},function(submitData){
+						if(submitData.success == true){
+							osg.open("achievement.html","achievement.html",{
+								userName:self.userName,
+								data:submitData.data
+							});
+						}
+					})
+				} else{
+					time-=1000;
+				}
+			},1000)
+			$(".subjectScore:eq(0)").text(datas.singleFraction);
+			$(".subjectScore:eq(1)").text(datas.multiFraction);
+			$(".subjectScore:eq(2)").text(datas.judgeFraction);
+			$(".subjectScore:eq(3)").text(datas.fillFraction);
+			$(".timeRight").on("click",function(){
+				if ($(".timeRight img").attr("style")) {
+					$(".timeRight img").removeAttr("style");
+				} else{
+					$(".timeRight img").attr("style","transform: rotate(180deg);transition: 0.5s;");
+				}
+				$(".slideCon").fadeToggle();
+				for (var a = 0;a<answerArr.length;a++) {
+					if (answerArr[a] != 0) {
+						$(".slideCon ul li").eq(a).addClass("active");
+					}
+				}
+			})
+			for (var a = 0;a<data.length;a++) {
+				$(".slideCon ul").append('<li>'+(a+1)+'</li>');
+				answerArr.push([]);
+				answerIdArr.push(data[a]._id)
+			}
+			$(".slideCon ul li").on("click",function(){
+				subjectNum = $(this).text()-1;
+				subjectFun(subjectNum);
+				$(".num").text(parseInt(subjectNum)+1);
+				$(".slideCon").fadeOut();
+				$(".timeRight img").removeAttr("style");
+			});
+			var subjectNum = 0;
+			$(".modalClose,.modalFooter button").on("click",function(){
+				$(".modalBox").hide();
+			})
+			subjectFun(subjectNum);
+			function subjectFun(subjectNum){
+				if (data[subjectNum].type == 1) {
+					$(".singleElection").show().siblings().hide();
+					var liListElement = $(".singleElection .itemList li");
+					optionFun(subjectNum,1);
+				} else if(data[subjectNum].type == 2){
+					$(".multiSelection").show().siblings().hide();
+					optionFun(subjectNum,2);
+				} else if(data[subjectNum].type == 3){
+					$(".completion").show().siblings().hide();
+					completion(subjectNum);
+				} else if(data[subjectNum].type == 4){
+					$(".judge").show().siblings().hide();
+					judgeFun(subjectNum);
+				}
+				if(data.length == 1){
+					$("footer").html('<button class="nextBtn">提交</button>');
+					$(".nextBtn").css({"width":"100%"});
+				} else if (subjectNum == 0) {
+					$("footer").html('<button class="nextBtn">下一题</button>');
+					$(".nextBtn").css({"width":"100%"});
+				} else if(subjectNum == data.length - 1){
+					$("footer").html('<button class="prevBtn">上一题</button><button class="nextBtn">提交</button>');
+					$("footer button").css({"width":"40%"});
+					$(".prevBtn").css({"background":"white","border":"1px solid #4496EC","color":"#4496EC"})
+				} else{
+					$("footer").html('<button class="prevBtn">上一题</button><button class="nextBtn">下一题</button>');
+					$("footer button").css({"width":"40%"});
+					$(".prevBtn").css({"background":"white","border":"1px solid #4496EC","color":"#4496EC"})
+				}
+				$(".num").text(parseInt(subjectNum)+1);
+				$(".subjectname").text(data[subjectNum].title);
+				$(".nextBtn:contains('提交')").on("click",function(){
+					updataFun(1);
+					$(".timeRight img").removeAttr("style");
+				});
+				$(".nextBtn:contains('下一题')").off("click").on("click",function(){
+					subjectNum++;
+					if (subjectNum >= data.length-1) {
+						subjectNum = data.length-1;
+					}
+					$(".slideCon").fadeOut();
+					subjectFun(subjectNum);
+					$(".timeRight img").removeAttr("style");
+				});
+				$(".prevBtn").off("click").on("click",function(){
+					subjectNum--;
+					if(subjectNum == 0){
+						subjectNum = 0;
+						$(this).hide();
+					}
+					$(".slideCon").fadeOut();
+					subjectFun(subjectNum);
+					$(".timeRight img").removeAttr("style");
+				})
+			}
+			function updataFun(updataType){
+				var recordId = self.data._id;
+				for (var d = 0;d<answerIdArr.length;d++) {
+					jsonObj[answerIdArr[d]] = answerArr[d].join(';');
+				}
+				var keyMap = JSON.stringify(jsonObj);
+				$(".slideCon").fadeOut();
+				if(updataType == 1){
+					$(".modalTxt").text("提交后将不能继续答题或修改答案。是否确认提交？");
+				}else{
+					$(".modalTxt").text("返回将自动提交试卷，请问是否确认提交？");
+				}
+				$(".modalBox").show();
+				$(".blueBtn").on("click",function(){
+					osg.ajax("/app/appExam/submitExamRecord",{
+						recordId:recordId,
+						keyMap:keyMap
+					},function(submitData){
+						if(submitData.success == true){
+							osg.open("achievement.html","achievement.html",{
+								userName:self.userName,
+								data:submitData.data
+							});
+						}
+					})
+				})
+			}
+			function judgeFun(subjectNum){
+				$(".judge ul").html('<li><div class="option"><p>A</p></div><div class="optionCon">对</div></li><li><div class="option"><p>B</p></div><div class="optionCon">错</div></li>');
+				if (answerArr[subjectNum] != "") {
+					$(".judge li").eq(answerArr[subjectNum] - 1).addClass("active").siblings().removeClass("active");
+				}
+				$(".judge li").on("click",function(){
+					answerArr[subjectNum] = [];
+					$(this).addClass("active").siblings().removeClass("active");
+					answerArr[subjectNum].push($(this).index()+1);
+				});
+			}
+			function completion(subjectNum){
+				$(".textareaText").html('<textarea name="" placeholder="请输入内容……"></textarea>');
+				$("textarea").val(answerArr[subjectNum]);
+				$("textarea").on("blur",function(){
+					answerArr[subjectNum] = [];
+					answerArr[subjectNum].push($("textarea").val());
+				})
+			}
+			function optionFun(subjectNum,optionType){
+				var liList = '';
+				$.each(data[subjectNum].map, function(key,value) {
+					liList += '<li><div class="option"><p></p></div><div class="optionCon">'+value+'</div></li>'
+				});
+				$(".itemList").html(liList); 
+				if (optionType == 1) {
+					var liListArr = ["A","B","C","D","E","F"];
+					$.each($(".singleElection .itemList li"), function(index) {
+						$(".singleElection .itemList li").eq(index).children().children("p").text(liListArr[index]);
+					});
+					if (answerArr[subjectNum].length>0) {
+						$(".singleElection li").eq(answerArr[subjectNum]-1).addClass("active").siblings().removeClass("active");
+					}
+				} else{
+					var liListArr = ["A","B","C","D","E","F"];
+					$.each($(".multiSelection .itemList li"), function(index) {
+						$(".multiSelection .itemList li").eq(index).children().children("p").text(liListArr[index]);
+					});
+					if (answerArr[subjectNum].length>0) {
+						for (var c = 0;c<answerArr[subjectNum].length;c++) {
+							$(".multiSelection li").eq(answerArr[subjectNum][c]-1).addClass("active");
+						}
+					}
+				}
+				$(".multiSelection li").on("click",function(){
+					if ($(this).attr("class") == "active") {
+						$(this).removeClass("active");
+						for (var c = 0;c<answerArr[subjectNum].length;c++) {
+							if (answerArr[subjectNum][c] == $(this).index()+1) {
+								answerArr[subjectNum].splice(c,1);
+							}
+						}
+					} else{
+						$(this).addClass("active");
+						answerArr[subjectNum].push($(this).index()+1);
+					}
+				})
+				$(".singleElection li").on("click",function(){
+					answerArr[subjectNum] = [];
+					$(this).addClass("active").siblings().removeClass("active");
+					answerArr[subjectNum].push($(this).index()+1);
+				});
+			}
+			//返回监听
+			mui.back = function(){
+//				alert(123)
+				updataFun();
+			}
+			//添加toNames 自定义事件监听  获得选择好的用户数据
+			window.addEventListener('backFun',function(event){
+				var wvB=plus.webview.currentWebview();  //获取当前窗口的WebviewObject对象
+			    var wvA=wvB.opener();		 			//获取当前窗口的创建者
+				//触发详情页面的newsId事件
+				mui.fire(wvA,'backFun',{});
+				wvB.close();   
+			});
+		})
+	</script>
+</html>

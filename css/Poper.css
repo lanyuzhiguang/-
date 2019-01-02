@@ -1,0 +1,216 @@
+/*弹窗样式*/
+
+.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #000000;
+	opacity: 0.14;
+}
+
+.poperDiv {
+	border-radius: 4px;
+	background: #ffffff;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	width: 17.52rem;
+	box-shadow: 0px 0px 20px 0px #333333;
+	z-index: 1;
+}
+
+.innerPoper {
+	width: 100%;
+	border-radius: 4px;
+}
+
+.poperTop {
+	border-radius: 4px 4px 0 0;
+	height: 2.17rem;
+	line-height: 2.17rem;
+	background: #f4f4f5;
+	position: relative;
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.poperTop div {
+	font-size: 0.94rem;
+	text-align: center;
+}
+
+.poperTop img {
+	position: absolute;
+	right: 0.94rem;
+	width: 0.94rem;
+	top: 50%;
+	margin-top: -0.47rem;
+}
+
+.popContent {
+	margin: auto;
+	text-align: center;
+	font-size: 0.82rem;
+	width: 62%;
+	margin-top: 2.05rem;
+	margin-bottom: 2.05rem;
+}
+
+.btnList {
+	width: 70%;
+	margin: auto;
+	margin-bottom: 1.44rem;
+}
+
+.btnList input {
+	width: 4.64rem;
+	height: 1.76rem;
+	line-height: 1.76rem;
+	text-align: center;
+	padding: 0 0;
+	outline: none;
+	border-radius: 2px;
+	font-size: 0.82rem;
+}
+
+.sure {
+	background: #009ee2!important;
+	color: #ffffff!important;
+	border: 1px solid #009ee2!important;
+	margin-right: 2.64rem;
+}
+
+.cancel {
+	border: 1px solid #c8c8c8;
+	color: #333333;
+}
+
+.cancel:active {
+	background: #ffffff!important;
+	color: #333333!important;
+}
+
+.hid {
+	display: none;
+}
+
+
+/*带输入框的弹出内容样式*/
+
+
+/*入党申请人弹框和列为积极分子弹框*/
+
+.popInput {
+	width: 88%;
+	margin: auto;
+	text-align: center;
+	font-size: 0.82rem;
+	margin-top: 2.05rem;
+	margin-bottom: 2.05rem;
+}
+
+.popInput>div:first-child {
+	text-align: left;
+	padding-left: 0.7rem;
+	margin-bottom: 1.17rem;
+}
+
+.popInput>div:last-child>div {
+	display: inline-block;
+}
+
+.popInput>div:last-child>div input {
+	width: 7.41rem;
+	height: 1.58rem;
+	border: 1px solid #d5d5d5;
+	margin-bottom: 0;
+	margin-left: 0.44rem;
+	padding: 0 0;
+	font-size: 0.82rem;
+}
+
+.popInput>div:last-child>div:last-child {
+	position: relative;
+}
+
+.popInput>div:last-child>div img {
+	position: absolute;
+	width: 1rem;
+	height: 1rem;
+	top: 50%;
+	margin-top: -0.5rem;
+	right: 0.41rem;
+}
+
+
+/*指定谈话人和指定培养人弹窗*/
+
+.talker {
+	width: 88%;
+	margin: auto;
+	text-align: center;
+	font-size: 0.82rem;
+	margin-top: 2.05rem;
+	margin-bottom: 2.05rem;
+}
+
+.talker>div:first-child {
+	margin-bottom: 0.88rem;
+}
+
+.talker>div>div {
+	display: inline-block;
+}
+
+.talker>div>div:first-child {
+	margin-right: 1.41rem;
+}
+
+.talker>div>div:last-child>input {
+	width: 7.41rem;
+	height: 1.67rem;
+	border: 1px solid #d5d5d5;
+	margin-bottom: 0;
+	padding: 0 0;
+	font-size: 0.82rem;
+	border-radius: 0;
+}
+
+.talker>div>div:last-child {
+	position: relative;
+	width: 48%;
+}
+
+.talker>div>div:last-child>img {
+	position: absolute;
+	width: 1.5rem;
+	height: 1.6rem;
+	top: 50%;
+	margin-top: -0.8rem;
+	right: 0px;
+}
+
+
+/*思想汇报提交要求*/
+
+.thought {
+	width: 88%;
+	margin: auto;
+	text-align: center;
+	font-size: 0.82rem;
+	margin-top: 2.05rem;
+	margin-bottom: 2.05rem;
+}
+
+.thought>div>div>input {
+	width: 2.52rem;
+	height: 1.58rem;
+	border: 1px solid #d5d5d5;
+	margin-left: 0.58rem;
+	margin-right: 0.58rem;
+	padding: 0 0;
+	font-size: 0.82rem;
+}

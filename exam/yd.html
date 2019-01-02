@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/stylescore.css">
+		<link href="../iconfont/logo/iconfont.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				box-sizing: border-box;
+				font-family: "苹方";
+			}
+			
+			body {
+				background: #F5F6F1;
+			}
+			
+			.big {
+				background: #f5f6f1;
+				width: 100%;
+			}
+			
+			.conte-top {
+				width: 100%;
+				margin: 0 auto;
+				margin-top: 4rem;
+				background: white;
+				box-shadow: 3px 3px 8px #ccc;
+				min-height: 26rem;
+				margin-bottom: 6rem;
+				border-radius: 0.6rem;
+			}
+			
+			.conte-top-gz img {
+				width: 100%;
+			}
+			
+			.xcont {
+				margin: 1rem 0;
+			}
+			
+			.ul-li {
+				display: flex;
+				justify-content: space-between;
+				padding: 0 2.4rem;
+				font-size: 0.8rem;
+				margin-top: 0.6rem;
+				text-align: left;
+			}
+			
+			.ul-lie {
+				display: flex;
+				justify-content: space-between;
+				padding: 0 2.3rem;
+				font-size: 0.8rem;
+				line-height: 1.6rem;
+				text-align: left;
+			}
+			
+			.ul-li li:first-of-type,
+			.ul-lie li:first-of-type {
+				flex: 1;
+			}
+			
+			.ul-li li>span:first-of-type,
+			.ul-lie li>span:first-of-type {
+				color: #8F8F8F;
+			}
+			
+			.ul-li li:last-of-type,
+			.ul-lie li:last-of-type {
+				flex: 1;
+				padding-left: 0.6rem;
+			}
+			
+			.imageBox {
+				padding: 0 0.6rem;
+			}
+			
+			.image {
+				width: 100%;
+			}
+			
+			.rq {
+				font-size: 0.75rem;
+				padding: 0.6rem 0 2rem 0;
+				text-align: center;
+				color: #333;
+			}
+			
+			.btnbg {
+				width: 100%;
+				padding: 0.8rem 0;
+				text-align: center;
+				background: white;
+				position: fixed;
+				bottom: 0;
+			}
+			
+			.btn {
+				width: 90%;
+				padding: 0.8rem;
+				background: #4496ec;
+				color: white;
+				font-size: 0.9rem;
+				border: none;
+				border-radius: 0.3rem;
+			}
+			
+			.modalBox {
+				position: absolute;
+				top: 0;
+				z-index: 99;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.4);
+				display: none;
+			}
+			
+			.modalcon {
+				width: 17.2rem;
+				height: 10rem;
+				border-radius: 0.2rem;
+				overflow: hidden;
+				padding-bottom: 1.2rem;
+				background: white;
+				border-radius: 0.1rem;
+				margin: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			
+			.modalHeader {
+				height: 2.1rem;
+				line-height: 2.1rem;
+				background: #f4f4f4;
+				display: flex;
+				border-bottom: 1px solid #D5D5D5;
+			}
+			
+			.modalHeader .placeFlex {
+				flex: 1;
+			}
+			
+			.modalTitle {
+				flex: 5;
+				font-size: 0.94rem;
+				text-align: center;
+			}
+			
+			.modalClose {
+				flex: 1;
+				font-size: 1.94rem;
+			}
+			
+			.modalTxt {
+				text-align: center;
+				font-size: 0.82rem;
+				padding: 1.35rem 2.47rem;
+				height: 4.94rem;
+			}
+			
+			.modalFooter {
+				text-align: center;
+			}
+			
+			.modalFooter button,
+			.modalFooter button:active {
+				border-radius: 0.1rem;
+				background: white;
+				border: 1px solid #cbcbcb;
+				font-size: 0.82rem;
+				padding: 0.5rem 1.4rem;
+			}
+			
+			.modalFooter .blueBtn,
+			.modalFooter .blueBtn:active {
+				border: none;
+				background: #419EDC;
+				color: white;
+				margin-right: 0.6rem;
+			}
+			
+			.mui-icon-left-nav {
+				color: white;
+			}
+			
+			.about {
+				padding: 0.6rem 2rem 1.6rem 2rem;
+				text-align: left;
+			}
+			
+			.mui-bar-nav {
+				background: #D61D1D;
+			}
+			.offset_top{
+				position: relative;
+				bottom: 1.15rem;
+			}
+			.examTitle{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				color: #8F8F8F;
+				font-size: 0.75rem;
+				font-weight: 600;
+				padding: 0 0.6rem;
+				background: #fff;
+			}
+			.examTitle>.examTitle_left,.examTitle>.examTitle_right{
+				height: 0.2rem;
+				width: 38%;
+				border-top: 0.06rem solid #EFEFEF;
+				border-bottom: 0.06rem solid #EFEFEF;
+			}
+			.readTitle{
+				padding: 0 1.44rem 1.52rem 2.23rem;
+				font-size: 0.75rem;
+				color: #d91d17;
+				text-align: left;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="modalBox">
+			<div class="modalcon">
+				<div class="modalHeader">
+					<div class="placeFlex">
+
+					</div>
+					<div class="modalTitle">
+						提示
+					</div>
+					<div class="modalClose">
+						×
+					</div>
+				</div>
+				<div class="modalTxt">
+					目前尚未开始，清于开始后进行作答。
+				</div>
+				<div class="modalFooter">
+					<button class="blueBtn">确认</button>
+					<button>返回</button>
+				</div>
+			</div>
+		</div>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">十九大人民代表大会</h1>
+		</header>
+		<div class="big">
+			<div class="conte-top">
+				<div class="conte-top-gz">
+					<img src="img/u773_07.png" />
+				</div>
+				<div class="examTitle offset_top">
+					<div class="examTitle_left"></div>
+					<div>考前提示</div>
+					<div class="examTitle_right"></div>
+				</div>
+				<div class="readTitle">
+					在答题过程中，请勿关闭、退出APP，否则将直接提交试卷，无法继续作答
+				</div>
+				<div class="examTitle">
+					<div class="examTitle_left"></div>
+					<div>考试信息</div>
+					<div class="examTitle_right"></div>
+				</div>
+				<div class="xcont">
+					<ul class="ul-li">
+						<li><span>试卷总分：</span><span class="totalScore"></span>分</li>
+						<li><span>及格分：</span><span class="qualfraction"></span>分</li>
+					</ul>
+
+					<ul class="ul-lie">
+						<li><span>总题数：</span><span class="examQuestions"></span>题</li>
+						<li><span>考试时长：</span><span class="answerTime"></span>分钟</li>
+					</ul>
+				</div>
+
+				<!--<div class="imageBox">
+					<img src="img/u773_03_04.png" class="image" />
+				</div>-->
+				<div class="examTitle">
+					<div class="examTitle_left"></div>
+					<div>考试时间</div>
+					<div class="examTitle_right"></div>
+				</div>
+				<p class="rq">
+					<span class="starValidity"></span>至
+					<span class="endValidity"></span>
+				</p>
+				<!--<div class="imageBox">
+					<img src="img/u773_03_05.png" class="image" />
+				</div>-->
+				<div class="examTitle">
+					<div class="examTitle_left"></div>
+					<div>考试说明</div>
+					<div class="examTitle_right"></div>
+				</div>
+				<p class="rq about">dfreg</p>
+			</div>
+		</div>
+		<div class="btnbg">
+			<button class="btn">开始答题</button>
+		</div>
+	</body>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/mui.pullToRefresh.js"></script>
+	<script src="../js/mui.pullToRefresh.material.js"></script>
+	<script type="text/javascript">
+		mui.init();
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			var userId = self.userId;
+			var userName = self.userName;
+			osg.ajax('/app/appExam/readingBeforeExamination', {
+				paperId: userId
+			}, function(data) {
+				$(".mui-title").text(userName);
+				var data = data.data;
+				$(".totalScore").text(data.totalScore);
+				$(".qualfraction").text(data.qualfraction);
+				$(".examQuestions").text(data.quest);
+				$(".answerTime").text(data.answerTime);
+				$(".starValidity").text(data.formStarValidity);
+				$(".endValidity").text(data.formEndValidity);
+				$(".about").text(data.about);
+				$(".btn").on("click", function() {
+					osg.ajax('/app/appExam/startAnswer', {
+						paperId: userId
+					}, function(data) {
+						var data = data.data;
+						if(data.examPaper.state == 0 || data.examPaper.state == 1 || data.examPaper.state == 2 || data.examPaper.state == 4) {
+							$(".modalBox").show();
+							$(".modalClose,.blueBtn,button:contains('返回')").off("click").on("click", function() {
+								$(".modalBox").hide();
+							});
+						} else {
+							osg.open("ksdt.html", "ksdt.html", {
+								data: data,
+								userName: userName
+							});
+						}
+					})
+				})
+			})
+			//添加toNames 自定义事件监听  获得选择好的用户数据
+			window.addEventListener('backFun', function(event) {
+				var wvB = plus.webview.currentWebview(); //获取当前窗口的WebviewObject对象
+				var wvA = wvB.opener(); //获取当前窗口的创建者
+				//触发详情页面的newsId事件
+				mui.fire(wvA, 'backFun', {});
+				wvB.close();
+			});
+		})
+	</script>
+
+</html>

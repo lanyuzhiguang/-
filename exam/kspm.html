@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/stylescore.css">
+		<link href="../iconfont/logo/iconfont.css" rel="stylesheet" />
+		<title>考试排名</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				min-height: 100%;
+				box-sizing: border-box;
+				font-size: 0.16rem;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #333;
+			}
+			
+			#app {
+				width: 100%;
+				height: 100%;
+				/*overflow: auto;*/
+			}
+			
+			.container-top {
+				margin-top: 2.8rem;
+				width: 100%;
+				background: #f0f0f0;
+				padding: 0.2rem 0.9rem;
+				padding-top: 1.2rem;
+			}
+			
+			.top-box {
+				width: 100%;
+				height: 4.7rem;
+				background: #fff;
+				border-radius: 0.3rem;
+				display: flex;
+				/*padding: 0 0.2rem;*/
+				align-items: center;
+				justify-content: space-between;
+				box-shadow: 0 0 5px #ddd;
+			}
+			
+			.top-box-left {
+				font-size: 0.7rem;
+				text-align: center;
+				color: #D51B1B;
+				flex: 1;
+			}
+			
+			.top-box-left b {
+				font-size: 1.4rem;
+			}
+			
+			.top-box-center {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+			}
+			
+			.top-box-center span {
+				text-align: center;
+				margin-top: 0.2rem;
+				font-weight: bold;
+				font-size: 0.8rem;
+				font-weight: 600;
+				margin-top: 0.4rem;
+			}
+			
+			.div-img {
+				width: 3.29rem;
+				height: 3.29rem;
+				overflow: hidden;
+				border-radius: 50%;
+				background: white;
+				box-shadow: 0 0 5px #ddd;
+				margin-top: -1rem;
+			}
+			
+			.top-box-center img {
+				width: 3.5rem;
+				/*margin-top: -1.2rem;*/
+			}
+			
+			.top-box-right {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+			}
+			
+			.top-box-right b {
+				font-size: 1.2rem;
+			}
+			
+			.top-box-right a {
+				font-size: 0.7rem;
+				color: #D51B1B;
+			}
+			
+			.top-box-right a>span {
+				font-size: 1.2rem;
+				font-weight: 700;
+			}
+			
+			.top-box-right>span {
+				font-size: 0.65rem;
+				color: #999;
+				margin-top: 0.2rem;
+			}
+			
+			.list {
+				width: 100%;
+				padding: 0 0.9rem;
+			}
+			
+			.list li {
+				width: 100%;
+				border-bottom: 1px solid #efefef;
+				display: flex;
+				height: 5.5rem;
+				/*padding-top: 1rem;*/
+				align-items: center;
+				justify-content: space-between;
+				align-content: center;
+			}
+			
+			.list-left {
+				width: 1.5rem;
+			}
+			
+			.list-left img {
+				width: 1.5rem;
+			}
+			
+			.list-left span {
+				font-size: 1.3rem;
+				color: #D51B1B;
+				font-weight: bold;
+			}
+			
+			.list-center {
+				width: 9.6rem;
+				margin-left: -1.6rem;
+			}
+			
+			.list-center h1 {
+				font-size: 0.9rem;
+			}
+			
+			.list-center p {
+				font-size: 0.65rem;
+				margin: 0;
+				line-height: 1rem;
+				margin-top: 0.5rem;
+				color: #999;
+			}
+			
+			.list-right {
+				text-align: left;
+			}
+			
+			.list-right h1 {
+				margin-top: 0.5rem;
+				font-size: 0.6rem;
+				color: #D51B1B;
+			}
+			
+			.list-right h1 a {
+				font-size: 1.2rem;
+				color: #D51B1B;
+			}
+			
+			.list-right p {
+				font-size: 0.6rem;
+				margin-top: 0.2rem;
+			}
+			.mui-bar-nav{background: #D61D1D;}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">考试排名</h1>
+			</header>
+			<div class="container-top">
+				<div class="top-box">
+					<a class="top-box-left">第<b>99</b>名</a>
+					<div class="top-box-center">
+						<div class="div-img"><img src="img/ckpm_03.png"></div>
+						<span>张三</span>
+					</div>
+					<div class="top-box-right">
+						<a><span>65</span>分</a>
+						<span>用时：10分01秒</span>
+					</div>
+				</div>
+			</div>
+			<ul class="list">
+				<!--<li>
+					<div class="list-left">
+						<img src="img/dymiconthrid.png" />
+					</div>
+					<div class="list-center">
+						<h1>王力宏</h1>
+						<p>天合互联示范第一党支部</p>
+					</div>
+					<div class="list-right">
+						<h1>得分: <a>90</a>分</h1>
+						<p>用时：10分01秒</p>
+					</div>
+				</li>
+				<li>
+					<div class="list-left">
+						<img src="img/demiconfirst.png" />
+					</div>
+					<div class="list-center">
+						<h1>王力宏</h1>
+						<p>天合互联示范第一党支部</p>
+					</div>
+					<div class="list-right">
+						<h1>得分: <a>90</a>分</h1>
+						<p>用时：10分01秒</p>
+					</div>
+				</li>
+				<li>
+					<div class="list-left">
+						<img src="img/dsmiconscend.png" />
+					</div>
+					<div class="list-center">
+						<h1>王力宏</h1>
+						<p>天合互联示范第一党支部天合互联示范第一党支部</p>
+					</div>
+					<div class="list-right">
+						<h1>得分: <a>90</a>分</h1>
+						<p>用时：10分01秒</p>
+					</div>
+				</li>
+				<li>
+					<div class="list-left">
+						<img src="image/11.png"/>
+						<span>4</span>
+					</div>
+					<div class="list-center">
+						<h1>王力宏</h1>
+						<p>天合互联示范第一党支部</p>
+					</div>
+					<div class="list-right">
+						<h1>得分: <a>90</a>分</h1>
+						<p>用时：10分01秒</p>
+					</div>
+				</li>
+				<li>
+					<div class="list-left">
+						<img src="image/11.png"/>
+						<span>5</span>
+					</div>
+					<div class="list-center">
+						<h1>王力宏</h1>
+						<p>天合互联示范第一党支部</p>
+					</div>
+					<div class="list-right">
+						<h1>得分: <a>90</a>分</h1>
+						<p>用时：10分01秒</p>
+					</div>
+				</li>
+				<li>
+					<div class="list-left">
+						<img src="image/11.png"/>
+						<span>6</span>
+					</div>
+					<div class="list-center">
+						<h1>王力宏</h1>
+						<p>天合互联示范第一党支部</p>
+					</div>
+					<div class="list-right">
+						<h1>得分: <a>90</a>分</h1>
+						<p>用时：10分01秒</p>
+					</div>
+				</li>-->
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/mui.pullToRefresh.js"></script>
+<script src="../js/mui.pullToRefresh.material.js"></script>
+<script type="text/javascript">
+	mui.init();
+	mui.plusReady(function() {
+		var self = plus.webview.currentWebview();
+		var data = self.data;
+		var ranking = self.ranking;
+		$(".top-box-center span").text(data[0].name);
+		$(".top-box-right a span").text(data[0].score);
+		var usTime = data[0].usTime;
+		$(".top-box-right>span").text(timeFun(usTime));
+		$(".top-box-left b").text(data[0].ranking);
+		var imgSrc = data[0].head?(qiniuRoot+data[0].head):"../images/logo.png";
+		$(".div-img img").attr("src",imgSrc);
+		var listItem = "";
+		for (var a =1;a<data.length;a++) {
+			var rankingNum = "";
+			if (a == 1) {
+				rankingNum = '<img src="img/dymiconthrid.png" />';
+			} else if(a == 2) {
+				rankingNum = '<img src="img/demiconfirst.png" />';
+			} else if(a == 3) {
+				rankingNum = '<img src="img/dsmiconscend.png" />';
+			} else {
+				rankingNum = a;
+			}
+			listItem += '<li><div class="list-left"><span class="ranking">'+rankingNum+'</span></div><div class="list-center"><h1>'+data[a].name+'</h1><p>'+data[a].bumenName+'</p></div><div class="list-right"><h1>得分: <a>'+data[a].score+'</a>分</h1><p>用时：<span class="ustime">'+parseInt(data[a].usTime / 1000 / 60)+"分"+parseInt(data[a].usTime/1000%60)+"秒"+'</span></p></div></li>';
+		}
+		$(".list").html(listItem);
+		function timeFun(time){
+			var minutes = parseInt(usTime / 1000 / 60);
+			var seconds = parseInt(usTime/1000%60);
+			return minutes+"分"+seconds+"秒";
+		}
+	})
+</script>

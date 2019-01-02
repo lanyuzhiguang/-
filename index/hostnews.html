@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+     <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+    <style type="text/css">
+    	/*公共*/
+     *{
+     	padding: 0;
+     	margin: 0;
+     	font-family: "苹方";
+     } 
+     body{
+     	background: #FFFFFF;
+     }
+    .clearfix:after{
+    	content: '';
+    	display: block;
+    	clear: both;
+    }
+    .clearfix{
+    	zoom: 1;
+    }
+    .fll{
+    	float: left;
+    }
+    .flr{
+    	float: right;
+    }
+    /*end*/
+     .wrap{
+     	background: #FFFFFF;
+     	overflow-x: hidden;
+     	margin-top: 2.352941rem;
+     }
+     .headerimg{
+     	width: 1.294117rem;
+     	height: 1.294117rem;
+     }
+     .mui-bar-nav{
+     	background: linear-gradient(#ce0000, #D9150F);
+     }
+     .mui-bar{
+     	box-shadow: 0 0 0 0 #000000;
+     	-webkit-box-shadow: 0 0 0 0 #000000;
+     }
+     /*header结束*/
+   /*新闻列表*/
+   .newslist{
+   		padding-top:0.294117rem;
+   		margin-bottom:1.17647rem;
+   }
+   .seeall-news{
+   		font-size: 0.764705rem;
+   		color: #CE0000;
+   		margin-bottom: 0;
+   }
+   .newsitem{
+   		padding:0.882352rem 0;
+   		margin: 0 0.705882rem;
+   	 	display: flex;
+   		display:-webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        -webkit-justify-content:flex-start;
+        -moz-justify-content:flex-start;
+        -ms-justify-content:flex-start;
+        -o-justify-content: flex-start;
+        justify-content: flex-start;
+        border-bottom: 1px solid #E8E8E8;
+   }
+   .newsitem:last-of-type {
+   		border: none;
+   		padding-bottom: 1.17647rem;
+   }
+   .newsitem img{
+   		width: 7.294117rem;
+   		height: 4.823529rem;
+   		border-radius: 0.235294rem;
+   }
+   .newsitem-content{
+   	 	display: flex;
+   		display:-webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        width: 13.6rem;
+        padding-left: 0.705882rem;
+        
+   }
+   .newsitem-content p{
+   		margin-bottom: 0;
+   }
+   .newsitem .timeimg{
+   		width: 0.588235rem;
+   		height: 0.588235rem; 
+   }
+   .newsitem .eaysimg{
+	   	width: 0.705882rem;
+	   	height: 0.470588rem;
+   }
+   .eaysimg{
+   	 	margin-left:0.882352rem;
+   }
+   .news-see{
+	   	display: inline-block;
+	   	width:1.941176rem;
+   }
+   .news-title{
+	 	white-space: nowrap;
+	 	overflow: hidden;
+	 	text-overflow:ellipsis;
+	   	font-size: 0.941176rem;
+	   	color: #333333;
+	   	font-family: '苹方中等'; 
+	   	line-height: 1.705882rem;
+	   	text-align: left;
+   }
+   .newsitem .news-des{
+   	  	font-size: 0.764705rem;
+   	  	color: #666666;
+   		white-space: nowrap;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		font-family: '苹方';
+		line-height: 1.529411rem;
+		padding-bottom:0.588235rem;
+		text-align: left;
+   }
+   .news-icon{
+   		font-family: '苹方';
+   	  	line-height:0.941176rem;
+   	  	font-size: 0.647058rem;
+   	  	text-align: left;
+   }
+   .news-variety{
+   		color: #CE0000;
+   		vertical-align: middle;  
+   }
+   .news-time,.news-see{
+	   	margin-left:0.294117rem;
+	   	color: #999999;
+		font-size: 0.647058rem; 
+		vertical-align: middle;  	 
+   }
+   /*newslistEnd*/
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title" id="muiTitle">热点新闻</h1>
+	</header>
+		<div class="wrap">
+			<div class="mui-scroll1">
+				<div class="newslist ">
+	    			<div class="newsitem">
+	            		<img src="../exam/img/red1.jpg" class="img"/>
+		            	<div class="newsitem-content">
+		            		<p class="news-title">灾难面前彰显的中国力量、中国速度和中国精神</p>
+		            		<p class="news-des">站“换心手术”：旅客少迈90厘米 铁路升级又一步湖南岳阳问计民企：如何优化营商环境A股探底回升 沪指2500点失而复得25日中小板指跌0.54%25日创业板指跌0.85%京沈高铁沈阳至承德段将于2客户端</p>
+		            		<div class="news-icon clearfix">
+		            			<span class="news-variety fll">时政要闻</span>
+		            			<div class="flr">
+		            				<img src="../exam/img/time.png" class="timeimg"/><span class="news-time">09-10</span>
+		            			<img src="../exam/img/eays.png" class="eaysimg"/><span class="news-see">0</span>
+		            			</div>	
+		            		</div>
+		            	</div>
+	            	</div>  
+	            </div> 
+			</div>
+		</div> 
+	    <script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+		<script src="../js/jquery.marquee.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript">
+			mui.plusReady(function() {
+				var allnewsitem = $(".newsitem");
+				//上拉加载下拉刷新
+	 			page1 = 0;
+				ptr1 = mui('.wrap .mui-scroll1').pullToRefresh({
+					down: {
+						callback: function() {
+							$(".wrap .newslist").html('');
+							var self = this;
+							page1 = 1;
+							findPage1(1, {
+								'self': self
+							});
+							self.endPullDownToRefresh();
+							self.refresh(true);
+						}
+					},
+					up: {
+						auto: true, //可选,默认false.自动上拉加载一次
+						callback: function() {
+							var self = this;
+							page1++;
+							findPage1(page1, {
+								'self': self
+							});
+						}
+					}
+				});
+	 	//上拉加载下拉刷新上拉加载下拉刷新end
+				function findPage1(page,parme){
+				if (page<=1) {
+				$(".wrap .newslist").html('');	
+				}
+				osg.ajax('newsInteg/findhotNewsByCategoryId', {
+						'page':page,
+				}, function(data) {
+					if (data.data.length>0) {
+							$(data.data).each(function(newsindex,newsitem){
+								var item = allnewsitem.clone().attr("id",newsitem.typeId).attr("type",newsitem.type);
+								item.find(".img").attr("src",qiniuRoot + newsitem.logo + '!news_logo')
+								item.find(".news-title").text(newsitem.title);
+								var des = newsitem.content==null?"暂无内容":newsitem.content
+								item.find(".news-des").text(des);
+								item.find(".news-variety").text(newsitem.categoryName);
+								item.find(".news-time").text(newsitem.releaseTime);
+								item.find(".news-see").text(newsitem.times);
+								item[0].addEventListener('tap', function(e) {
+								  	var goid = $(this).attr("id");
+								  	var newtype = $(this).attr("type")
+									if(newtype == 0) {
+										openDetail(goid);
+									} else if(newtype == 1) {
+										openLibraryDetail(goid);
+									}
+								});
+								$(".newslist").prepend(item)
+								
+							})
+						}
+					parme.self.endPullUpToRefresh(data.page >= data.pages);
+				});
+           }
+				function openDetail(newsId) { //租户新闻跳转页面
+					osg.open('../news/detail.html', 'detail.html', {
+						'newsId': newsId
+					}, {
+						show: function() {
+							ctime = new Date().getTime();
+						},
+						hide: function() {
+							var tc = parseInt((new Date().getTime() - ctime) / 1000);
+							if(tc > 0 && ctime > 0) {
+								osg.ajax('score/studyTimeScore', {
+										type: 99,
+										typeId: newsId,
+										time: tc,
+										libSore: 0
+									}, null,
+									null,
+									true,
+									true);
+							}
+						}
+					});
+				}
+				function openLibraryDetail(newsId) { //资源库新闻跳转页面
+					osg.open('../news/librarydetail.html', 'librarydetail.html', {
+						'newsId': newsId
+					}, {
+						show: function() {
+							ctime = new Date().getTime();
+						},
+						hide: function() {
+							var tc = parseInt((new Date().getTime() - ctime) / 1000);
+							if(tc > 0 && ctime > 0) {
+								osg.ajax('score/studyTimeScore', {
+										type: 99,
+										typeId: newsId,
+										time: tc,
+										libSore: 1
+									}, null,
+									null,
+									true,
+									true);
+							}
+						}
+					});
+				}
+			})
+		</script>
+	</body>
+</html>

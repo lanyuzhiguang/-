@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/stylescore.css">
+		<link href="../iconfont/logo/iconfont.css" rel="stylesheet" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				box-sizing: border-box;
+				color: #333;
+			}
+			h1,p,h2{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background:#f5f6f1;
+			}
+			.container{
+				margin-top: 3rem;				
+			}
+			.container >ul{
+				width: 100%;
+			}
+			.container >ul >li{
+				width: 100%;
+				padding:1rem;
+				/*padding-right: 0;*/
+				margin-bottom: 0.2rem;
+				background: #FFFFFF;
+				text-align:justify;
+				text-justify:inter-ideograph;				
+			}
+			.list1 h1,.list2 h1{
+				font-size: 0.95rem;
+				font-weight:600;
+				line-height:1.2rem;
+			}
+			h1 span{
+				color:#959595;
+				font-weight: 400;
+			}
+			 /*单选样式*/ 
+			.dx{
+				width: 100%;
+				border-bottom: 1px solid #d4d4d4;
+				padding:0.2rem 0 0.6rem 0;
+			}
+			.dx >li{
+				width: 100%;
+				margin-top: 0.4rem;
+				font-size: 0.95rem;
+				display: flex;
+			}
+			.dx >li span{
+				flex-shrink:0;
+		       	display: inline-block;
+				width: 0.9rem;
+				height: 0.9rem;
+				margin-right:0.5rem;
+				margin-left: 0.3rem;
+			}
+			.dx >li span img{
+				width: 100%;
+				margin-top: 0.01rem;
+			}
+			.list1 h2,.list h2{
+				margin-top: 0.7rem;
+				font-size: 0.95rem;
+				font-weight: 400;
+				color: #73b956;
+				padding: 0 0.4rem;
+				line-height:1.2rem;
+			}
+			 .list1 h2 p{
+			 	line-height:1.2rem;
+				margin-top: 0.8rem;
+				font-size: 0.9rem;
+				color: #898989;
+				font-weight: 400;				
+			}
+			.list1 h2 p span{
+				display: inline-block;
+				padding: 0.2rem 0.8rem;
+				color: #FFFFFF;
+				font-size: 0.5rem;
+				background: #DDDDDD;
+				margin-right: 0.5rem;
+			}
+			.list2 h1{
+				font-size:0.95rem;
+				font-weight: 600;		
+				margin-bottom: 1rem;		
+			}
+			.list2 p:first-of-type{
+				line-height:1.2rem;
+				background:#f1f1f1 ;
+				margin: 0;
+				width: 100%;
+				border:none;
+				color: #333333;
+				padding: 0.3rem 0.5rem;
+				border-radius: 0.2rem;
+			}
+			i{
+				font-style: normal;
+			}
+			.jx{
+				margin-top: 0.7rem;
+				font-size: 0.8rem;
+				color: #898989;
+				line-height:1.2rem;
+			}
+			.jx span{
+				display: inline-block;
+				/*margin-left: 0.2rem;*/
+				/*width: 2.5rem;*/
+				padding: 0.1rem 0.8rem;
+				border-radius: 0.15rem;
+				text-align: center;
+				color: white;
+				background: #ddd;
+				margin-right: 0.75rem;
+			}
+			.mui-bar-nav{background: #D61D1D;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">十九大人民代表大会</h1>
+			</header>
+			<div class="container">
+				<ul class="list">
+					<!--<li class="list1"><h1>1、安夫人粉丝团梗塞的方法 <span>(判断题，2分)</span></h1><ul class="dx pd'+a+'" keyMap=""><li><span><img src="img/radiono.png" /></span>A.对</li><li><span><img src="img/radiono.png" /></span>B.错</li></ul><h2 keys="">正确答案【A】</h2><p class="jx"><span>解析</span>	摄入高铁如果地铁规划好好干吧</p></li>-->
+				</ul>
+			</div>
+	</body>
+</html>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/mui.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/mui.pullToRefresh.js"></script>
+<script src="../js/mui.pullToRefresh.material.js"></script>
+<script type="text/javascript">
+	mui.init();
+	mui.plusReady(function() {
+		var self = plus.webview.currentWebview();
+		var data = self.data;
+		$(".mui-title").text(data.examPaper.title);
+		var liListHtml = "";
+		var datas = data.examPaper.examQuestions;
+		var optionArr = ["A","B","C","D","E","F"];
+		for (var a = 0;a<datas.length;a++) {
+			if (datas[a].type == 1) {
+				var liItemHtml = '';
+				$.each(datas[a].map,function(key,value){
+					liItemHtml += '<li><span><img src="img/radiono.png" /></span><i>'+optionArr[key-1]+'</i>.'+datas[a].map[key]+'</li><li>'
+				})
+//				<li><span><img src="img/radiono.png" /></span>A.'+datas[a].map[1]+'</li><li><span><img src="img/radiono.png" /></span>B.'+datas[a].map[2]+'</li><li><span><img src="img/radiono.png" /></span>C.'+datas[a].map[3]+'</li><li><span><img src="img/radiono.png" /></span>D.'+datas[a].map[4]+'</li>
+				liListHtml = '<li class="list1"><h1>'+(a+1)+'、'+datas[a].title+'<span>(单选题，'+data.examPaper.singleFraction+'分)</span></h1><ul class="dx dx'+a+'" keyMap="'+data.keyMap[datas[a]._id]+'">'+liItemHtml+'</ul><h2 keys="'+datas[a].keys+'">正确答案【A】</h2><p class="jx"><span>解析</span>	<i class="analysis">'+datas[a].analysis+'</i></p></li>';
+			} else if(datas[a].type == 2){
+				var liItemHtml = "";
+				$.each(datas[a].map,function(key,value){
+					liItemHtml += '<li><span><img src="img/checkedno.png" /></span><i>'+optionArr[key-1]+'</i>.'+datas[a].map[key]+'</li><li>'
+				})
+				liListHtml = '<li class="list1 list3"><h1>'+(a+1)+'、'+datas[a].title+'<span>(多选题，'+data.examPaper.multiFraction+'分)</span></h1><ul class="dx dux'+a+'" keyMap="'+data.keyMap[datas[a]._id]+'">'+liItemHtml+'</ul><h2 keys="'+datas[a].keys+'">正确答案</h2><p class="jx"><span>解析</span>		<i class="analysis">'+datas[a].analysis+'</i></p></li>';
+			} else if(datas[a].type == 3){
+				liListHtml = '<li class="list2"><h1>'+(a+1)+'、'+datas[a].title+' <span>(填空题,'+data.examPaper.fillFraction+'分)</span></h1><p>'+data.keyMap[datas[a]._id]+'</p><h2>正确答案：'+datas[a].keys+'</h2><p class="jx"><span>解析</span>	<i class="analysis">'+datas[a].analysis+'</i></p></li>';
+			} else if(datas[a].type == 4){
+				liListHtml = '<li class="list1"><h1>'+(a+1)+'、'+datas[a].title+' <span>(判断题，'+data.examPaper.judgeFraction+'分)</span></h1><ul class="dx pd'+a+'" keyMap="'+data.keyMap[datas[a]._id]+'"><li><span><img src="img/radiono.png" /></span>A.对</li><li><span><img src="img/radiono.png" /></span>B.错</li></ul><h2 keys="'+datas[a].keys+'">正确答案【A】</h2><p class="jx"><span>解析</span>	<i class="analysis">'+datas[a].analysis+'</i></p></li>'
+			}
+			$(".list").append(liListHtml);
+			$.each($(".analysis"), function() {
+				if ($(this).text() == "") {
+					$(this).text("暂无答案解析");
+				}
+			});
+			for (var c = 0;c<$("h2[keys]").length;c++) {
+				var keys = $("h2[keys]").eq(c).attr("keys").split(';');
+				var optionTrue = '正确答案';
+				for(var b = 0;b<keys.length;b++){
+					optionTrue += '【'+optionArr[keys[b]-1]+'】'
+				}
+				$("h2[keys]").eq(c).text(optionTrue);
+			}
+			if ($(".dx"+a).attr("keyMap") != 0) {
+				$(".dx"+a).find('img').eq($(".dx"+a).attr("keyMap")-1).attr("src","img/radioy.png");
+			}
+			if ($(".pd"+a).attr("keyMap") != 0) {
+				$(".pd"+a).find('img').eq($(".pd"+a).attr("keyMap")-1).attr("src","img/radioy.png");
+			}
+			if ($(".dux"+a).attr("keyMap") != undefined) {
+				var optionKeyMap = $(".dux"+a).attr("keyMap").split(";");
+				if (optionKeyMap != 0) {
+					for (var d=0;d<optionKeyMap.length;d++) {
+						$(".dux"+a).find("img:eq("+(optionKeyMap[d]-1)+")").attr("src","img/checkedy.png");
+					}
+				}
+			} else{
+				
+			}
+		}
+	})
+</script>

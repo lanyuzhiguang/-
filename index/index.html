@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+     <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+    <style type="text/css">
+        .swiper-container{
+          margin: 0;	
+       }
+        *{
+        	margin: 0;
+        	padding: 0;
+            font-family: "苹方";
+        }
+        .mui-pull-left{
+            float: left;
+            color: #fff;
+            font-size: 1rem;
+            line-height: 2.8rem;
+        }
+        .headerimg img{
+            width: 1.471rem;
+            height: 1.471rem;
+        }
+        #swipercontainer1{
+           height:10rem!important;
+        }
+        .sliderimg{
+            height:10rem;
+            width: 100%;
+        }
+        .swiper-pagination-bullet{
+            background: rgb(255,255,255);
+            opacity:1
+        }
+        .swiper-pagination-bullet-active{
+            background: rgb(206,0,0);
+        }
+          .newflash-wrapper{
+            height: 4.412rem!important;
+        }
+         .news-swiper-item{
+            display: flex;
+            justify-content:flex-start;
+            align-items: center;
+            font-family: "苹方粗体";
+            font-weight: 600;
+            padding-left: 0.471rem;  
+        }
+        .newsflash-time{
+            color:rgb(102,102,102);
+            font-size: 0.688rem;
+            padding-left: 2rem;
+        }
+        .runXuns{
+        	display: flex;
+        	justify-content: flex-start;
+        	height:4.412rem!important;
+        	padding:0.4688rem 1.412rem;
+            border-bottom: 0.68rem solid#f7f7f7;
+        }
+         .newflash-wrapper{
+            height: 4.412rem!important;
+        }
+        .news-swiper-img{
+        	display: flex;
+        	align-items: center;
+        	background-color: none;
+        }
+        .news-swiper-img img{
+             width:2.882rem;
+             height: 1.188rem;
+             padding-right: 0.471rem; 
+             border-right: 1px solid rgb(232,232,232); 
+        }
+        .six-swiper-content{
+            padding:1.5625rem 0.25rem ;
+            overflow: hidden;
+            border: 1px solid rgb(232,232,232);
+        }
+        .six-slide{
+            width:5rem!important;
+        }
+        .sixitem{
+            text-align: center;
+            height:5rem;
+            width:5rem!important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+        }
+         .sixitemp{
+        	padding-left:0.125rem;
+        	padding-right:0.125rem;
+        }
+        .siximg{
+            height: 3.125rem!important;
+            width: 3.125rem!important;
+        }
+        .six-swiper-title, .news-swiper-item{
+            color: #333333;
+            font-size: 0.875rem;
+            line-height: 1;
+        }
+        .six-swiper-title{
+        	padding-top:0.8125rem;	
+        }
+        .nomsg{
+            font-size: 0.875rem;
+            color: rgb(102,102,102);
+            font-family: "苹方粗体";
+            font-weight: 600;
+            padding: 0.938rem 0;
+            text-align: center;
+            line-height:1;
+        }
+        .redcar{
+            border-bottom: 0.68rem solid#f7f7f7;
+            padding-top: 0.813rem;
+        }
+        .redcar-top{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 0.706rem;
+        }
+        .redcar-title{
+            font-size: 1rem;
+            color: rgb(51,51,51);
+            font-family: "苹方粗体";
+            font-weight: 600;
+            line-height:2 ;
+        }
+        .redcarimg{
+            margin-right: 0.471rem;
+        }
+        .redcarimg img{
+        	display: block;
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+        .redcar-content{
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 0.188rem;
+            margin-bottom:0.969rem;
+           /* padding: 0 0.705rem;*/
+        }
+        .redcar-content-item{
+        	flex: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+        }
+        .redcar-content-item img{
+        	display: block;
+        	width: 100%;
+            /*width: 6.876rem;
+            height: 4.530rem;*/
+        }
+
+        .redcar-content-item .item-title{
+            color: #333333;
+            font-size: 0.746rem;
+            margin-top:0.594rem;
+        }
+        .spirit-item{
+            display: flex;
+            justify-content: space-between;
+            margin:0 0.706rem;
+            padding:0.938rem 0 ;
+            border-bottom:1px solid #E8E8E8;
+        }
+        .NOimg-item{
+        	margin:0 0.706rem;
+            padding:0.938rem 0 ;
+            border-bottom:1px solid #E8E8E8;
+        }
+        .spirit-icon1{
+        	display: flex;
+        	justify-content: flex-start;
+        }
+        .spirit-icon{
+        	margin-top: 2.5rem;
+        }
+        .noimg-icon{
+        	display: flex;
+        	justify-content: space-between;
+        	margin-top: 2.5rem;
+        }
+        .spirit-itemimg{
+            flex: 33%;
+        }
+        .spirit-itemimg img{
+        	display: block;
+        	width: 100%;
+        	height:100%;
+        	border-radius:0.25rem;
+        }
+        .spirit-item-content{
+            flex: 67%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 0.735rem;
+        }
+        .spirit-title{
+            font-size:1rem;
+             font-family: "苹方粗体";
+             line-height: 1.5;
+            /*font-weight:500;*/
+        }
+        .spirit-content{
+            font-size: 0.813rem;
+            color: #666666;
+            line-height: 1.375rem;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space:nowrap;
+			width:11.4706rem;
+        }
+        .spirit-icon{
+        	padding-top: 0.25rem;
+        	display: flex;
+        	justify-content: space-between;
+        }
+        .bottom_time{
+        	margin: 0;
+        }
+        .spirit-icon1 img{
+            width: 0.6255rem !important;
+            height:0.6255rem ;
+        }
+         .spirit-icon2 img{
+            width: 0.781rem !important;
+            height:0.531rem;
+        }
+        .timeeyes{
+            color: #999999;
+            font-size: 0.687rem;
+            padding-left: 0.313rem;
+            line-height: 1;
+        }
+        .mui-tab-label {
+            margin-top: 0.1rem;
+            display: block;
+            font-size: 0.705rem;
+        }
+        .mui-bar-tab {
+            background-color: #fff;
+            height: 3rem !important;
+        }
+        .mui-bar {
+        	
+            /*box-shadow: #efeeee  1px 4px 10px 5px!important;
+            height: 3rem!important;*/
+        }
+       
+        /*列表*/
+        .mui-fullscreen{
+				position: relative;
+		}
+		.mui-bar ~ .mui-content .mui-fullscreen{
+				top:0rem !important;
+		}
+		.mui-fullscreen .mui-segmented-control ~ .mui-slider-group{
+				position: relative;
+				top: 0;
+		}
+		.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+            
+        }
+        
+		.mui-fullscreen.mui-slider .mui-slider-item>a {
+            top: 0;
+            -webkit-transform: none;
+            transform: none;
+        } 
+        .mui-segmented-control.mui-scroll-wrapper{
+        	height: 3rem!important;
+        }
+        .mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+            /*height: 2.235rem;*/
+        }  
+        .mui-control-item {
+            line-height: 2.235rem;
+            position: relative;
+            color: #333333;
+            font-size: 0.875rem;
+            font-family: "苹方粗体";
+            font-weight: 600;
+        } 
+        .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+            color: rgb(206,0,0)!important;
+            font-size: 0.875rem;
+            background: 0 0;
+        }
+        .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active:after {
+            content: '';
+            height: 0.094rem;
+            /*width: 2.9rem;*/
+            width: 1.75rem;
+            background: rgb(206,0,0);
+            display: block;
+            position: absolute;
+            bottom: 0.05rem;
+            left: 50%;
+            margin-left: -1.55rem;
+		    left: 50%;
+        }
+        @media only screen and (min-width:756px ) {
+    		#swipercontainer1{
+           height:20rem!important;
+        }
+        .sliderimg{
+            height:20rem;
+            width: 100%;
+        }	
+    	}
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <span class=" headerimg mui-pull-left" id="searchB"><img src="../exam/img/hseacher.png"/></span>
+    <h1 class="mui-title" id="muiTitle"></h1>
+    <span class="mui-pull-right headerimg" id="toCode"><img src="../exam/img/sao.png"/></span>
+</header>
+<div class="mui-content">
+	<div class="top">
+			<div id="swipercontainer1" class="swiper-container swipercontainer1">
+		        <div class="swiper-wrapper">
+		            <!--<div class="swiper-slide"id="sliderImg"><img src="../exam/img/red1.jpg" class="sliderimg"/></div>
+		            <div class="swiper-slide"><img src="../exam/img/red3.jpg" class="sliderimg"/></div>
+		            <div class="swiper-slide"><img src="../exam/img/red4.jpg" class="sliderimg"/></div>-->
+		        </div>
+		        <div class="swiper-pagination"></div>
+	    	</div>
+		    <div class="six-swiper-content swiper-container" id="swipercontainer2" >
+		        <div class="swiper-wrapper six-wrapper">
+		            <div class="swiper-slide six-slide">
+		                <div class="mui-slider-item sixitem" style="padding-right:0.125rem ;">
+		                    <img src="../exam/img/inform.png" class="siximg"/>
+		                    <div class="six-swiper-title">通知公告</div>
+		                </div>
+		            </div>
+		            <div class="swiper-slide six-slide">
+		                <div class="mui-slider-item sixitem sixitemp">
+		                    <img src="../exam/img/threeclass.png" class="siximg"/>
+		                    <div class="six-swiper-title">三会一课</div>
+		                </div>
+		            </div>
+		            <div class="swiper-slide six-slide sixitemp">
+		                <div class="mui-slider-item sixitem">
+		                    <img src="../exam/img/dangfei.png" class="siximg"/>
+		                    <div class="six-swiper-title">党费缴纳</div>
+		                </div>
+		            </div>
+		            <div class="swiper-slide six-slide sixitemp">
+		                <div class="mui-slider-item sixitem">
+		                    <img src="../exam/img/develop.png" class="siximg"/>
+		                    <div class="six-swiper-title">党员发展</div>
+		                </div>
+		            </div>
+		            <div class="swiper-slide six-slide sixitemp">
+		                <div class="mui-slider-item sixitem">
+		                    <img src="../exam/img/open.png" class="siximg"/>
+		                    <div class="six-swiper-title">党务公开</div>
+		                </div>
+		            </div>
+		            <div class="swiper-slide six-slide">
+		                <div class="mui-slider-item sixitem"style="padding-left:0.125rem ;">
+		                    <img src="../exam/img/assess.png" class="siximg"/>
+		                    <div class="six-swiper-title" >考核</div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	    	<div class="marquee_sub_title_div newsflash">
+				<div class="runXuns">
+					<div class="runxusChild news-swiper-img">
+						<img src="../exam/img/newsflash .png"/>
+					</div>
+					<div class="swiper-container"id="swipercontainer3">
+	                    <div class="swiper-wrapper newflash-wrapper marquee_sub_title">
+			                 <!--<div class="swiper-slide news-swiper-item">11111</div>-->
+	                    </div>
+	        		</div>
+				</div>
+			</div>
+			<div class="redcar">
+		        <div class="redcar-top">
+		            <div class="redcarimg"><img src="../exam/img/redcar.png"/></div>
+		            <div class="redcar-title">红色直通车</div>
+		        </div>
+		        <div class="redcar-content">
+		            <div class="redcar-content-item" style="margin-right: 2%; margin-left:3.2%;">
+		                <img src="../exam/img/redone.png"/>
+		                <div class="item-title">部领导接待日预约</div>
+		            </div>
+		            <div class="redcar-content-item" style="margin-right: 2%; ">
+		                <img src="../exam/img/redcartwo.png"/>
+		                <div class="item-title">联络保障需求</div>
+		            </div>
+		            <div class="redcar-content-item" style="margin-right: 3.2%; ">
+		                <img src="../exam/img/redcarthree.png"/>
+		                <div class="item-title">意见诉求</div>
+		            </div>
+		        </div>
+		   </div>
+	   </div>
+    <div id="slider" class="mui-slider mui-fullscreen">
+        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="background: white;">           
+           	<div class="mui-scroll " id="nav_fun" style="background: #FFFFFF;border-top: none;margin-left:0.75rem; padding-bottom: 3rem;">
+                <a id="navItem" class="mui-control-item  myselect nav-item-title" href="#" style="color: #333333;line-height: 1rem;display: inline-block;padding:1.063rem  0;padding-right:1.25rem;"></a>
+            </div>
+        </div>        
+        <div class="mui-slider-group my-slider-group" style="height:26rem;" >
+        	<div id="sliderContent"   class="mui-slider-item mui-control-content mui-active" style="display:none">
+                <div id="scroll1" class="mui-scroll-wrapper">
+					<div class="mui-scroll myscroll">
+						<!--<div class="promise" style="display: none;"><img id="promise" src="../images/promise.jpg" /></div>
+						<div class="yui"></div>-->
+						<div class="news_list">
+		              	        <input type="hidden" class="categoryId" value="All" />
+								<input type="hidden" class="page" value="0" />
+								<input type="hidden" class="pages" />
+				                <div id="news_list" class="spirit-news-list" style="border-bottom: 0.6255rem solid rgb(247,247,247);">
+				                	      
+				                </div>
+	                       </div>
+	                </div>
+               </div> 
+            </div>
+        </div> 
+    </div>
+</div>
+<!--轮播图3-->
+                <div class="swiper-slide news-swiper-item">
+                </div>
+<!--新闻列表-->
+                <div id="listItem" >
+            		<div id="" class="spirit-item img-item news_list_item">
+            			<div class="spirit-itemimg"><img  class="img"/></div>
+                    	<div class="spirit-item-content">
+                            <div class="spirit-title title"></div>
+                            <div class="spirit-content"></div>
+                            <div class="spirit-icon">
+                                <div class="spirit-icon1">
+                                	<img src="../exam/img/time.png"/><span class="timeeyes bottom_time"></span></div>
+                                <div class="spirit-icon2"><img src="../exam/img/eays.png" class="eaysimg"/><span class="timeeyes bottom_num"></span></div>
+							</div>
+                    	</div>
+            		</div>
+            	</div>
+                <div id="listItemNoLogo" >
+                	<div id="" class="NOimg-item news_list_item">
+                		<div class="spirit-title title"></div>
+                        <div class="spirit-content"></div>
+                        <div class="noimg-icon">
+                            <span class="spirit-icon1"><img src="../exam/img/time.png"/><span class="timeeyes bottom_time"></span></span>
+                            <span class="spirit-icon2"><img src="../exam/img/eays.png" class="eaysimg"/><span class="timeeyes bottom_num"></span></span>
+						</div>
+                	</div>   
+                </div>
+        <div id="sw-per1" style="display: none;" class="swiper-slide"><img  class="sliderimg"/></div>
+	    <script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+		<script src="../js/jquery.marquee.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+	<script type="text/javascript">
+			function refresh() {
+				location.reload();
+			}
+			document.getElementById("searchB").addEventListener("tap", function(e) {
+				osg.open("../news/search.html");
+				e.stopPropagation();
+			});
+			var mySwiper1;
+			var ctime = 0;
+			mui.init();
+			mui.plusReady(function() {
+				var navFun = $('#nav_fun');
+				
+				var navItemObj = $('#navItem');
+				navItemObj.attr("id", "");
+				navItemObj.remove();
+
+				//侧滑内容克隆 
+				var sliderContentObj = $("#sliderContent");
+				sliderContentObj.attr("id", "");
+				sliderContentObj.css("display", "");
+				sliderContentObj.remove();
+
+				//新闻条目模板
+				// 单logo模板
+				var listItemObj = $('#listItem');
+				listItemObj.css('display', '');
+				listItemObj.attr('id', '');
+				listItemObj.remove();
+				// 无logo模板
+				var listItemNoLogoObj = $('#listItemNoLogo');
+				listItemNoLogoObj.css('display', '');
+				listItemNoLogoObj.attr('id', '');
+				listItemNoLogoObj.remove();
+
+				/*osg.ajax("newsInteg/initNewsInter",{},function(data){
+					console.log(data);
+				});*/
+				//快讯
+				
+				
+				//顶部轮播
+				var swper1=$("#sw-per1");
+				swper1.css("display","");
+				swper1.remove();				
+				osg.ajax('newsInteg/findNewsAllCategories', {}, function(data) {
+
+					for(var i = 0; i < data.length; i++) {
+						var newCategory = data[i];
+						//添加功能导航条
+
+						var navItem = navItemObj.clone();
+						navItem.text(newCategory.name);
+						navItem.attr("href", '#' + newCategory._id);
+						if(i == 0) navItem.addClass("mui-active");
+						navFun.append(navItem);
+						//添加侧滑项目
+						var sliderContent = sliderContentObj.clone();
+						sliderContent.attr('id', newCategory._id);
+						sliderContent.find('.categoryId').val(newCategory._id);
+						if(i != 0) {
+							sliderContent.removeClass("mui-active");
+							sliderContent.find(".promise").remove();
+
+						} else {
+							sliderContent.find(".marquee_sub_title_div").hide();
+							sliderContent.find(".promise").hide();
+						}
+						// 增加轮播图片
+						var slidersImg = newCategory.sliders; //调整为新闻整合表中数据
+						if (newCategory._id=="All") {
+//							alert(JSON.stringify(slidersImg));
+							$("#swipercontainer1 .swiper-wrapper").html("");
+							for(var j = 0; j < slidersImg.length; j++) {
+								var item=swper1.clone();
+								item.find("img").attr("src",qiniuRoot + slidersImg[j].banner + '!news_banner');
+								item.attr("newsId",slidersImg[j]._id);
+								item[0].addEventListener('tap', function(e) {
+									var newsId = $(this).attr("newsId");
+									openDetail(newsId);
+								});
+								$("#swipercontainer1 .swiper-wrapper").append(item);
+							}
+							mySwiper1 = new Swiper ('#swipercontainer1', {
+							        loop: true,
+							        autoplay: true,
+							        pagination:{
+							        el:".swiper-pagination",
+							        clickable:true
+							        }
+						   });
+						}
+						var myscroll = sliderContent.find(".myscroll")[0];
+						$(".my-slider-group").append(sliderContent);
+						mui(myscroll).pullToRefresh({
+							down: {
+								callback: function() {
+									var self = this;
+									var categoryId = $(self.element.innerHTML).find('.categoryId').val();
+									var page = parseInt($(self.element.innerHTML).find('.page').val());
+									var pages = parseInt($(self.element.innerHTML).find('.pages').val());
+									findPage(1, {
+										'listSelector': '#' + categoryId + ' #news_list',
+										'pagesSelector': '#' + categoryId + ' .pages',
+										'pageSelector': '#' + categoryId + ' .page',
+										'categoryId': categoryId,
+										'self': self
+									});
+									self.endPullDownToRefresh(page >= pages);
+									self.refresh(true);
+								}
+							},
+							up: {
+								auto: true,
+								callback: function() {
+									var self = this;
+									var categoryId = $(self.element.innerHTML).find('.categoryId').val();
+									var page = parseInt($(self.element.innerHTML).find('.page').val());
+									var pages = parseInt($(self.element.innerHTML).find('.pages').val());
+									var nextPage = page + 1;
+									if(page >= pages) {
+										self.endPullUpToRefresh(true);
+										return;
+									}
+									findPage(nextPage, {
+										'listSelector': '#' + categoryId + ' #news_list',
+										'pagesSelector': '#' + categoryId + ' .pages',
+										'pageSelector': '#' + categoryId + ' .page',
+										'categoryId': categoryId,
+										'self': self
+									});
+								}
+							},
+						});
+//						if(slidersImg.length > 1) {
+//							var slider = $(sliderContent).find(".my_slider")[0];
+//							var gallery = mui(slider);
+//							gallery.slider({
+//								interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+//							});
+//						}
+					}
+					loadMarquee();
+					//promise();
+					mui('.mui-slider').slider().refresh();
+					mui('.mui-scroll-wrapper.mui-slider-indicator.mui-segmented-control').scroll({
+						scrollY: false,
+						scrollX: true,
+						indicators: false,
+						snap: '.mui-control-item'
+					}).refresh();
+				}, 'POST', true, false, null, true);
+
+				//分页函数
+				function findPage(page, param) {
+					var $newsList = $(param.listSelector);
+					if(page != 1) {
+						var pages = parseInt($(param.pagesSelector).val());
+						if(page > pages) {
+							return;
+						}
+					}
+					osg.ajax('newsInteg/findNewsByCategoryId', {
+						'page': page,
+						'categoryId': param.categoryId
+					}, function(data) {
+						if(!data) {
+							param.self.endPullUpToRefresh(true);
+							return;
+						}
+						if(page == 1) {
+							//loadMarquee();
+							$newsList.html('');
+						}
+						$(param.pageSelector).val(data.page);
+						$(param.pagesSelector).val(data.pages);
+						for(var i = 0; i < data.data.length; i++) {
+							var oneData = data.data[i];
+							$newsList.append(getNewsItem(param.categoryId, oneData));
+						}
+						param.self.endPullUpToRefresh(data.page >= data.pages);
+					}, 'POST', true, false, null, false);
+				}
+				// 获取新闻显示条目
+				function getNewsItem(categoryId, oneData) {
+					var listItem = listItemObj.clone();
+					//console.log(listItem,"aaa")
+					var ti = oneData.title;
+					
+					if(oneData.logo) {
+						listItem = listItemObj.clone();
+						listItem.find('.img').attr('src', qiniuRoot + oneData.logo + '!news_logo');
+						if(ti.length > 17) {
+							ti = ti.substring(0, 10) + "...";
+						}
+					} else {
+						listItem = listItemNoLogoObj.clone();
+						if(ti.length > 33) {
+							ti = ti.substring(0, 32) + "...";
+						}
+					}
+					listItem.find('.title').text(ti);
+					if(categoryId != 'All') {
+						listItem.find('.bottom_first_label').remove();
+					} else {
+						if(tapN != undefined && tapN && tapN.length > 5) {
+							listItem.find('.tips').text(tapN.substring(0, 4));
+						} else {
+							listItem.find('.tips').text(tapN);
+						}
+					}
+					var tapN = oneData.categoryName;
+					if(tapN != undefined && tapN.length > 5) {
+						listItem.find('.tips').text(tapN.substring(0, 4));
+					} else {
+						listItem.find('.tips').text(tapN);
+					}
+
+					function timestampToTime(timestamp) {
+						var date = new Date(timestamp); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+						Y = date.getFullYear() + '-';
+						M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+						D = date.getDate() + ' ';
+						return  M + D;
+					}
+					listItem.find('.bottom_time').text(oneData.releaseTime);
+
+					listItem.find('.bottom_num').text(oneData.times);
+
+					listItem.append('<input type="hidden" id="newsId" value="' + oneData.typeId + '" />');
+					listItem.append('<input type="hidden" id="bloo" value="' + oneData.type + '" />');
+					listItem[0].addEventListener('tap', function(e) {
+						var newsId = $(this).find('#newsId').val();
+						var bloo = $(this).find('#bloo').val();
+						if(bloo == 0) {
+							openDetail(newsId);
+						} else if(bloo == 1) {
+							openLibraryDetail(newsId);
+						}
+					});
+					return listItem;
+				}
+
+				//	        var btnSearch = document.getElementById('btnSearch');
+				//				btnSearch.addEventListener('tap', function(event) {
+				//					osg.open("search.html");
+				//				});
+
+				function openDetail(newsId) { //租户新闻跳转页面
+					osg.open('../news/detail.html', 'detail.html', {
+						'newsId': newsId
+					}, {
+						show: function() {
+							ctime = new Date().getTime();
+						},
+						hide: function() {
+							var tc = parseInt((new Date().getTime() - ctime) / 1000);
+							if(tc > 0 && ctime > 0) {
+								osg.ajax('score/studyTimeScore', {
+										type: 99,
+										typeId: newsId,
+										time: tc,
+										libSore: 0
+									}, null,
+									null,
+									true,
+									true);
+							}
+						}
+					});
+				}
+
+				function openLibraryDetail(newsId) { //资源库新闻跳转页面
+					osg.open('../news/librarydetail.html', 'librarydetail.html', {
+						'newsId': newsId
+					}, {
+						show: function() {
+							ctime = new Date().getTime();
+						},
+						hide: function() {
+							var tc = parseInt((new Date().getTime() - ctime) / 1000);
+							if(tc > 0 && ctime > 0) {
+								osg.ajax('score/studyTimeScore', {
+										type: 99,
+										typeId: newsId,
+										time: tc,
+										libSore: 1
+									}, null,
+									null,
+									true,
+									true);
+							}
+						}
+					});
+				}
+			});
+			var toCode = document.getElementById("toCode");
+			toCode.addEventListener('tap', function(event) {
+				osg.open("../tools/barcode_scan2.html");
+			});
+
+			function loadMarquee() {
+				osg.ajax('news/marquee/queryAll', {}, function(data) {
+					if(data && data.length > 0) {
+						$(".marquee_sub_title_div").show();
+						$(".marquee_sub_title_div .runXuns .swiper-container .marquee_sub_title").text('');
+						for(var i = 0; i < data.length; i++) {
+							if(i > 0)
+							console.log(data[i]._id);
+
+							$(".marquee_sub_title_div .runXuns .swiper-container .marquee_sub_title").append("<div class='swiper-slide news-swiper-item' id='"+data[i]._id+"' style='text-overflow: ellipsis;white-space: nowrap;height:100%;text-align: left;'>" + data[i].title + "</div>");
+						}
+//												$("marquee").marquee();
+						 var mySwiper3 = new Swiper ('#swipercontainer3', {
+							        direction: 'vertical',
+							        loop: true,
+							        autoplay: true
+							    })
+						$(".marquee_sub_title_div .runXuns .swiper-container .swiper-slide").each(function() {
+							this.addEventListener('tap', function(e) {
+								var id = $(this).attr('id');
+								osg.open('../news/detailMarquee.html', 'detailMarquee.html', {
+									'marqueeId': id
+								});
+							});
+						});
+
+					}
+				}, 'POST', true, false, null, true);
+			}
+
+			function promise() {
+				$(".promise").show();
+				$(".promise").text('');
+				var mq = "<img id=\"promise\" src=\"../images/promise.jpg\"/>";
+				$(".promise").append(mq);
+				document.getElementById("promise").addEventListener('tap', function(e) {
+					osg.open("../news/promiseMessage.html", "promiseMessage.html", {});
+				});
+			}
+		</script>
+
+	<script type="text/javascript" charset="utf-8">
+	    //	      	mui.init();
+	    
+	    var mySwiper2 = new Swiper ('#swipercontainer2', {
+	//			    direction: 'vertical',
+	//			    loop:true,
+	//			    autoplay:true,
+	        slidesPerView:'auto',
+	        loopedSlides:6,
+	    })
+	    //轮播图3
+	   
+	
+	</script>
+</body>
+</html>
