@@ -42,8 +42,8 @@
   	}
 	.talk{
 	  margin: 0 0.705882rem;
-	  background: url(../exam/img/talk.png)no-repeat;
-	  background-size: 100%,100%;
+	  background: url(../images/talk.png)no-repeat;
+	  background-size: 100% 100%;
 	  height: 3.470588rem;	
 	  padding-left: 3.352941rem;
 	  padding-right:1.764705rem;
@@ -54,20 +54,19 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		height: 3.470588rem;
+		height: 3.4706rem;
 		font-family: '苹方';
 		font-weight: 700;
-		line-height: 3.470588rem;
+		padding-top:1.17647rem;
 		font-size: 0.705882rem;
 		color: #70b7a9;
+		padding-right: 0.294117rem;
 	}
 	.icon-next{
 		position: absolute;
 		height:0.823529rem;
 		right:1.17647rem;
-		top:0;
-		bottom:0;
-		margin:auto 0;
+		top:1.17647rem;
 		font-size:0.823529rem;
 		color: #70b7a9;	
 	}
@@ -101,27 +100,28 @@
 	.threeContentItem:nth-of-type(1){
 		width: 6.647058rem;
 		height: 6.647058rem;
-		background: url(../exam/img/order.png)no-repeat;
-		background-size: 100%,100%;
+		background: url(../images/order.png)no-repeat;
+		background-size: 100% 100%;
 	}
 	.threeContentItem:nth-of-type(2){
 		width: 6.647058rem;
 		height: 6.647058rem;
-		background: url(../exam/img/democratic.png)no-repeat;
-		background-size: 100%,100%;
+		background: url(../images/democratic.png)no-repeat;
+		background-size: 100% 100%;
 	}
 	.threeContentItem:nth-of-type(3){
 		width: 6.647058rem;
 		height: 6.647058rem;
-		background: url(../exam/img/letter.png)no-repeat;
-		background-size: 100%,100%;
+		background: url(../images/letter.png)no-repeat;
+		background-size: 100% 100%;
 	}
 	/*通知公告*/
 	.notice{
 		margin: 0 0.705882rem;
-		margin-top:1.352941rem;
+		margin-top:0.7rem;
 		height: 3.411764rem;
 		position: relative;
+		
 	}
 	.notice-wrapper{
 		height: 3.411764rem;
@@ -159,6 +159,17 @@
 		left: 0;
 		margin: auto 0;
 	}
+	.notice-all:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		height: 1.352941rem;
+		left:-0.588235rem;
+		margin: auto 0;
+		border-left: 1px solid #e8e8e8;
+		
+	}
 	.notice-content{
 		padding-left:2.352941rem;
 		margin: auto 0;
@@ -175,7 +186,7 @@
 	/*跳转目录*/
 	.catalogute{
 		position: relative;
-		padding:1.17647rem;
+		padding:1.17647rem 0.9rem;
 		display: flex;
 		display:-webkit-box;
 	    display: -webkit-flex;
@@ -225,8 +236,8 @@
 		padding-left: 0.705882rem;
 	}
 	.theme-title img{
-		width: 1.058823rem;
-		height: 1.058823rem;
+		width:1.117647rem;
+		height: 1.117647rem;
 		margin-right: 0.352941rem;
 		
 	}
@@ -234,6 +245,14 @@
 		font-size: 0.941176rem;
 		color: #333333;
 		font-weight:700;
+	}
+	.theme-title .seeAll{
+		font-size: 0.764705rem;
+		color: #CE0000;
+		font-weight: 400;
+		margin-right: 0.705882rem;
+		padding-top: 0.470588rem;
+		
 	}
 	.themelist{
 		padding-bottom: 0.235294rem;
@@ -265,12 +284,26 @@
 		font-size: 0.647058rem;
 		border-radius: 1.294117rem;
 		text-align: center;
+		display: flex;
+		display:-webkit-box;
+	    display: -webkit-flex;
+	    display: -moz-box;
+	    display: -ms-flexbox;
+	     -webkit-align-items: center;
+		-moz-align-items: center;
+		-ms-align-items: center;
+		-o-align-items: center;
+	}
+	.mymsg>span{
+		display: inline-block;
 	}
 	.mymsg>img{
 		width: 1rem;
 		height:1rem;
 		border-radius: 50%;
-		margin-right:1rem;
+		margin-right:1.17647rem;
+		margin-left: 0.470588rem;
+		
 	}
 	.themeitem-content{
 		padding-top:0.882352rem ;
@@ -285,19 +318,29 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		margin: 0;
-		padding-bottom: 0.588235rem;
+		/*padding-bottom:2px;*/
+		
 	}
 	.themeitem-content .time{
 		font-size: 0.647058rem;
 		color: #666666;
 	}
-	.time img{
-		width: 0.588235rem;
-		height: 0.588235rem;
+	.time .timeimg{
+		width: 1.17647rem;
+		height: 1.17647rem;
+		display: inline-block;
+		border-radius: 50%;
+		transform: scale(0.5);
+	}
+	.timeimg img{
+		width: 100%;
+		height:auto;
 	}
 	.themeitem-content-bot{
+		padding-top: 0.470588rem;
 		color: #666666;
 		font-size: 0.647058rem;
+		
 	}
 	.themeitem-content-bot img:nth-of-type(1){
 		width: 1.058823rem;
@@ -318,9 +361,10 @@
 	}
 	/*三会一课*/
 	.threeClass-title{
-		padding: 1.294117rem 0 0.941176rem 0.705882rem;
+		padding: 1.294117rem 0 0.705882rem 0.705882rem;
 	}
 	.threeClass-title img{
+		margin-top: -0.235294rem;
 		width: 1.058823rem;
 		height: 1.058823rem;
 		margin-right: 0.352941rem;
@@ -330,9 +374,18 @@
 		font-size: 0.941176rem;
 		color: #333333;
 		font-weight:700;
+		line-height: 1;
+	}
+	.threeClass-title .seeAll{
+		font-size: 0.764705rem;
+		color: #CE0000;
+		font-weight: 400;
+		margin-right: 0.705882rem;
+		padding-top: 0.470588rem;
+		
 	}
 	.threeClassitem{
-		width:14.6rem;
+		width:14.1rem;
 		height: 5.235294rem;
 		margin-top:0.235294rem;
 		margin-bottom: 0.882352rem;
@@ -340,17 +393,18 @@
 		
 	}
 	.threeClass-item{
-		width:13.235294rem;
+		width:13rem;
 		height: 5.435294rem;
 		box-shadow:0 0 0.235294rem 1px rgba(61,61,61,0.16);
-		position: relative;	
+		position: relative;
+		border-radius: 0.294117rem;	
 	}
 	.threeClassTime{
 		height: 2.941176rem;
 		width: 2.941176rem;
 		border-radius: 50%;
-		background: url(../exam/img/threeTime.png)no-repeat;
-		background-size:100%,100%;
+		background: url(../images/threeTime.png)no-repeat;
+		background-size:100% 100%;
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -367,15 +421,19 @@
 		font-size: 0.647058rem;
 	}
 	.threeClassitem-content{
-		padding:0.470588rem 0;
+		padding-top:0.5rem;
 		margin-left: 2.352941rem;
-		margin-right: 0.705882rem;
+		/*margin-right:0.294117rem;*/
+		
 	}
 	.totdo-title{
 		font-size: 0.941176rem;
 		font-weight: 700;
 		color: #333333;
-		padding-bottom:0.235294rem;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		/*padding-bottom:0.235294rem;*/
 	}
 	.threeClass-section{
 		font-size: 0.764705rem;
@@ -391,8 +449,9 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		right: 0.705882rem;
 		margin: 0;
-		width: 100%;
+		width: 90%%;
 		border-bottom: 1px dashed #E8E8E8;
 	}
 	.threeClassitem-content-bot{
@@ -404,6 +463,13 @@
 	.threeClasslist{
 		padding-left: 1.411764rem;
 	}
+	.threeClasslist>p{
+		color: #909090;
+		/*text-align: center;*/
+		font-size: 0.705882rem;
+		margin-left:8rem;
+	}
+	
     </style>
 </head>
 <body>
@@ -421,7 +487,7 @@
 				<div class="threeContentItem"></div>
 			</div>
 			<div class="notice">
-				<img src="../exam/img/informimg.png"/>
+				<img src="../images/informimg.png"/>
 				<div id="swipercontainer2" class="swiper-container notice-wrapper">
                     <div class="swiper-wrapper noticelist clearfix">
 		                <div class="swiper-slide news-swiper-item smallswiperitem fll">
@@ -433,30 +499,31 @@
 			</div>
 			<div class="catalogute">
 				<div class="catalogute-item">
-					<img src="../exam/img/threeTwo.png"/>
+					<img src="../images/threeTwo.png"/>
 					<p>三会一课</p>
 				</div>
 				<div class="catalogute-item">
-					<img src="../exam/img/actionimg.png"/>
+					<img src="../images/actionimg.png"/>
 					<p>支部动态</p>
 				</div>
 				<div class="catalogute-item">
-					<img src="../exam/img/friend.png"/>
+					<img src="../images/friend.png"/>
 					<p>党员朋友圈</p>
 				</div>
 				<div class="catalogute-item">
-					<img src="../exam/img/survery.png"/>
+					<img src="../images/survery.png"/>
 					<p>问卷调查</p>
 				</div>
 				<div class="catalogute-item">
-					<img src="../exam/img/vote.png"/>
+					<img src="../images/vote.png"/>
 					<p>投票管理</p>
 				</div>
 			</div>
 			<div class="theme">
-				<div class="theme-title">
-					<img src="../exam/img/qi.png"/>
+				<div class="theme-title clearfix">
+					<img src="../images/qi.png"/>
 					<span class="">主题党日</span>
+					<span class="seeAll flr">查看更多</span>
 				</div>
 				<div id="swipercontainer1" class="swiper-container swiper-container1">
 			        <div class="swiper-wrapper themelist">
@@ -469,16 +536,41 @@
 			            	<div class="themeitem-content">
 			            		<p class="themeitemName">年底一定要算清这笔账 跟你明年一项收入有关</p>
 			            		<div class="time">
-			            			<img src="../exam/img/time2.png"/>
+			            			<span class="timeimg"><img src="../images/time2.png"/></span>
+			            			
 			            			<span class="startTime">12月27日14:00</span>~
 			            			<span class="endTime">12月28日15:00</span>
 			            		</div>
 			            		<div class="themeitem-content-bot">
-			            			<img src="../exam/img/discuss.png"/>
+			            			<img src="discuss.png"/>
 			            			<span>5</span>
-			            			<img src="../exam/img/love.png"/>
+			            			<img src="../images/loveaction.png"/>
 			            			<span>4</span>
-			            			<img src="../exam/img/see2.png"/>
+			            			<img src="../images/see2.png"/>
+			            			<span>3</span>
+			            		</div>
+			            	</div>
+			            </div>
+			             <div class="swiper-slide themeitem">
+			            	<img src="../exam/img/red4.jpg" class="img"/>
+			            	<div class="mymsg">
+			            		<img src="../exam/img/red1.jpg" class="img"/>
+			            		<span class="name">龙陈艳</span>
+			            	</div>
+			            	<div class="themeitem-content">
+			            		<p class="themeitemName">年底一定要算清这笔账 跟你明年一项收入有关</p>
+			            		<div class="time">
+			            			<span class="timeimg"><img src="../images/time2.png"/></span>
+			            			
+			            			<span class="startTime">12月27日14:00</span>~
+			            			<span class="endTime">12月28日15:00</span>
+			            		</div>
+			            		<div class="themeitem-content-bot">
+			            			<img src="../images/discuss.png"/>
+			            			<span>5</span>
+			            			<img src="../images/loveaction.png"/>
+			            			<span>4</span>
+			            			<img src="../images/see2.png"/>
 			            			<span>3</span>
 			            		</div>
 			            	</div>
@@ -487,9 +579,10 @@
 		    	</div>
 			</div>
 			<div class="threeClass">
-				<div class="threeClass-title">
-					<img src="../exam/img/threeclass2.png"/>
+				<div class="threeClass-title clearfix">
+					<img src="../images/threeclass2.png"/>
 					<span class="">三会一课</span>
+					<span class="seeAll flr">查看更多</span>
 				</div>
 				<div id="swipercontainer3" class="swiper-container swiper-container3">
 			        <div class="swiper-wrapper threeClasslist">
@@ -500,15 +593,14 @@
 				            		<div class="monthTime">12月</div>
 				            	</div>
 				            	<div class="threeClassitem-content ">
-				            		<div class="totdo-title">明天开会</div>
-				            		<div class="threeClass-section">中共海淀地铁第一党支部</div>
+				            		<div class="totdo-title meetTitle">明天开会</div>
+				            		<div class="threeClass-section meetSection">中共海淀地铁第一党支部</div>
 				            		<div class="threeClassitem-content-bot">
 				            			<span>类型</span>:
-				            			<span>支部党员大会</span>
+				            			<span class="meetType">支部党员大会</span>
 				            		</div>
 				            	</div>
 			            	</div>
-			            	
 			            </div>
 			        </div>
 		   	 	</div>
@@ -522,9 +614,55 @@
 		<script src="../js/mui.pullToRefresh.js"></script>
 		<script src="../js/mui.pullToRefresh.material.js"></script>
 		<script type="text/javascript">
+           //	领导接待日
+          $(".threeContentItem").eq(0).off('tap').on("tap",function(){
+				osg.open("../funmodule/affair/bespeak/index.html", "../funmodule/affair/bespeak/index.html",{
+					"moduleCode":"leadbespeak"
+				   });
+			})
+			//民主评议
 			
-			var mySwiper1 = new Swiper ('#swipercontainer1', {
-			        loop: true,
+			$(".threeContentItem").eq(1).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //书记信箱
+			$(".threeContentItem").eq(2).off('tap').on("tap",function(){
+				osg.open("../manage/mailboxList.html","../manage/mailboxList.html");
+			})
+			//三会一课
+			$(".catalogute-item").eq(0).off('tap').on("tap",function(){
+				osg.open("../funmodule/conferActivities/meeting/myagenda.html", "myagenda.html",{
+						type:1
+				});
+			})
+			//支部动态
+			$(".catalogute-item").eq(1).off('tap').on("tap",function(){
+				osg.open("../manage/bumByCodeList.html","../manage/bumByCodeList.html",{
+						actCode:"dynamicScope"
+					});
+			})
+			//党员朋友圈
+			$(".catalogute-item").eq(2).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			//问卷调查
+			$(".catalogute-item").eq(3).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			//投票管理
+			$(".catalogute-item").eq(4).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})	
+			//三会一课查看更多
+			$(".threeClass .seeAll").off('tap').on("tap",function(){
+				osg.open("../funmodule/conferActivities/meeting/myagenda.html", "../funmodule/conferActivities/meeting/myagenda.html",{
+					type:1
+				});
+			})
+		</script>
+		<script type="text/javascript">
+						var mySwiper1 = new Swiper ('#swipercontainer1', {
+//			        loop: true,
 			        slidesPerView:'auto',
 		   });
 			var mySwiper2 = new Swiper ('#swipercontainer2', {
@@ -533,10 +671,44 @@
 		        autoplay: true
 		    })
 			var mySwiper3 = new Swiper ('#swipercontainer3', {
-			        loop: true,
+//			        loop: true,
 			        slidesPerView:'auto',
 		   });
-						
+		</script>
+		<script type="text/javascript">
+			var threeClassitem = $(".threeClassitem");
+				threeClassitem.remove();
+			mui.plusReady(function() {
+			osg.ajax("/app/conference/detail/query",{
+				"page": 1,
+				"size":5,
+				"in:conference.type|array-integer":"101,"+"102"
+			},function(data){
+				var data = data.data.data;
+				if (data.length>0) {
+					$(data).each(function(i,key){
+						var classdata = key.conference;
+						var item = threeClassitem.clone().attr("id",key._id);
+						item.find(".meetTitle").text(classdata.title);
+						item.find(".meetSection").text(classdata.forbumname);
+						item.find(".meetType").text(classdata.meetTypeName);
+						var time = classdata.formatAttendtime;
+						var daytime = parseInt(time.split("-")[1]);
+						var monthtimme = parseInt(time.split("-")[2]);
+						item.find(".dayTime").text(daytime+"日");
+						item.find(".monthTime").text(monthtimme+"月");
+						$(item[0]).off("tap").on("tap",function(){
+							osg.open("../funmodule/conferActivities/meeting/myjoinmeetingdetails.html","../funmodule/conferActivities/meeting/myjoinmeetingdetails.html",{
+								"detailId": $(this).attr("id")
+							});
+						});
+						$(".threeClasslist").append(item)
+					})
+				} else{
+					$(".threeClasslist").html('<p>暂无数据</p>')
+				}
+			})
+			})
 		</script>
 	</body>
 </html>

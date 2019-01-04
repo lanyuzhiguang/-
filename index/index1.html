@@ -450,9 +450,9 @@
 </head>
 <body>
 	<header class="mui-bar mui-bar-nav">
-	    <span class="mui-pull-left" id="searchB"><img src="../exam/img/hseacher.png" class="headerimg"/></span>
+	    <span class="mui-pull-left" id="searchB"><img src="../images/hseacher.png" class="headerimg"/></span>
 	    <h1 class="mui-title" id="muiTitle">示范党委</h1>
-	    <span class="mui-pull-right" id="toCode"><img src="../exam/img/sao.png" class="headerimg"/></span>
+	    <span class="mui-pull-right" id="toCode"><img src="../images/sao.png" class="headerimg"/></span>
 	</header>
 		<div class="wrap">
 			<div class="top-swiper">
@@ -462,21 +462,13 @@
 		            	<img src="../exam/img/red1.jpg" class="img"/>
 		            	<div class="swiper-title">年底一定要算清这笔账 跟你明年一项收入有关</div>
 		            </div>
-		            <!--<div class="swiper-slide">
-		            	<img src="../exam/img/red3.jpg" class="sliderimg"/>
-		            	<div class="swiper-title">H5丨“千万工程”，千千万万知多少？</div>
-		            </div>
-		            <div class="swiper-slide">
-		            	<img src="../exam/img/red4.jpg" class="sliderimg"/>
-		            	<div class="swiper-title">灾难面前彰显的中国力量、中国速度和中国精神</div>
-		            </div>-->
 		        </div>
 		        <div class="swiper-pagination"></div>
 	    	</div>
 			</div>
 			<div class="two-swiper">
 				<div class="news-flash">
-						<img src="../exam/img/newsflash.png"/>
+						<img src="../images/newsflash.png"/>
 					<div id="swipercontainer2" class="swiper-container newflash-wrapper">
 	                    <div class="swiper-wrapper smallswiperlist">
 			                <div class="swiper-slide news-swiper-item clearfix smallswiperitem">
@@ -489,15 +481,15 @@
 			</div>
 		    <div class="three">
 		    	<div class="three-item">
-		    		<img src="../exam/img/three.png" class="three-img"/>
+		    		<img src="../images/three.png" class="three-img"/>
 		    		<p>三会一课</p>
 		    	</div>
 		    	<div class="three-item">
-		    		<img src="../exam/img/newopen.png" class="newopen-img"/>
+		    		<img src="../images/newopen.png" class="newopen-img"/>
 		    		<p>党务公开</p>
 		    	</div>
 		    	<div class="three-item">
-		    		<img src="../exam/img/qiqiu.png" class="qiqiu-img"/>
+		    		<img src="../images/qiqiu.png" class="qiqiu-img"/>
 		    		<p>党日活动</p>
 		    	</div>
 		    </div>
@@ -520,8 +512,8 @@
 			            				<span class="news-variety ">时政要闻</span>
 			            			</div>
 			            			<div class="flr">
-			            				<img src="../exam/img/time.png" class="timeimg"/><span class="news-time">09-10</span>
-			            			     <img src="../exam/img/eays.png" class="eaysimg"/><span class="news-see">0</span>	
+			            				<img src="../images/time.png" class="timeimg"/><span class="news-time">09-10</span>
+			            			     <img src="../images/eays.png" class="eaysimg"/><span class="news-see">0</span>	
 			            			</div>		
 			            		</div>
 			            	</div>
@@ -533,7 +525,7 @@
 		    </div>
 		    <div class="hot-news">
 		    	<div class="hot-news-top clearfix">
-		    		<img src="../exam/img/handpick.png" class="handpick"/>
+		    		<img src="../images/handpick.png" class="handpick"/>
 		    		<span class="hot-title">为您精选</span>
 		    		<span class="seeall-news hot-seeall flr" newstype="2" id="hotnwes">查看更多</span>
 		    		<div class="newslist hotnewslist">
@@ -548,8 +540,8 @@
 				            		<p class="news-des">站“换心手术”：旅客少迈90厘米 铁路升级又一步湖南岳阳问计民企：如何优化营商环境A股探底回升 沪指2500点失而复得25日中小板指跌0.54%25日创业板指跌0.85%京沈高铁沈阳至承德段将于2客户端</p>
 				            		<div class="news-icon clearfix">
 				            			<div class="fll">
-				            				<img src="../exam/img/time.png" class="timeimg"/><span class="news-time">09-10</span>
-				            			    <img src="../exam/img/eays.png" class="eaysimg"/><span class="news-see">0</span>
+				            				<img src="../images/time.png" class="timeimg"/><span class="news-time">09-10</span>
+				            			    <img src="../images/eays.png" class="eaysimg"/><span class="news-see">0</span>
 				            			</div>	
 				            		</div>
 				            	</div>
@@ -589,11 +581,11 @@
 				//党务公开
 				$(".three-item:eq(1)").click(function(){
 //					osg.toast("正在建设中");
-					osg.open("interaction.html", "interaction.html",{});
+					osg.open("me.html", "me.html");
 				});
 				//活动
 				$(".three-item:eq(2)").click(function(){
-					osg.toast("正在建设中")
+					osg.open("../manage/activityList.html","../manage/activityList.html");
 				});
 			document.getElementById("searchB").addEventListener("tap", function(e) {
 				osg.open("../news/search.html");

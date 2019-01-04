@@ -76,9 +76,21 @@
    	 	font-weight: 500;
    	 	margin-top:0.764705rem ;
    }
-   .partWork img{
-   		width: 1.764705rem;
+   .smallwidth{
+   		width:1.764705rem;
+   		height:auto;
+   }
+   .samllheight{
    		height: 1.764705rem;
+   		width: auto;
+   }
+   .qiqiuer{
+   		height: 2rem;
+   		width: auto;
+   }
+   .jifen2{
+   		height:1.882352rem;
+   		width: auto;
    }
     </style>
 </head>
@@ -87,106 +99,86 @@
 	    <h1 class="mui-title" id="muiTitle">支部互动</h1>
 	</header>
 		<div class="partWork">
-			<div class="">
-				<img src="../exam/img/threeTwo.png"/>
+			<div class="partWorkItem">
+				<img src="../images/threeTwo.png" class="smallwidth"/>
 				<p>三会一课</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/qiqiu.png"/>
+			<div class="partWorkItem">
+				<img src="../images/qiqiuer.png" class="qiqiuer"/>
 				<p>党日活动</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/msg.png"/>
+			<div class="partWorkItem">
+				<img src="../images/msg.png" class="samllheight"/>
 				<p>通知公告</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/dangri.png"/>
+			<div class="partWorkItem">
+				<img src="../images/dangri.png" class="samllheight"/>
 				<p>主题党日</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/kaohe.png"/>
+			<div class="partWorkItem">
+				<img src="../images/kaohe.png" class="samllheight"/>
 				<p>党员考核</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/jifen2.png"/>
+			<div class="partWorkItem">
+				<img src="../images/jifen2.png" class="jifen2"/>
 				<p>党员积分</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/jiaona.png"/>
+			<div class="partWorkItem">
+				<img src="../images/jiaona.png" class="smallwidth"/>
 				<p>党费缴纳</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/gongkai.png"/>
+			<div class="partWorkItem">
+				<img src="../images/gongkai.png" class="smallwidth"/>
 				<p>党务公开</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/xuexi.png"/>
+			<div class="partWorkItem">
+				<img src="../images/xuexi.png" class="smallwidth"/>
 				<p>文件学习</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/jihua.png"/>
+			<div class="partWorkItem">
+				<img src="../images/jihua.png" class="smallwidth"/>
 				<p>工作计划</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/fazhan.png"/>
+			<div class="partWorkItem">
+				<img src="../images/fazhan.png" class="smallwidth"/>
 				<p>党员发展</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/zhuanjie.png"/>
+			<div class="partWorkItem">
+				<img src="../images/zhuanjie.png" class="smallwidth"/>
 				<p>组织关系转接</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/xuanju.png"/>
+			<div class="partWorkItem">
+				<img src="../images/xuanju.png" class="smallwidth"/>
 				<p>换届选举</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/jiaoliu.png"/>
+			<div class="partWorkItem">
+				<img src="../images/jiaoliu.png" class="smallwidth"/>
 				<p>支部交流</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/shenqing.png"/>
+			<div class="partWorkItem">
+				<img src="../images/shenqing.png" class="smallwidth"/>
 				<p>会议室申请</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/tongji.png"/>
+			<div class="partWorkItem">
+				<img src="../images/tongji.png" class="smallwidth"/>
 				<p>统计查询</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/fenxi.png"/>
+			<div class="partWorkItem">
+				<img src="../images/fenxi.png" class="smallwidth"/>
 				<p>计划统计分析</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/tou.png"/>
+			<div class="partWorkItem">
+				<img src="../images/tou.png" class="samllheight"/>
 				<p>投票箱</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/daibiao.png"/>
+			<div class="partWorkItem">
+				<img src="../images/daibiao.png" class="samllheight"/>
 				<p>党代表</p>
 			</div>
-			<div class="">
-				<img src="../exam/img/pai.png"/>
+			<div class="partWorkItem">
+				<img src="../images/pai.png" class="smallwidth"/>
 				<p>随手拍</p>
-			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			</div>	
 		</div>
 	    <script src="../js/mui.min.js"></script>
 		<script src="../js/common.js"></script>
@@ -196,7 +188,92 @@
 		<script src="../js/mui.pullToRefresh.js"></script>
 		<script src="../js/mui.pullToRefresh.material.js"></script>
 		<script type="text/javascript">
-						
+			//三会一课
+			 $(".partWorkItem").eq(0).off('tap').on("tap",function(){
+				osg.open("../funmodule/conferActivities/meeting/myagenda.html", "myagenda.html",{
+						type:1
+				});
+			})
+			 //党日活动
+			 $(".partWorkItem").eq(1).off('tap').on("tap",function(){
+				
+				btnActivity.addEventListener('tap', function(event) {
+					osg.open("../manage/activityList.html");
+				});
+			})
+			 //通知公告
+			 $(".partWorkItem").eq(2).off('tap').on("tap",function(){
+				osg.open("../manage/Newnotice.html", "Newnotice.html");
+			})
+			 //主题党日
+			 $(".partWorkItem").eq(3).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");	
+			})
+			 //党员考核
+			 $(".partWorkItem").eq(4).off('tap').on("tap",function(){
+				osg.open("../manage/partyorganizationCheck/check.html");
+			})
+			 //党员积分
+			 $(".partWorkItem").eq(5).off('tap').on("tap",function(){
+				osg.open("discuss.html");
+			})
+			 //党费缴纳
+			 $(".partWorkItem").eq(6).off('tap').on("tap",function(){
+				osg.open("../manage/Party_pay.html");
+			})
+			 //党务公开
+			 $(".partWorkItem").eq(7).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //文件学习
+			 $(".partWorkItem").eq(8).off('tap').on("tap",function(){
+				osg.open("../funmodule/studys/tab-webview-subpage-study.html");
+			})
+			 //工作计划
+			 $(".partWorkItem").eq(9).off('tap').on("tap",function(){
+				osg.open("../manage/workPlan/workPlanList.html");
+			})
+			 //党员发展
+			 $(".partWorkItem").eq(10).off('tap').on("tap",function(){
+				osg.open("../manage/partyMemberDeveloper/partyMemberDeveloping.html");
+			})
+			 //组织关系转接
+			 $(".partWorkItem").eq(11).off('tap').on("tap",function(){
+				osg.open("../manage/connectionTransfer/TransferPage.html");
+			})
+			 //换届选举
+			 $(".partWorkItem").eq(12).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //支部交流
+			 $(".partWorkItem").eq(13).off('tap').on("tap",function(){
+				osg.open("../forum/tab-webview-subpage-forum.html")
+			})
+			 //会议室申请
+			 $(".partWorkItem").eq(14).off('tap').on("tap",function(){
+				osg.open("../manage/room/applyRoom.html")
+			})
+			 //统计查询
+			 $(".partWorkItem").eq(15).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //计划统计分析
+			 $(".partWorkItem").eq(16).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //投票箱
+			 $(".partWorkItem").eq(17).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //党代表
+			 $(".partWorkItem").eq(18).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 //随手拍
+			 $(".partWorkItem").eq(19).off('tap').on("tap",function(){
+				osg.open("defer.html","defer.html");
+			})
+			 
 		</script>
 	</body>
 </html>
