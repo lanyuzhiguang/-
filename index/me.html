@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+     <link href="../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="icon/iconfont.css"/>
+    <style type="text/css">
+    	/*公共*/
+    *{
+     	padding: 0;
+     	margin: 0;
+     	font-family: "苹方";
+     } 
+    .clearfix:after{
+    	content: '';
+    	display: block;
+    	clear: both;
+    }
+    .clearfix{
+    	zoom: 1;
+    }
+    .fll{
+    	float: left;
+    }
+    .flr{
+    	float: right;
+    }
+    .mui-title{
+    	font-size: 1.058823rem;
+    	font-weight: 500;
+    	font-family: '苹方中等';
+    }
+    body{
+    	background: #F7F7F7;
+    }
+    /*end*/
+   /*顶部*/
+    .me-header{
+    	padding-top: 0.705882rem;
+   		height: 12.529411rem;
+   		width: auto;
+   		background: url(../images/MEheaderimg.png)no-repeat;
+   		background-size:100% 100% ;
+   		padding-right: 0.705882rem;
+    }
+    .three-img img{
+    	width: 1.294117rem;
+    	height: auto;
+    	margin-left: 1.470588rem;
+    }
+    .three-img img:nth-of-type(2){
+    	width:1.235294rem;
+    	height: auto;
+    	margin-left: 1.470588rem;
+    }
+    .ME-msg{
+    	margin-top: 2.117647rem;
+    	padding-left: 1.294117rem;
+    }
+    .ME-msg img{
+    	width: 3.529411rem;
+    	height: 3.529411rem;
+    	border-radius: 50%;
+    	border: 1px solid #FFFFFF;
+    }
+    .me-content p{
+    	margin: 0;
+    	color:#FFFFFF;
+    	line-height: 1;
+    	padding-left: 1.294117rem;
+    }
+    .me-content p:nth-of-type(1){
+    	margin-top: 0.882352rem;
+    	font-size: 1.058823rem;
+    	font-weight: 700;
+    }
+    .me-content p:nth-of-type(2){
+    	margin-top:0.470588rem;
+    	font-size:0.823529rem;
+    }
+    .me{
+    	position: relative;
+    }
+    .intergral{
+    	position: absolute;
+    	left: 0;
+    	right: 0;
+    	bottom:-0.352941rem;
+    	margin: 0 auto;
+    	margin:0 0.705882rem;
+    	height:3.235294rem;
+    	background: #FFFFFF;
+    	border-radius: 0.17647rem;
+    	box-shadow: 0 0 0.17647rem 1px rgba(0,0,0,0.11);
+    	overflow:hidden;
+    }
+    .five-text{
+    	background: url(../images/wuxing.png)no-repeat;
+    	background-size: 100% 100%;
+    	width: 4.117647rem;
+    	height: 1.235294rem;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    }
+    .intergral-two{
+    	margin-left: 4.17647rem;
+    	font-size: 0.705882rem;
+    	color: #F09034;
+    	font-weight: 700;
+    	margin-top: 0.470588rem;
+    	line-height: 1;
+    }
+    .intergral-two img{
+    	width: 1.411764rem;
+    	height: auto;
+    	margin-bottom: 0.294117rem;
+    }
+    .progress{
+    	margin-left:0.823529rem;
+    	font-size: 0.647058rem;
+    	color: #333333;
+    	width:11rem;
+    	line-height: 1;
+    	margin-top:0.588235rem;
+    	position: relative;
+    }
+    .progress>div{
+    	text-align: center;
+    }
+    .mui-progressbar{
+    	margin-top: 0.352941rem;
+    	margin-bottom: 0;
+    	background: #F7F7F7;
+    	height: 0.294117rem;
+    	border-radius: 0.470588rem;
+    	overflow: hidden;
+    }
+    .mui-progressbar-success span {
+		background-color: #FDC127;
+		border-radius: 0.470588rem;
+	}
+	.progress .score{
+		font-size: 0.647058rem;
+		color: #333333;
+		font-weight: 400;
+		text-align: left;
+		line-height: 1;
+		padding-top: 0.411764rem;
+		display: inline-block;
+		margin-left: 2.17647rem;
+	}
+	.start{
+		position: absolute;
+		right:0;
+		bottom:0.882352rem;
+		
+	}
+	.icon-star{
+    	color: #9B9B9B;
+    	font-size: 0.588235rem;
+    	
+    }
+    .okstart{
+    	color: #ffde00;
+    	
+    }
+    .go{
+    	width: 2.764705rem;
+    	height: 3.235294rem;
+    	background: #F7F7F7;
+    	position: absolute;
+    	top: 0;
+    	bottom: 0;
+    	right: 0;
+    }
+    .go-content{
+    	width: 1.588235rem;
+    	height: 1.588235rem;
+    	border-radius: 50%;
+    	background: linear-gradient(#f3444a,#ff627b);
+    	font-size: 0.705882rem;
+    	color: #FFFFFF;
+    	text-align: center;
+    	padding-top: 0.411764rem;
+    	line-height: 1;
+    	margin: 0 auto;
+    	margin-top: 0.823529rem;
+    }
+    /*排名*/
+    .myContent{
+    	margin: 0.588235rem 0.705882rem 0 0.705882rem;
+    	background: #FFFFFF;
+    	border-radius: 0.17647rem;
+    	text-align: center;
+    	
+    }
+    .myContent-top{
+    	height: 3.529411rem;
+    	padding-top: 0.764705rem;
+    	font-weight: 700;
+    	border-bottom: 1px solid #E8E8E8;
+    }
+    .myContent-top-RANK{
+    	width: 50%;
+    	position: relative;
+    }
+    .myContent-top-RANK:after{
+    	position: absolute;
+    	content: '';
+    	height: 2.294117rem;
+    	top: 0;
+    	bottom: 0;
+    	right: 0;
+    	margin: auto 0;
+    	border-right: 1px solid #E8E8E8;
+    }
+    .myContent-top-item{
+    	width: 50%;
+    }
+    .myContent-title{
+    	font-size: 0.941176rem;
+    	color: #333333;
+    	line-height: 1;
+    }
+    .rank{
+    	font-size: 0.882352rem;
+    	color: #CE0000;
+    	line-height: 2.058823rem;
+    }
+    /*目录*/
+   .myWork{
+   	   	position: relative;
+   		background: #FFFFFF;
+   		height: 5.647058rem;
+   		padding: 0 0.705882rem;
+   		display: flex;
+   		display:-webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        -webkit-justify-content: space-between;
+        -moz-justify-content:space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+         -webkit-align-items: center;
+		-moz-align-items: center;
+		-ms-align-items: center;
+		-o-align-items: center;
+		height: 5.294117rem;
+		padding-bottom:0.294117rem;
+		margin-bottom: 0.588235rem;
+   }
+   .myWork>div{
+   		width:3.235294rem;
+   		font-size: 0.764705rem;
+   		color: #333333;
+   		text-align: center;
+   		position: relative;
+   }
+   .seemheight{
+   	 	height: 1.764705rem;
+   	 	width: auto;
+   	 	display:block;
+   	 	margin: 0 auto;
+   	 	margin-bottom: 0.588235rem;
+   }
+    .seemWidth{
+   		width:1.764705rem;
+   		height: auto;
+   		display: block;
+   		margin: 0 auto;
+   		margin-bottom: 0.588235rem;
+    }
+   .msg-num{
+   		position: absolute;
+   		top: 0;
+   		right: 0.588235rem;
+   		width: 0.823529rem;
+   		height:0.823529rem;
+   		border: 1px solid #FF0000;
+   		border-radius: 50%;
+   		color: #FF0000;
+   		background: #FFFFFF;
+   		font-size: 0.529411rem;
+   		line-height: 1;
+   		text-align: center;
+   		padding-top:0.058823rem;
+   }
+   .inform-msg{
+   		position: absolute;
+   		top: 0;
+   		right:0.705882rem;
+   		width: 0.294117rem;
+   		height: 0.294117rem;
+   		background: #FF0000;
+   		border-radius: 50%;
+   }
+   /*我的学习*/
+    .myStudy{
+    	margin: 0.588235rem 0.705882rem;
+    	background: #FFFFFF;
+    }
+    .myStudy-title{
+    	padding-top: 0.588235rem;
+    	background: url(../images/MEstudytitle.png) no-repeat center;
+    	background-size: 100% 0.941176rem;
+    	font-size: 0.941176rem;
+    	font-weight: 700;
+    	color: #333333;
+    	height: 2rem;
+    	text-align: center;
+    	background-color: #FFFFFF;
+    	line-height: 1;	
+    	-webkit-border-top-left-radius: 0.17647rem;
+    	-webkit-border-top-right-radius: 0.17647rem;
+    	border-bottom: 1px solid #E8E8E8;
+    }
+    .studyContent{
+    	height: 12.823529rem;
+    	background: #FFFFFF;
+    }
+    .studyContent-left{
+    	width: 7.9411rem;
+    }
+    .left-title{
+    	margin: 0 1.294117rem;
+    	line-height: 1;
+    	height: 1.647058rem;
+    	padding-top:0.529411rem;
+    	background: url(../images/MEleftTitle.png) no-repeat center;
+    	background-size: 100% 0.235294rem;
+    	font-weight: 700;
+    	font-size: 0.705882rem;
+    	color: #ff5b60;
+    	text-align: center;
+    }
+    .staticItem{
+    	padding: 0.235294rem 0;
+    	margin: 0 0.411764rem;
+    	width: 7rem;
+    	height:2.352941rem;
+    	border: 1px solid #E8E8E8;
+    	border-radius: 0.235294rem;
+    	margin-bottom: 0.411764rem;
+    	font-size: 0.588235rem;
+    	color: #333333;
+    	line-height: 1.5;
+    	padding-right:0.411764rem;
+    	position: relative;
+    	padding-left: 1.235294rem;
+    }
+    .staticItem-img{
+    	display: block;
+    	width: 0.823529rem;
+    	height: 1rem;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	background: url(../images/MEnew.png) no-repeat;
+    	background-size: 100% 100%;
+    	text-align: center;
+    	color: #FFFFFF;
+    	font-size: 0.588235rem;	
+    }
+    .studyContent-right{
+    	display: flex;
+   		display:-webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        -webkit-justify-content: space-between;
+        -moz-justify-content:space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+         -webkit-align-items: center;
+		-moz-align-items: center;
+		-ms-align-items: center;
+		-o-align-items: center;
+		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        width:12.7rem;
+        height: 12.764705rem;
+        text-align: center;
+        font-size: 0.823529rem;
+        color: #333333;
+        font-weight: 700;
+        line-height:3;
+    }
+    .studyContent-right>div{
+    	width: 50%;
+    	height: 50%;
+    	border-left: 1px solid #E8E8E8;
+    	padding-top: 1.117647rem;
+    	
+    }
+    .studyContent-right>div:nth-of-type(1){
+     	border-bottom: 1px solid #E8E8E8;
+    }
+    .studyContent-right>div:nth-of-type(2){
+     	border-bottom: 1px solid #E8E8E8;
+    }
+    .studyContent-right img{
+    	width: 2.529411rem;
+    	shape-image-threshold: auto;
+    }
+    /*寄语*/
+   .word{
+   		height: 3.823529rem;
+   		background: url(../images/MEword.png) no-repeat;
+   		background-size: 100% 100%;
+   		margin: 0 0.705882rem;
+   		color: #70B7A9;
+   		font-size: 0.705882rem;
+   		position: relative;
+   		padding-top: 0.705882rem;
+   		margin-bottom: 0.588235rem;
+   }
+   .send-content{
+   		text-align: left;
+   		font-size: 0.705882rem;
+   		font-family: '苹方';
+   		line-height: 1.5;
+   		padding-left: 3.411764rem;
+   		padding-right: 1.058823rem;
+   		box-sizing: border-box;
+   		height:2.17647rem;
+   	}
+   	.word .send-time{
+   		font-size: 0.588235rem;
+   		position: absolute;
+   		right: 1.058823rem;
+   		bottom:0.470588rem;
+   	}
+   	/*我的互动*/
+   	.myaction{
+   		margin: 0 0.705882rem 0.588235rem 0.705882rem;
+   	}
+   	.myaction-title{
+   		padding-top:0.588235rem;
+    	background: url(../images/MEactionTitle.png) no-repeat center;
+    	background-size: 100% 0.941176rem;
+    	font-size: 0.941176rem;
+    	font-weight: 700;
+    	color: #333333;
+    	height:2.058823rem;
+    	text-align: center;
+    	background-color: #FFFFFF;
+    	line-height: 1;	
+    	-webkit-border-top-left-radius: 0.17647rem;
+    	-webkit-border-top-right-radius: 0.17647rem;
+    	border-bottom: 1px solid #E8E8E8;
+   	}
+   	.myaction-item{
+   		height: 4.588235rem;
+   		background: #FFFFFF;
+   		padding-right: 1.17647rem;
+   		border-bottom: 1px solid #E8E8E8;
+   	}
+   	.myaction-item img{
+   		height: 1.470588rem;
+   		width: auto;	
+   	}
+   	.myaction-item-title{
+   		font-size: 0.647058rem;
+   		color: #333333;
+   	}
+   	.myaction-item-content{
+   	 	width: 10.235294rem;
+   	 	margin-left: 1.705882rem;
+   		padding-right: 1.17647rem;	
+   	}
+   	.myaction-item-content>.title{
+   		padding-top: 1.17647rem;
+   		font-size: 0.882352rem;
+   		color: #333333;
+   		font-family: '苹方中等';
+   		font-weight: 500;
+   		overflow: hidden;
+   		white-space: nowrap;
+   		text-overflow: ellipsis;
+   		line-height: 1;
+   		padding-bottom: 0.764705rem;
+   	}
+   	.myaction-item-content>.content{
+   		font-size:0.764705rem;
+   		color: #666666;
+   		font-family: '苹方中等';
+   		font-weight: 500;
+   		overflow: hidden;
+   		white-space: nowrap;
+   		text-overflow: ellipsis;
+   		line-height: 1;
+   	}
+   	.seeall{
+   		width: 3.941176rem;
+   		height: 1.294117rem;
+   		border-radius: 0.647058rem;
+   		border: 1px solid #999999;
+   		font-size: 0.823529rem;
+   		color: #333333;
+   		font-family: '苹方中等';
+   		text-align: center;
+   		margin-top: 1.647058rem;
+   	}
+   	.myaction-item-img{
+   		margin-left:0.882352rem ;
+   		text-align: center;
+   		margin-top: 1.058823rem;
+   	}
+    </style>
+</head>
+<body>
+	<div class="me-wwrap">
+		<div class="me">
+			<div class="me-header clearfix">
+				<div class="three-img flr">
+					<img src="../images/MEtong.png" id="addressList"/>
+					<img src="../images/MEpeople.png" id="btnUser"/>
+					<img src="../images/MEset.png" id="setting"/>	
+				</div>
+				<div class="ME-msg clearfix">
+					<img src="../images/logo.png" class="fll" id="header"/>
+					<div class="fll me-content">
+						<p id="userName">张良</p>
+						<p id="bumenName">xxxxxxxxxxx支部</p>
+					</div>
+				</div>
+			</div>
+			<div class="intergral clearfix">
+				<div class="five-text"></div>
+				<div class="fll intergral-two">
+					<img src="../images/MEjifen.png"/>
+					<div class="">积分</div>
+				</div>
+				<div class="fll clearfix progress" id="progress">
+					<div class="">个人总积分情况</div>
+					<p class="mui-progressbar mui-progressbar-success progress1" data-progress="20"><span></span></p>
+					<span class="score">815</span>
+					<span class="start flr">
+						<span class="iconfont icon-star okstart"></span>
+						<span class="iconfont icon-star okstart"></span>
+						<span class="iconfont icon-star okstart"></span>
+						<span class="iconfont icon-star okstart"></span>
+						<span class="iconfont icon-star"></span>
+		   			</span>
+				</div>
+				<div class="go">
+					<div class="go-content">GO</div>
+				</div>
+			</div>
+		</div>
+		<div class="myContent">
+			<div class="myContent-top clearfix">
+				<div class="myContent-top-RANK fll">
+					<div class="myContent-title">个人排名</div>
+					<div class="rank" id="ranking">NO1</div>
+				</div>
+				<div class="myContent-top-item flr">
+					<div class="myContent-title">支部排名</div>
+					<div class="rank" id="rankingBumen">NO1</div>
+				</div>
+			</div>
+			<div class="myWork">
+				<div id="bumen">
+					<img src="../images/MEssection.png" class="seemheight"/>
+					<span class="">我的支部</span>
+				</div>
+				<div id="notice">
+					<img src="../images/MEinfore.png" class="seemheight"/>
+					<span class="">我的通知</span>
+					<div class="inform-msg"></div>
+				</div>
+				<div class="">
+					<img src="../images/MEwork.png" class="seemheight"/>
+					<span class="">我的工作</span>
+				</div>
+				<div id="btnParty_pay">
+					<img src="../images/MEmoney.png" class="seemWidth"/>
+					<span class="">我的党费</span>
+				</div>
+				<div id="message">
+					<img src="../images/MEmsg.png" class="seemWidth"/>
+					<span class="">我的消息</span>
+					<div class="msg-num">6</div>
+				</div>
+			</div>
+		</div>
+	    <div class="myStudy">
+	    	<div class="myStudy-title">我的学习</div>
+	    	<div class="studyContent clearfix">
+	    		<div class="studyContent-left fll">
+	    			<div class="left-title">信息统计</div>
+	                <div class="staticlist">
+	            		<div class="staticItem">
+	            			你在本周学习的积分中获得60分
+	            			<div class="staticItem-img">新</div>
+	            		</div>
+	            		<div class="staticItem">
+	            			你在本周学习的积分中获得60分
+	            			<div class="staticItem-img">新</div>
+	            		</div>	
+	            		<div class="staticItem">
+	            			你在本周学习的积分中获得60分
+	            			<div class="staticItem-img">新</div>
+	            		</div>	
+	            		<div class="staticItem">
+	            			你在本周学习的积分中获得60分
+	            			<div class="staticItem-img">新</div>
+	            		</div>	
+	                </div>
+	    		</div>
+	    		<div class="studyContent-right flr">
+	    			<div class="">
+	    				<img src="../images/MEstudy.png"/>
+	    				<div class="">我的学习</div>
+	    			</div>
+	    			<div id="favor">
+	    				<img src="../images/MEclloect.png"/>
+	    				<div class="">我的收藏</div>
+	    			</div>
+	    			<div class="">
+	    				<img src="../images/MEscore.png"/>
+	    				<div class="">我的积分</div>
+	    			</div>
+	    			<div id="download">
+	    				<img src="../images/MEdown.png"/>
+	    				<div class="">我的下载</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="word">
+	    	<div class="send-content">祝贺!中国成功实现人类探测器首次月球背面软着陆</div>
+	    	<div class="send-time">——2019年12月9日</div>
+	    </div>
+	    <div class="myaction">
+	    	<div class="myaction-title">我的互动</div>
+	    	<div class="myaction-content">
+	    		<div class="myaction-item clearfix">
+	    			<div class="fll myaction-item-img">
+	    				<img src="../images/MErefer.png"/>
+	    				<div class="myaction-item-title">我的咨询</div>
+	    			</div>
+	    			<div class="myaction-item-content fll">
+	    				<div class="title refertitle ">立时代之潮头 通古今之变化 发思想之先声</div>
+	    				<div class="content refer-content">1月2日，习近平总书记向中国社会科学院中国历史研究院致贺信。总书记在贺信中指出，新时代坚持和发展中国特色社会主义，更加需要系统研究中国历史和文化，更加需</div>
+	    			</div>
+	    			<div class="seeall flr">查看更多</div>
+	    		</div>
+	    		<div class="myaction-item clearfix">
+	    			<div class="myaction-item-img fll">
+	    				<img src="../images/MElanch.png"/>
+	    				<div class="myaction-item-title">我的发布</div>
+	    			</div>
+	    			<div class="myaction-item-content fll">
+	    				<div class="title refertitle ">立时代之潮头 通古今之变化 发思想之先声</div>
+	    				<div class="content refer-content">1月2日，习近平总书记向中国社会科学院中国历史研究院致贺信。总书记在贺信中指出，新时代坚持和发展中国特色社会主义，更加需要系统研究中国历史和文化，更加需</div>
+	    			</div>
+	    			<div class="seeall flr" id="issue">查看更多</div>
+	    		</div>
+	    		<div class="myaction-item clearfix">
+	    			<div class="myaction-item-img fll">
+	    				<img src="../images/MErefer.png"/>
+	    				<div class="myaction-item-title">我的奖惩</div>
+	    			</div>
+	    			<div class="myaction-item-content fll">
+	    				<div class="title refertitle ">立时代之潮头 通古今之变化 发思想之先声</div>
+	    				<div class="content refer-content">1月2日，习近平总书记向中国社会科学院中国历史研究院致贺信。总书记在贺信中指出，新时代坚持和发展中国特色社会主义，更加需要系统研究中国历史和文化，更加需</div>
+	    			</div>
+	    			<div class="seeall flr">查看更多</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/swiper.min.js"></script>
+		<script src="../js/jquery.marquee.js"></script>
+		<script src="../js/mui.pullToRefresh.js"></script>
+		<script src="../js/mui.pullToRefresh.material.js"></script>
+		<script type="text/javascript">
+			//go
+			$(".go-content").off('tap').on("tap",function(){
+				osg.open("discuss.html", "discuss.html");
+			})
+           //	领导接待日
+          var progress1 = mui(".progress1")[0];
+          mui(progress1).progressbar({progress:progress1.getAttribute("data-progress")}).show();
+		</script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				var nw = plus.webview.currentWebview();
+				nw.addEventListener('show', function(e) {
+					initData();
+				}, false);
+
+				function initData() {
+					var user = osg.currentUser();
+					$("#userName").text(user.name);
+
+					if(user.pub == 1) {
+						$("#bumenName").text('所属支部:' + '----');
+					}
+
+					var avatar = user.avatar ? (qiniuRoot + user.avatar + '!avatar') : '../images/logo.png';
+					$("#header").attr('src', avatar);
+				}
+				initData();
+				//设置
+				var btnSetting = document.getElementById('setting');
+				btnSetting.addEventListener('tap', function(event) {
+					osg.open("../mine/settings.html");
+				});
+				//我的
+				var btnUser = document.getElementById('btnUser');
+				btnUser.addEventListener('tap', function(event) {
+					osg.open("../mine/material.html");
+				});
+				//我的发布
+				var issue = document.getElementById('issue');
+				issue.addEventListener('tap', function(event) {
+					osg.open("../mine/publishMessage.html"); //修改我的发布的页面名称
+				});
+				//我的收藏
+				var favor = document.getElementById('favor');
+				favor.addEventListener('tap', function(event) {
+					osg.open("../mine/myfavor.html");
+				});
+				//通知公告
+				var notice = document.getElementById('notice');
+				notice.addEventListener('tap', function(event) {
+					osg.open("../manage/Newnotice.html", "Newnotice.html");
+				});
+				//通讯录
+				var addressList = document.getElementById('addressList');
+				addressList.addEventListener('tap', function(event) {
+					osg.open("../mine/personList.html");
+				});
+				//下载
+				var downloadList = document.getElementById('download');
+				downloadList.addEventListener('tap', function(event) {
+					osg.open("../mine/myDownload.html");
+				});
+				//消息
+				var messageList = document.getElementById('message');
+				messageList.addEventListener('tap', function(event) {
+					osg.open("../mine/myMessage.html");
+				});
+                 //消息的数目
+                 osg.ajax('systemMessage/query', {
+					'page': 1
+				}, function(data) {
+					
+				})
+                 //党费缴纳
+				var btnParty_pay = document.getElementById('btnParty_pay');
+				btnParty_pay.addEventListener('tap', function(event) {
+					osg.open("../manage/Party_pay.html");
+				});
+                 //我的支部
+				var bumen = document.getElementById('bumen');
+				bumen.addEventListener('tap', function(event) {
+					var user = osg.currentUser();
+					if(user.pub == 1) {
+						osg.confirm("您还没有加入支部，请选择申请加入", function() {
+							osg.open("../rebmList.html", "../rebmList.html", {
+								parentId: 0
+							});
+						});
+						return;
+					}
+					osg.open("../mine/bumenMine.html", "../mine/bumenMine.html", {
+						bumenId: user.bumenId
+					});
+				});
+				//				var btnNext = document.getElementById('btnNext');
+				//				btnNext.addEventListener('tap', function(event) {
+				//					osg.open("myScore.html");
+				//				});
+				mui('#btnNext').on('tap', '#myScore', function(event) {
+					osg.open('scoreRankUser.html', 'scoreRankUser.html');
+				});
+				mui('#btnNext').on('tap', '#bumenScore', function(event) {
+					osg.open('scoreRankBumen.html', 'scoreRankBumen.html');
+				});
+
+				loadMine();
+				document.addEventListener("pause", onAppPause, false);
+
+				function onAppPause() {
+					loadMine();
+				}
+
+				function loadMine() {
+					var no='NO';
+					osg.ajax('user/mine', null, function(data) {
+						if(!data)
+							return;
+						$("#scoreTotal").text(data.scoreTotal);
+						$("#rankingBumen").text(no+data.rankingBumen);
+						$("#scoreActivity").text(data.scoreActivity);
+						$("#scoreWork").text(data.scoreWork);
+						$("#userName").text(data.name);
+						$("#bumenName").text(data.bumenName);
+
+						var token = osg.currentToken();
+						var userInfo = {
+							'user': data,
+							'token': token
+						}
+						osg.currentUserSet(userInfo);
+					}, 'POST', true);
+					osg.ajax("/app/ScorePartyMember/partyMemberScore", null, function(data) {
+						$("#ranking").text(no+(data.data.ranking - 1));
+					}, 'POST', true)
+				}
+			});
+		</script>
+	</body>
+</html>
