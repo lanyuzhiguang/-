@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>学习</title>
+		<link href="../css/mui.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/mui.previewimage.css">
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+        <link rel="stylesheet" type="text/css" href="icon/iconfont.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/custom-styles.css"/>
+		<style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                color: #333;
+                font-family: "苹方";
+            }
+            html,body {
+                background: #F7F7F7;
+            }
+            .mui-content {
+                background: transparent;
+            }
+			.content_header {
+                padding: 1.17647rem 0.705882rem;
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                background: #fff;
+                margin-bottom: 0.588235rem;
+            }
+            .content_header div {
+                -prefix-box-flex: 1;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+            .content_header div img {
+                width: 100%;
+            }
+            .content_header div:first-of-type {
+                margin-right: 0.411764rem;
+            }
+            /* 列表 */
+            .listParent {
+                margin-bottom: 0.588235rem;
+            }
+            .listParent .iconfont {
+                font-size: 1.17647rem;
+            }
+            .listParent>ul>.list {
+                margin-bottom: 1px;
+            }
+            .listParent>ul>.list>.list_header {
+                background: #fff;
+                height: 2.941176rem;
+                padding: 0 1.470588rem 0 0.705882rem;
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                -ms-justify-content: space-between;
+                -o-justify-content: space-between;
+                justify-content: space-between;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+            }
+            .listParent>ul>.list>.list_header img {
+                width: 1.17647rem;
+                height: 100%;
+                vertical-align: middle;
+                margin-right: 0.588235rem;
+            }
+            .listParent>ul>.list>.list_header img.imgminw {
+                width: 1rem;
+                margin-left: 0.088235rem;
+                margin-right: 0.67647rem;
+            }
+            .list_header_left {
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+            }
+            .list_title {
+                font-weight: 500;
+                font-size: 0.941176rem;
+            }
+            .list>div:last-of-type {
+                display: none;
+            }
+            /* 子列表 */
+            .studyTab nav{
+                margin-top: 1px;
+                background: #fff;
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: center;
+                -moz-justify-content: center;
+                -ms-justify-content: center;
+                -o-justify-content: center;
+                justify-content: center;
+            }
+            .studyTab>nav>div {
+                padding: 0.823529rem 0;
+                font-size: 0.823529rem;
+                font-weight: 500;
+                position: relative;
+                width: auto;
+            }
+            .studyTab>nav>div:first-of-type {
+                margin-right: 4rem;
+            }
+            .studyTab>nav>div.actives {
+                font-weight: 600;
+            }
+            .studyTab>nav>div.actives:after {
+                content: "";
+                width: 70%;
+                height: 3px;
+                background: #ce0000;
+                border-radius: 3px;
+                position: absolute;
+                bottom: 0;
+                left: 15%;
+            }
+            .listSonBox {
+                margin-bottom: 0.588235rem;
+                background: #fff;
+            }
+            .listSonBox1>.listSon:nth-of-type(2) {
+                display: none;
+            }
+            .listSonBox>ul {
+                padding: 0 0.705882rem;
+            }
+            .listSonBox>ul>.listSonItem {
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                border-top: 1px solid #f7f7f7;
+                padding: 1.17647rem 0 0.882352rem 0;
+            }
+            .listSonBox>ul>.listSonItem>div:first-of-type {
+                width: 7.294117rem;
+                height: 4.823529rem;
+                border-radius: 0.17647rem;
+                overflow: hidden;
+                margin-right: 0.705882rem;
+                flex-shrink: 0;
+            }
+            .listSonBox>ul>.listSonItem>div:first-of-type>img {
+                width: 100%;
+                height: 100%;
+            }
+            .listSonBox>ul>.listSonItem>div:last-of-type {
+                -prefix-box-flex: 1;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+            .listSonItemTitle {
+                font-size: 0.941176rem;
+                font-weight: 500;
+            }
+            .listSonItemRightMid_left span,.listSonItemBottom span {
+                font-size: 0.705882rem;
+                color: #666;
+            }
+            .listSonItemBottom u {
+                font-size: 0.882352rem;
+                color: #ff6600;
+            }
+            .listSonItemBottom {
+                line-height: 0.882352rem;
+            }
+            .listSonBox>ul>.seeMore {
+                padding: 0 0 1.17647rem 0;
+                text-align: center;
+                background: #fff;
+            }
+            .listSonItemRightMid {
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                -ms-justify-content: space-between;
+                -o-justify-content: space-between;
+                justify-content: space-between;
+            }
+            .listSonItemRightMid_right {
+                width: 2.470588rem;
+                height: 2.470588rem;
+                position: relative;
+                margin: 0;
+                top: 0.235294rem;
+            }
+            .listSonItemRightMid_right>span {
+                display: block;
+                font-size: 0.588235rem;
+                color: #ABEDFF;
+            }
+            .listSonItemRightMid_right>span:first-of-type {
+                margin-bottom: -0.470588rem;
+            }
+            .listSonItemRightMid_right>span:last-of-type {
+                margin-bottom: -2.117647rem;
+            }
+            .listSonItemRightMid_right img {
+                width: 2.470588rem;
+                height: 2.470588rem;
+                position: relative;
+            }
+            .listSonItemRightMid_right.noadopt:after {
+                content: "未答题";
+                color: #fd8b71;
+                font-size: 0.529411rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -0.529411rem;
+                margin-left: -0.847058rem;
+                transform: rotate(-25deg);
+                -webkit-transform: rotate(-25deg);
+                -ms-transform: rotate(-25deg);
+                -moz-transform: rotate(-25deg);
+                -o-transform: rotate(-25deg);
+            }
+            .listSonItemRightMid_right.adopt:after {
+            	content: "已答题";
+            	color: #abedff;
+                font-size: 0.529411rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -0.529411rem;
+                margin-left: -0.847058rem;
+                transform: rotate(-25deg);
+                -webkit-transform: rotate(-25deg);
+                -ms-transform: rotate(-25deg);
+                -moz-transform: rotate(-25deg);
+                -o-transform: rotate(-25deg);
+            }
+            /* 专家库 */
+            .more {
+                color: #ce0000;
+                font-size: 0.764705rem;
+            }
+            .listSonItemRightMid_left .more {
+                font-size: 0.705882rem;
+            }
+            .expertLibrary {
+                background: #fff;
+            }
+            .expertLibrary>.expert_header {
+                padding: 1.117647rem 0.705882rem;
+                padding-bottom: 0.588235rem;
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                -ms-justify-content: space-between;
+                -o-justify-content: space-between;
+                justify-content: space-between;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+            }
+            .expertLibrary>.expert_header>span {
+                font-size: 0.941176rem;
+                font-weight: bold;
+            }
+            /* 轮播样式修改 */
+            .swiper-container {
+                padding: 0.588235rem;
+            }
+            .swiper-slide {
+                width: 7.470588rem !important;
+                height: 9.823529rem;
+                border-radius: 0.235294rem;
+                box-shadow: 0 0 0.470588rem 2px rgba(61,61,61,0.2);
+                text-align: center;
+                /* margin: 0 0.470588rem; */
+                padding-top: 0.882352rem;
+            }
+            .swiper-slide img {
+                width: 3.117647rem;
+                height: 3.117647rem;
+                border-radius: 50%;
+            }
+            .swiper-slide .name {
+                margin: 0;
+                font-size: 0.882352rem;
+                font-weight: 500;
+                line-height: 1.6rem;
+            }
+            .swiper-slide .job {
+                font-size: 0.647058rem;
+                color: #666;
+            }
+            .swiper-slide button,.swiper-slide button:enabled:active {
+                border: none;
+                background: #FDC127;
+                font-size: 0.705882rem;
+                color: #fff;
+                width: 3.294117rem;
+                padding: 0.235294rem 0;
+                border-radius: 1.17647rem;
+                margin-top: 0.588235rem;
+            }
+            /* 心得样式 */
+            .listSonBox2 {
+                background: transparent;
+            }
+            .listSonBox2>ul {
+                padding: 0;
+            }
+            .list_son>.list_sonItem {
+                margin-top: 1px;
+            }
+            .list_sonItemTop {
+                background: #fff;
+                padding: 0.588235rem 0.705882rem 0.705882rem 0.705882rem;
+            }
+            .list_son>.list_sonItem>.list_sonItemTop>.user_detail {
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                -ms-justify-content: space-between;
+                -o-justify-content: space-between;
+                justify-content: space-between;
+                padding: 0.588235rem 0;
+            }
+            .list_son>.list_sonItem>.list_sonItemTop>.user_detail img {
+                width: 2.352941rem;
+                height: 2.352941rem;
+                border-radius: 50%;
+                flex-shrink: 0;
+                margin-right: 0.588235rem;
+            }
+            .user_detail_right {
+                -prefix-box-flex: 1;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                -moz-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+            .user_detail_right>div:first-of-type {
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                -ms-justify-content: space-between;
+                -o-justify-content: space-between;
+                justify-content: space-between;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+            }
+            .user_detail_right .userName {
+                font-size: 0.941176rem;
+                font-weight: 600;
+                vertical-align: middle;
+            }
+            .userClass {
+                display: inline-block;
+                font-size: 0.705882rem;
+                color: #CE0000;
+                border: 1px solid #ce0000;
+                border-radius: 2px;
+                line-height: 0.705882rem;
+                padding: 0.117647rem 0.294117rem;
+            }
+            .userTime {
+                color: #666;
+                font-size: 0.705882rem;
+            }
+            .userBumen {
+                color: #666;
+                font-size: 0.705882rem;
+            }
+            .commentCon {
+                font-size: 0.882352rem;
+            }
+            .commentFile {
+                padding: 0.882352rem 0.705882rem;
+                text-align: center;
+            }
+            .commentFile img {
+                width: 6.941176rem;
+                height: auto;
+                border-radius: 0.235294rem;
+            }
+            .commentFile span {
+                font-size: 0.941176rem;
+            }
+            .operation {
+                background: #fff;
+                padding: 0.882352rem 0.705882rem;
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                -ms-justify-content: space-between;
+                -o-justify-content: space-between;
+                justify-content: space-between;
+                -webkit-align-items: flex-end;
+                -moz-align-items: flex-end;
+                -ms-align-items: flex-end;
+                -o-align-items: flex-end;
+                align-items: flex-end;
+            }
+            .operation>div:first-of-type {
+                font-size: 0.705882rem;
+                color: #666;
+            }
+            .operation>div:last-of-type {
+                display: flex;
+                display:-webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-align-items: flex-end;
+                -moz-align-items: flex-end;
+                -ms-align-items: flex-end;
+                -o-align-items: flex-end;
+                align-items: flex-end;
+            }
+            .operation>div:last-of-type i.iconfont {
+                font-size: 1.411764rem;
+                vertical-align: middle;
+                margin-left: 1.764705rem;
+            }
+            .operation>div:last-of-type span {
+                font-size: 0.705882rem;
+                color: #666;
+            }
+            /* 心得样式修改 */
+            /* .list>div:last-of-type{display: block;} */
+            .gier {
+            	color: #c1c1c1;
+            }
+            .interaction_t {
+                background: #fff;
+                height: auto;
+                line-height: initial;
+                position: relative;
+            }
+            .branchName {
+                position: initial !important;
+                bottom: 0;
+                font-size: 0.705882rem !important;
+            }
+            .video_content {
+            	height: 185px!important;
+            	width: 5.88rem;
+            	overflow: hidden;
+            }
+            
+            .video_content img {
+            	width: 5.88rem!important;
+            	height: 11.765rem!important;
+            }
+            
+            .video_content .btnFullscreen {
+            	position: absolute;
+            	right: 0.47rem;
+            	bottom: 0.47rem;
+            	display: none;
+            	width: 2.5rem;
+            	height: 2.5rem;
+            	background: url(../images/showBig.png) center no-repeat!important;
+            	background-size: 1.294rem 1.294rem!important;
+            }
+            
+            .video_icon_start {
+            	position: absolute;
+            	left: 2rem;
+            	bottom: 4.5rem;
+            	display: inline-block;
+            	width: 1.9rem;
+            	height: 1.9rem;
+            	background: url(../images/video_start1.png) center no-repeat;
+            	background-size: 1.853rem 1.853rem!important;
+            }
+            
+            .video_icon_pause {
+            	position: absolute;
+            	left: 2rem;
+            	bottom: 4.5rem;
+            	display: inline-block;
+            	width: 1.9rem;
+            	height: 1.9rem;
+            	background: url(../images/pause_small.png) center no-repeat;
+            	background-size: 1.853rem 1.853rem!important;
+            }
+            .hid {
+            	display: none;
+            	border: 1px solid transparent!important;
+            }
+            .inter_img_list {
+            	margin-top: 0.6rem;
+            }
+            
+            .inter_img_list>div {
+            	width: 33.33%;
+            	float: left;
+            	margin-left: 0.23rem;
+            }
+            
+            .inter_img_list>div>img {
+            	width: 6.117rem!important;
+            	height: 6.117rem!important;
+            	border-radius: 0.3rem;
+            }
+            .inter_img_list div {
+            	width: 5rem;
+            	height: 5rem;
+            	border-radius: 0.23rem;
+            }
+            .clears:after{ display:block; content:''; clear:both;height: 0;}
+            .clears{ zoom:1;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title" id="muiTitle">学习</h1>
+		</header>
+		<div class="mui-content">
+			<div class="content_header">
+				<div><img src="../images/dailyreading.png" class="readDaily" ></div>
+				<div><img src="../images/dailyquestion.png" class="examDaily"></div>
+			</div>
+            <div class="listParent">
+            	<ul>
+            		<li class="list">
+                        <div class="list_header">
+                        	<div class="list_header_left">
+                                <img src="../images/theme.png" >
+                                <div class="list_title">主题学习</div>
+                            </div>
+                            <div class="list_header_right">
+                                <i class="iconfont icon-xiajiantou"></i>
+                            </div>
+                        </div>
+                        <div class="studyTab">
+                        	<nav>
+                                <div class="actives">必学课程</div>
+                                <div>选学课程</div>
+                            </nav>
+                            <div class="listSonBox listSonBox1">
+                                <ul class="listSon mustList1">
+                                	<li class="listSonItem listSonItem1">
+                                        <div><img src="../images/wode-beijing@2x.png" class="image" ></div>
+                                        <div class="listSonItemRight">
+                                        	<div class="listSonItemTitle"></div>
+                                            <div class="listSonItemRightMid">
+                                            	<div class="listSonItemRightMid_left">
+                                            		<div class="listSonItemClass more">党务工作</div>
+                                                    <div class="modal">
+                                                    	<span>学习积分：<span class="score">0</span></span>
+                                                    	<span>心得数：<span class="heartNum">0</span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="listSonItemRightMid_right easypiechart" id="easypiechart-blue" data-percent="0">
+                                                    <span class="studyNum">0%</span>
+                                                    <span class="">已学习</span>
+                                                </div>
+                                            </div>
+                                            <div class="listSonItemBottom">
+                                            	<span>考试分数：<u>0</u></span>
+                                                <span>共<span class="jNum">0</span>节 <span class="timeNum">0</span>学时</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="seeMore more">查看全部</li>
+                                </ul>
+                                <ul class="listSon mustList2">
+                                	
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list">
+                    	<div class="list_header">
+                    		<div class="list_header_left">
+                    			<img src="../images/myExam.png" >
+                    			<div class="list_title">我的考试</div>
+                    		</div>
+                    		<div class="list_header_right">
+                    			<i class="iconfont icon-xiajiantou"></i>
+                    		</div>
+                    	</div>
+                        <div class="listSonBox">
+                        	<ul class="listSon examList">
+                        		<li class="listSonItem listSonItem2">
+                        			<div><img class="images" src="../images/wode-beijing@2x.png" ></div>
+                        			<div class="listSonItemRight">
+                        				<div class="listSonItemTitle">党规党章选择题</div>
+                        				<div class="listSonItemRightMid">
+                        					<div class="listSonItemRightMid_left">
+                        						<div class="listSonItemClass more">党务工作</div>
+                        						<div class="modal">
+                        							<span>学习积分：<span class="score">0</span></span>
+                        							<span>心得数：<span class="xnum">5</span></span>
+                        						</div>
+                        					</div>
+                        					<div class="listSonItemRightMid_right">
+                        						<img src="../exam/img/noadopt.png" >
+                        					</div>
+                        				</div>
+                        				<div class="listSonItemBottom">
+                        					<span>考试分数：<u class="examNum">98</u></span>
+                        					<span>共<span>6</span>节 <span>0.5</span>学时</span>
+                        				</div>
+                        			</div>
+                        		</li>
+                        	</ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                    	<div class="list_header">
+                    		<div class="list_header_left">
+                    			<img src="../images/curriculum.png" class="imgminw" >
+                    			<div class="list_title">我的课程</div>
+                    		</div>
+                    		<div class="list_header_right">
+                    			<i class="iconfont icon-xiajiantou"></i>
+                    		</div>
+                    	</div>
+                        <div class="listSonBox">
+                        	<ul class="listSon curriclumList">
+                        		
+                        	</ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                    	<div class="list_header">
+                    		<div class="list_header_left">
+                    			<img src="../images/myCollection.png" class="imgminw" >
+                    			<div class="list_title">我的收藏</div>
+                    		</div>
+                    		<div class="list_header_right">
+                    			<i class="iconfont icon-xiajiantou"></i>
+                    		</div>
+                    	</div>
+                        <div class="listSonBox">
+                        	<ul class="listSon collectionList">
+                        		
+                        	</ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                    	<div class="list_header">
+                    		<div class="list_header_left">
+                    			<img src="../images/experience.png" >
+                    			<div class="list_title">心得体会</div>
+                    		</div>
+                    		<div class="list_header_right">
+                    			<i class="iconfont icon-xiajiantou"></i>
+                    		</div>
+                    	</div>
+                        <div class="listSonBox listSonBox2">
+                        	<ul class="list_son gainedList">
+                        		<li class="list_sonItem listSonItem3">
+                        			<div class="list_sonItemTop">
+                                        <div class="user_detail interaction_t">
+                                            <img id="header" src="../images/logo.png" >
+                                        	<div class="user_detail_right">
+                                                <div class="">
+                                                	<div>
+                                                        <span class="userName">123</span>
+                                                        <span class="userClass" id="groupName">无分类</span>
+                                                    </div>
+                                                    <span class="userTime" id="createTime">2019-01-04</span>
+                                                </div>
+                                                <span class="userBumen branchName">tianhe</span>
+                                            </div>
+                                        </div>
+                                        <div class="commentCon"  id="content">
+                                        	整体效果不错！
+                                        </div>
+                                        <div class="inter_img_list clears" style="margin-top: 0.6rem;margin-left: -0.2rem;font-family: '苹方';">
+                                        </div>
+                                        <!--视频-->
+                                        <div class="video_content hid no">
+                                        	<div id="jp_btnPlay1">
+                                        	</div>
+                                        	<!--<img class="vedioUrl" src="">-->
+                                        	<i class="btnPlay  btnFull video_icon_start" video=""></i>
+                                        	<!--<i class="btnFullscreen"></i>-->
+                                        </div>
+                        			</div>
+                                    <div class="commentFile">
+                                        <span></span>
+                                    </div>
+                                    <div class="operation">
+                                    	<div>浏览<span>15</span>次</div>
+                                        <div class="">
+                                        	<div id="zan">
+                                                <i class="iconfont icon-zan1 gier"></i>
+                                                <span id="zanTimes">0</span>
+                                            </div>
+                                            <div class="myC" id="comment">
+                                            	<i class="iconfont icon-pinglun gier"></i>
+                                            	<span id="commentCount">0</span>
+                                            </div>
+                                            <div id="zan1">
+                                            	<i class="iconfont icon-zan gier"></i>
+                                            	<span id="zanTimes1">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                        		</li>
+                        	</ul>
+                        </div>
+                    </li>
+            	</ul>
+            </div>
+            <div class="expertLibrary">
+            	<div class="expert_header">
+            		<span>专家库</span>
+                    <a href="javascript:;" class="more lookMores">查看更多</a>
+            	</div>
+                <div class="expert_con">
+                	<div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="../images/user-photo.png" >
+                                <div class="name">张琦</div>
+                                <div class="job">纪律检查委员会委员</div>
+                                <button>问Ta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</body>
+</html>
+<script src="../js/mui.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.jplayer.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/jquery.marquee.js"></script>
+<script src="../js/mui.pullToRefresh.js"></script>
+<script src="../js/mui.pullToRefresh.material.js"></script>
+<script src="../js/easypiechart.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/easypiechart-data.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/mui.zoom.js"></script>
+<script src="../js/mui.previewimage.js"></script>
+<script type="text/javascript">
+    mui.init();
+    mui.plusReady(function() {
+        var seeMore = $(".seeMore"),
+        	listSonItem1 = $(".listSonItem1"),
+        	listSonItem2 = $(".listSonItem2"),
+        	listSonItem3 = $(".listSonItem3"),
+            nullCon = "<p style='color:#666;font-size:0.823529rem;line-height:2.352941rem;text-align:center;border-top:1px solid #f7f7f7;'>暂无内容。</p>";
+        $(".seeMore").remove();
+        $(".listSonItem1").remove();
+        $(".listSonItem2").remove();
+        $(".listSonItem3").remove();
+        //每日一读 每日一题
+        $(".readDaily").off("click").on("click",function(){
+            osg.open("../funmodule/rudDtuy/oneDay.html","oneDay.html");
+        });
+        $(".examDaily").off("click").on("click",function(){
+            osg.open("../funmodule/examDaily/readRule.html","readRule.html");
+        });
+        
+        //主题学习(暂无)
+        
+        //我的考试
+        osg.ajax("/app/appExam/finishEvaluation",{},function(data){
+            var data = data.data;
+            if (data.length > 0) {
+                var tg = 0,ntg = 0;
+                $.each(data,function(key,value){
+                    var item2 = listSonItem2.clone();
+                    item2.attr("id",value.recordId).attr("isPassThrough",value.isPassThrough);
+                    item2.find(".listSonItemTitle").text(value.title);
+                    item2.find(".examNum").text(value.score);
+                    
+                    if (value.isPassThrough == "通过" && tg < 3) {
+                    	tg++;
+                        item2.find(".listSonItemRightMid_right").addClass("adopt");
+                        item2.find(".listSonItemRightMid_right img").attr("src","../exam/img/adopt.png");
+                        $(".examList").append(item2);
+                    } else if (value.isPassThrough == "未通过" && ntg < 3) {
+                    	ntg++;
+                        item2.find(".listSonItemRightMid_right").addClass("noadopt");
+                        item2.find(".listSonItemRightMid_right img").attr("src","../exam/img/noadopt.png");
+                        $(".examList").prepend(item2);
+                    }
+                });
+                $(".examList .listSonItem2").off("click").on("click",function(){
+                	var recordId = $(this).attr('id');
+                	var index = $(this).index();
+                	var isPassThrough = $(this).attr("isPassThrough");
+                	var userName = $(this).find(".listSonItemTitle").text();
+                	osg.ajax("/app/appExam/findAnswerRecord",{
+                		recordId:recordId
+                	},function(submitData){
+                		if(submitData.success == true){
+                			osg.open("../exam/achievement.html","achievement.html",{
+                				userName:userName,
+                				data:submitData.data,
+                				isPassThrough:isPassThrough
+                			});
+                		}
+                	})
+                })
+                var seeMores = seeMore.clone();
+                seeMores.off("click").on("click",function(){
+                    osg.open("../exam/header.html","../exam/header.html");
+                });
+                $(".examList").append(seeMores);
+            } else{
+            	$(".examList").html(nullCon);
+            }
+        });
+        //我的课程
+        osg.ajax("app/curriculumrecord/queryByPersonalBaesId",{},function(data){
+        	var data = data.data;
+        	$(".curriclumList").html("");
+        	var dataLength = data.length > 3 ? 3 : data.length;
+            if (dataLength > 0) {
+            	for (var i = 0;i<dataLength;i++) {
+            		var value = data[i];
+            		var viewListItem = listSonItem1.clone();
+            		viewListItem.attr("id",value.personalBaseId);
+            		viewListItem.find(".image").attr("src",value.image);
+            		viewListItem.find(".listSonItemTitle").html(value.personalBaseName);
+            		viewListItem.find(".heartNum").html(value.heartNum);
+            		viewListItem.find(".score").html(value.score);
+            		viewListItem.find(".listSonItemClass").text(value.baseClassficationName);//
+            		viewListItem.find(".jNum").text(value.temChapters.length == null ? "0" : value.temChapters.length);//章节数
+            		viewListItem.find(".timeNum").text(value.allStudy == null ? "0" : value.allStudy);//总时长
+                    viewListItem.find(".easypiechart").attr("data-percent",value.speedOfProgress);
+                    viewListItem.find(".studyNum").text(value.speedOfProgress + "%");
+                    
+            		viewListItem.off("tap").on("tap",function(){
+            			osg.open("../funmodule/studys/curriculumDetail.html","curriculumDetail.html",{
+            				"curriclumid": $(this).attr("id")
+            			});
+            		});
+            		$(".curriclumList").append(viewListItem);
+            	}
+                var seeMores = seeMore.clone();
+                seeMores.off("click").on("click",function(){
+                	osg.open("../funmodule/studys/myStudys.html","myStudys.html");
+                });
+                $(".curriclumList").append(seeMores);
+            } else{
+            	$(".curriclumList").html(nullCon);
+            }
+        });
+        //我的收藏
+        osg.ajax("app/curriculumrecord/queryCollectionList",{},function(data){
+            var data = data.data;
+            if (data.length > 0) {
+            	$.each(data, function(key,value) {
+            		var value = value.personalBase;
+            		var viewListItem = listSonItem1.clone();
+            		viewListItem.css("display","");
+            		viewListItem.attr("id",value._id);
+            		viewListItem.find(".image").attr("src",value.image);
+            		viewListItem.find(".listSonItemTitle").html(value.personalBaseName);
+            		viewListItem.find(".heartNum").html(value.heartNum);
+            		viewListItem.find(".score").html(value.score);
+            		viewListItem.find(".listSonItemClass").text(value.baseClassificationName);//
+            		viewListItem.find(".jNum").text(value.chapterNum == null ? "0" : value.chapterNum);//章节数
+            		viewListItem.find(".timeNum").text(value.timeNum == null ? "0" : value.timeNum);//总时长
+            		viewListItem.find(".easypiechart").attr("data-percent",value.speedOfProgress);
+            		viewListItem.find(".studyNum").text(value.speedOfProgress + "%");
+            		
+            		viewListItem.off("tap").on("tap",function(){
+            			osg.open("../funmodule/studys/curriculumDetail.html","curriculumDetail.html",{
+            				"curriclumid": $(this).attr("id")
+            			});
+            		});
+            		$(".collectionList").append(viewListItem);
+            	});
+                var seeMores = seeMore.clone();
+                seeMores.off("click").on("click",function(){
+                	osg.open("../funmodule/studys/collection.html","collection.html");
+                });
+                $(".collectionList").append(seeMores);
+            } else{
+            	$(".collectionList").append(nullCon);
+            }
+        });
+        //心得体会
+        osg.ajax('app/bsaegained/list', {
+        	'page': 1,
+            'size': 3
+        }, function(data) {
+            if (data.data.length > 0) {
+            	var dLen = data.data.length > 3 ? 3 : data.data.length;
+                for(var i = 0; i < dLen; i++) {
+                    var oneData = data.data[i];
+                    var listItem = listSonItem3.clone();
+                    listItem.css('display', '');
+                    listItem.attr('id', '');
+                    //评价的课程
+                    if (oneData.baseName) {
+                    	listItem.find(".commentFile span").text("《" + oneData.baseName + "》")
+                    }
+                    if (oneData.baseLogo) {
+                    	listItem.find(".commentFile").prepend("<img src='" + oneData.baseLogo + "' />");
+                    }
+                    if (!oneData.baseName && !oneData.baseLogo) {
+                    	listItem.find(".commentFile").remove();
+                    }
+                    var branchN = oneData.bumenName;
+                        //添加头像
+                        var avatar = oneData.avatar ? (qiniuRoot + oneData.avatar + '!avatar') : '../images/logo.png';
+                        listItem.find('#header').attr('src', avatar);
+                        listItem.find('#header').data("message", oneData);
+                        listItem.find('#header')[0].addEventListener('tap', function(e) {
+                            event.stopPropagation();
+                            var message = $(this).data("message");
+                            osg.open("../mine/userSelf.html", "../mine/userSelf.html", {
+                                userId: message.userId,
+                            });
+                        });
+                        listItem.find('.userName').text(oneData.userName);
+                        if(branchN.length > 28) {
+                        listItem.find('.branchName').text(branchN.substring(0, 27) + "...");
+                        } else {
+                        listItem.find('.branchName').text(branchN);
+                        }
+                        
+                
+                    
+                    if(oneData.groupName != undefined) {
+                        listItem.find('#groupName').removeClass("hid");
+                        var groName = oneData.groupName;
+                        if(groName.length > 5) {
+                            listItem.find('#groupName').text(groName.substring(0, 4) + "...");
+                        } else {
+                            listItem.find('#groupName').text(oneData.groupName);
+                        }
+                    } else {
+                        listItem.find('#groupName').addClass("hid");
+                    }
+    
+                    listItem.find('#commentCount').text(oneData.commentTimes);
+    
+                    listItem.find('#groupName').data("message", oneData);
+                    listItem.find('#groupName')[0].addEventListener('tap', function(e) {
+                        event.stopPropagation();
+                        var message = $(this).data("message");
+                        osg.open("../study/gainedGroup.html", "gainedGroup.html", {
+                            groupId: message.groupId,
+                            groupName: message.groupName
+    
+                        });
+                    });
+                    if(oneData.zaned) {
+                        listItem.find('#zan i').css("color", "#d43d3d");
+                    }
+                    if(oneData.favored) {
+                        listItem.find('#zan1 i').css("color", "#d43d3d");
+                    }
+                    listItem.find('#comment').data("message", oneData);
+                    listItem.find(".interaction_t")[0].addEventListener('tap', function(e) {
+                        var message = $(this).parent().find('#comment').data("message");
+                        osg.open("../funmodule/studys/gainedDetail.html", "gainedDetail"+message._id+".html", {
+                            messageId: message._id,
+                            pbumname: message.bumenName,
+                        });
+                    });
+                    listItem.find(".commentCon")[0].addEventListener('tap', function(e) {
+                        var message = $(this).parent().parent().parent().find('#comment').data("message");
+                        osg.open("../funmodule/studys/gainedDetail.html", "gainedDetail"+message._id+".html", {
+                            messageId: message._id,
+                            pbumname: message.bumenName,
+                        });
+                    });
+                    listItem.find(".myC")[0].addEventListener('tap', function(e) {
+                        var message = $(this).parent().parent().parent().parent().find('#comment').data("message");
+    //						alert(message._id);
+    //						alert(message.bumenName);
+                        osg.open("../funmodule/studys/gainedDetail.html", "gainedDetail"+message._id+".html", {
+                            messageId: message._id,
+                            pbumname: message.bumenName,
+                        });
+                    });
+                    listItem.find('#zan').data("message", oneData);
+                    listItem.find('#zan')[0].addEventListener('tap', function(e) {
+                        event.stopPropagation();
+                        var message = $(this).data("message");
+                        var $that = $(this);
+                        var type = '91';
+                        var typeId = message._id;
+                        if(message.zaned) {
+                            osg.ajax('zan/deleZan', {
+                                'type': type,
+                                'typeId': typeId
+                            }, function(data) {
+                                $that.find('span').text(data);
+                                message.zaned = false;
+                                
+                                $that.find('i').css("color", "");
+                            });
+                        } else {
+                            osg.ajax('zan/addZan', {
+                                'type': type,
+                                'typeId': typeId
+                            }, function(data) {
+                                $that.find('span').text(data);
+                                message.zaned = true;
+                                $that.find('i').css("color", "#d43d3d");
+                            });
+                        }
+                    });
+                    listItem.find('#zan1').data("message", oneData);
+                    listItem.find('#zan1')[0].addEventListener('tap', function(e) {
+                        event.stopPropagation();
+                        var message = $(this).data("message");
+                        console.log(JSON.stringify(message));
+                        
+                        var $that = $(this);
+                        var type = '91';
+                        var typeId = message._id;
+                        console.log(JSON.stringify(message));
+                        if(message.favored) {
+                            osg.ajax('favor/deleFavor', {
+                                'type': type,
+                                'typeId': typeId
+                            }, function(data) {
+                                $that.find('span').text(data);
+                                message.favored = false;
+                                $that.find('i').css("color", "");
+                            });
+                        } else {
+                            osg.ajax('favor/addFavor', {
+                                'type': type,
+                                'typeId': typeId
+                            }, function(data) {
+                                console.log(data);
+                                $that.find('span').text(data);
+                                
+                                message.favored = true;
+                                $that.find('i').css("color", "#d43d3d");
+                            });
+                        }
+                    });
+                    //图片
+                    listItem.find('#content').text(oneData.content);
+                    if(oneData.imageUrls != null && oneData.imageUrls.length != 0) {
+                        for(var j = 0; j < oneData.imageUrls.length; j++) {
+                            listItem.find('.inter_img_list').append('<div style="margin-bottom: 0.1rem;border-radius: 0.3rem;width: 6.117rem;height: 6.117rem;"><img style="margin-bottom: 0.1rem;border-radius: 0.3rem;width: 6.117rem;height: 6.117rem;" src="' + oneData.imageUrls[j] + '" data-preview-src="' + oneData.imagePreviewUrls[j] + '" data-preview-group="' + i + '"  /></div>');
+                        }
+                    }
+                    //视频
+    
+                    if(oneData.vedioUrls != null && oneData.vedioUrls.length != 0) {
+                        listItem.find(".video_content").removeClass("hid");
+                        for(var j = 0; j < oneData.vedioUrls.length; j++) {
+                            listItem.find('.btnPlay').attr('video', oneData.vedioUrls[j]);
+                        }
+                        listItem.find('.btnPlay').attr('videoCover', oneData.coverUrl);
+    
+                    }
+    
+                    listItem.find('#zanTimes').text(oneData.zanTimes);
+                    listItem.find('#createTime').text(oneData.createTime);
+                    listItem.find('#zanTimes1').text(oneData.favorTimes);
+                    
+                    $(".gainedList").append(listItem);
+    
+                    listItem.find('.btnPlay').data("data", oneData);
+                    if(oneData.vedioUrls != null && oneData.vedioUrls.length != 0) {
+                        setBtnPlay(listItem.find('.btnPlay')[0]);
+                    }
+    
+                }
+                mui.previewImage();
+                var seeMores = seeMore.clone();
+                seeMores.off("click").on("click",function(){
+                	osg.open("../study/gainedList.html","gainedList.html");
+                });
+                $(".gainedList").append(seeMores);
+            } else{
+            	$(".gainedList").append(nullCon);
+            }
+        });
+        function setBtnPlay(btnPlay) {
+        	var cd = osg.get(cacheKeys.downloads);
+        	var url = btnPlay.getAttribute("video");
+        	if(cd) {
+        		var dt = $(btnPlay).data('data');
+        		cd = JSON.parse(cd);
+        		for(var j = 0; j < cd.length; j++) {
+        			if(dt._id == cd[j].typeId) {
+        				url = cd[j].url;
+        				url = plus.io.convertLocalFileSystemURL(url);
+        				break;
+        			}
+        		}
+        	}
+        	osg.video1(btnPlay, url, function(btnEle, url, p) {
+        		if(!mui.os.ios) {
+        			$(btnEle).addClass('video_icon_pause');
+        		}
+        		$(btnEle).removeClass('video_icon_start');
+        	}, function(btnEle, url, p, error) {
+        		if(!mui.os.ios) {
+        			$(btnEle).removeClass('video_icon_pause');
+        		}
+        		$(btnEle).addClass('video_icon_start');
+        	}, function(btnEle, url, p) {
+        		if(!mui.os.ios) {
+        			$(btnEle).removeClass('video_icon_pause');
+        		}
+        		$(btnEle).addClass('video_icon_start');
+        	}, function(btnEle, url, p, duration, position) {
+        		//console.log("duration:" + duration + ":" + position)
+        	});
+        }
+        
+        //主题学习tab切换
+        $("nav>div").off("click").on("click",function(){
+        	$(this).addClass("actives").siblings().removeClass("actives");
+        	$(".listSonBox1 .listSon").eq($(this).index()).show().siblings().hide();
+        });
+        //列表收放操作
+        $(".list_header").off("click").on("click",function(){
+        	if ($(this).find(".list_title").text() == "主题学习") {
+        		osg.open("defer.html");
+        	} else{
+        		if ($(this).find("i").hasClass("icon-xiajiantou")) {
+        			$(this).find("i").removeClass("icon-xiajiantou").addClass("icon-shangjiantou");
+        		} else{
+        			$(this).find("i").removeClass("icon-shangjiantou").addClass("icon-xiajiantou");
+        		}
+        		$(this).next().slideToggle();
+        	}
+        });
+        $(".lookMores").click(function(){
+            osg.open("defer.html");
+        })
+        //专家库轮播
+        var mySwiper = new Swiper('.swiper-container',{
+        	slidesPerView : 2.5,
+        	slidesPerGroup : 2.5,
+        	spaceBetween : 16,
+        	freeMode: true
+        });
+    });
+</script>
