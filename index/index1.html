@@ -36,6 +36,7 @@
      .headerimg{
      	width: 1.294117rem;
      	height: 1.294117rem;
+     	margin-top: 0.764705rem;
      }
      .mui-bar-nav{
      	background: linear-gradient(#ce0000, #D9150F);
@@ -70,7 +71,7 @@
      	position: absolute;
      	bottom: 0.352941rem;
      	right: 0.588235rem;
-     	width: 1.882352rem;
+     	width: 2.2rem;
      	height: 0.882352rem;
      	color: #FFFFFF;
      	font-size: 0.647058rem;
@@ -459,17 +460,17 @@
 				<div id="swipercontainer1" class="swiper-container swiper-container1">
 		        <div class="swiper-wrapper bigswiperlist">
 		            <div class="swiper-slide bigswiperitem">
-		            	<img src="../exam/img/red1.jpg" class="img"/>
+		            	<img src="../images/red1.jpg" class="img"/>
 		            	<div class="swiper-title">年底一定要算清这笔账 跟你明年一项收入有关</div>
 		            </div>
 		        </div>
 		        <div class="swiper-pagination"></div>
 	    	</div>
 			</div>
-			<div class="two-swiper">
+			<div class="two-swiper" >
 				<div class="news-flash">
 						<img src="../images/newsflash.png"/>
-					<div id="swipercontainer2" class="swiper-container newflash-wrapper">
+					<div id="swipercontainer2" class="swiper-container newflash-wrapper" style="position: relative; z-index: 20;" >
 	                    <div class="swiper-wrapper smallswiperlist">
 			                <div class="swiper-slide news-swiper-item clearfix smallswiperitem">
 			                 	<p class="news-swiper-title">市场监管总局：不得宣传市场监管总局市场监管总局</p>
@@ -503,7 +504,7 @@
 		        <div class="swiper-wrapper swiper-newslist">
 		            <div class="swiper-slide newslist slidenewsitem">
             			<div class="newsitem swipernewsitem">
-		            		<img src="../exam/img/red1.jpg" class="img"/>
+		            		<img src="../images/red1.jpg" class="img"/>
 			            	<div class="newsitem-content">
 			            		<p class="news-title">灾难面前彰显的中国力量、中国速度和中国精神</p>
 			            		<p class="news-des">站“换心手术”：旅客少迈90厘米 铁路升级又一步湖南岳阳问计民企：如何优化营商环境A股探底回升 沪指2500点失而复得25日中小板指跌0.54%25日创业板指跌0.85%京沈高铁沈阳至承德段将于2客户端</p>
@@ -518,7 +519,7 @@
 			            		</div>
 			            	</div>
 		            	</div>
-	            	  	<p class="seeall-news" newstype="1">查看更多</p>   
+	            	  	
 		            </div> 
 		        </div>
 	    	</div>
@@ -531,7 +532,7 @@
 		    		<div class="newslist hotnewslist">
 	            		<div class="newsitem hotnewsitem">
 	            			<div class="foryouF">
-	            				<img src="../exam/img/red3.jpg"/>
+	            				<img src="../images/red1.jpg"/>
 	            				<div class="foryou">为您精选</div>
 	            			</div>
 			            		
@@ -546,7 +547,6 @@
 				            		</div>
 				            	</div>
 			            </div>
-
 		    		</div>
 		    	</div>
 		    </div>
@@ -559,7 +559,7 @@
 		<script src="../js/jquery.marquee.js"></script>
 		<script src="../js/mui.pullToRefresh.js"></script>
 		<script src="../js/mui.pullToRefresh.material.js"></script>
-		<!--<script type="text/javascript">
+		<script type="text/javascript">
 			var bigswiperitem = $(".bigswiperitem");
 				bigswiperitem.remove();
 			var smallswiperitem = $(".smallswiperitem");
@@ -580,8 +580,7 @@
 				});
 				//党务公开
 				$(".three-item:eq(1)").click(function(){
-//					osg.toast("正在建设中");
-					osg.open("me.html", "me.html");
+					osg.open("defer.html", "defer.html");
 				});
 				//活动
 				$(".three-item:eq(2)").click(function(){
@@ -607,22 +606,24 @@
 							var item = navitem.clone();
 							item.text(key.name).attr("goid",key._id);
 							var slideritem = slidenewsitem.clone().attr("id",key._id);
-							newsFUN(slideritem,key._id);
+							newsFUN(slideritem,key._id,key.name);
 							slideritem.find(".seeall-news").attr("id",key._id)
 							$(".navlist").append(item);
 							$(".swiper-newslist").append(slideritem)
-							if((key.sliders).length>0){
-								$(key.sliders).each(function(imgindex,imgitem){
-								  	var bigitem = bigswiperitem.clone().attr("id",imgitem._id);
-								  	bigitem.find(".img").attr("src",qiniuRoot + imgitem.banner + '!news_banner');
-								  	bigitem.find(".swiper-title").text(imgitem.title);
-								  	bigitem[0].addEventListener('tap', function(e) {
-									  	var goid = $(this).attr("id")
-										openDetail(goid);
-									});
-								  	$(".bigswiperlist").append(bigitem)
-								})
-								
+							if(i>0){
+								if((key.sliders).length>0){
+									$(key.sliders).each(function(imgindex,imgitem){
+									  	var bigitem = bigswiperitem.clone().attr("id",imgitem._id);
+									  	bigitem.find(".img").attr("src",qiniuRoot + imgitem.banner + '!news_banner');
+									  	bigitem.find(".swiper-title").text(imgitem.title);
+									  	bigitem[0].addEventListener('tap', function(e) {
+										  	var goid = $(this).attr("id")
+											openDetail(goid);
+										});
+									  	$(".bigswiperlist").append(bigitem)
+									})
+									
+								}
 							}
 						})
 						//top轮播图
@@ -632,8 +633,15 @@
 						        pagination:{
 						        el:".swiper-pagination",
 						        type:"fraction",
-						        clickable:true
-						        }
+						        },
+						        on:{
+								    tap: function(event){
+								    	var ind1 = this.realIndex+1;
+								        var goid = mySwiper1.slides.eq(ind1).attr("id");
+								        openDetail(goid);
+								      
+								    },
+							  	},
 					   });
 					   //tab滑动
 					   var myslip2 = new Swiper('.myslip2', {
@@ -649,17 +657,6 @@
 					        swiper: myslip2
 					      }
 					    });
-						
-						$(".swiper-newslist .seeall-news").each(function(){
-							this.addEventListener("tap",function(){
-								var golistType = $(this).attr("newstype");
-								var golistid = $(this).attr("id");
-								osg.open('newslist.html', 'newslist.html', {
-									'golistType': golistType,
-									'golistid': golistid,
-								});
-							})
-						})
 					}
 				})
 				//快讯
@@ -671,18 +668,25 @@
 							var fasttime = fastitem.createTimeFormat;
 							var ind = fasttime.indexOf(" ");
 							item.find('.news-swiper-time').text(fasttime.substring(0, ind))
-							item[0].addEventListener('tap',function(){
-								var godetailid = $(this).attr("id");
-								osg.open('../news/detailMarquee.html', 'detailMarquee.html', {
-									'marqueeId': godetailid
-								});
-							})
 							$(".smallswiperlist").append(item)
+							
 						})
 						var mySwiper2 = new Swiper ('#swipercontainer2', {
 					        direction: 'vertical',
 					        loop: true,
-					        autoplay: true
+					        autoplay: true,
+				          	observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+							observeParents:true, 
+							on:{
+						    tap: function(event){
+						    	var index1 =this.realIndex+1;
+						        var newsid = mySwiper2.slides.eq(index1).attr("id");
+						      	osg.open('../news/detailMarquee.html', 'detailMarquee.html', {
+										'marqueeId': newsid
+								});
+						      
+						    },
+						  },
 					    })
 
 					}
@@ -693,7 +697,7 @@
 				hotnwes.addEventListener("tap",function(){
 					osg.open("hostnews.html","hostnews.html")
 				})
-				function newsFUN(element,categoryId){
+				function newsFUN(element,categoryId,navName){
 					osg.ajax('newsInteg/findNewsByCategoryId', {
 						'page':1,
 						"size":5,
@@ -702,11 +706,19 @@
 						if (data.data.length>0) {
 							$(data.data).each(function(newsindex,newsitem){
 								var item = swipernewsitem.clone().attr("id",newsitem.typeId).attr("type",newsitem.type);
-								item.find(".img").attr("src",qiniuRoot + newsitem.logo + '!news_logo')
+								var newimg = newsitem.logo?qiniuRoot + newsitem.logo + '!news_logo':"../images/red1.jpg";
+								item.find(".img").attr("src",newimg)
 								item.find(".news-title").text(newsitem.title);
 								var des = newsitem.content==null?"暂无内容":newsitem.content
 								item.find(".news-des").text(des);
-								item.find(".news-variety").text(newsitem.categoryName);
+								var newscate;
+								if ((newsitem.categoryName).length>8) {
+									newscate = (newsitem.categoryName).substring(0,8)+"..."
+								}
+								else{
+									newscate =newsitem.categoryName
+								}
+								item.find(".news-variety").text(newscate);
 								item.find(".news-time").text(newsitem.releaseTime);
 								item.find(".news-see").text(newsitem.times);
 								item[0].addEventListener('tap', function(e) {
@@ -718,14 +730,22 @@
 										openLibraryDetail(goid);
 									}
 								});
-								element.prepend(item)
+								element.append(item)
 								
+							})
+							element.append('<p class="seeall-news" newstype="1">查看更多</p> ');
+							element.find('.seeall-news').click(function(){
+								osg.open('newslist.html', 'newslist.html', {
+									'golistid': categoryId,
+									 "Nav":navName,
+								});
 							})
 						}else {
 							element.html("<p style='font-size:14px;color:#999;text-align:center;'>暂无内容</p>")
 						}
 					})
 				}
+				
 				function hotnewsFUN(element,categoryId){
 					osg.ajax('newsInteg/findhotNewsByCategoryId', {
 						'page':1,
@@ -734,7 +754,7 @@
 						if (data.data.length>0) {
 							$(data.data).each(function(newsindex,newsitem){
 								var item = hotnewsitem.clone().attr("id",newsitem.typeId).attr("type",newsitem.type);
-								var newsimg = newsitem.logo==null?"../exam/img/red3.jpg":newsitem.logo + '!news_logo'
+								var newsimg = newsitem.logo?qiniuRoot + newsitem.logo + '!news_logo':"../images/red1.jpg";
 								item.find(".img").attr("src",newsimg )
 								item.find(".news-title").text(newsitem.title);
 								var des = newsitem.content==null?"暂无内容":newsitem.content
@@ -750,7 +770,7 @@
 										openLibraryDetail(goid);
 									}
 								});
-								$(".hotnewslist").prepend(item)
+								$(".hotnewslist").append(item)
 								
 							})
 						}else {
@@ -805,6 +825,6 @@
 					});
 				}
 			})
-		</script>-->
+		</script>
 	</body>
 </html>

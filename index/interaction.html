@@ -273,7 +273,8 @@
 		height: 8.941176rem;
 	}
 	.mymsg{
-		min-width: 4rem;
+		padding-right:0.294117rem;
+		min-width: 3.5rem;
 		height: 1.294117rem;
 		background: rgba(0,0,0,0.5);
 		position: absolute;
@@ -322,6 +323,7 @@
 		
 	}
 	.themeitem-content .time{
+		margin-top: 0.882352rem;
 		font-size: 0.647058rem;
 		color: #666666;
 	}
@@ -331,6 +333,11 @@
 		display: inline-block;
 		border-radius: 50%;
 		transform: scale(0.5);
+	}
+	.time .easyimg{
+	 	width: 0.9rem;
+		height: auto;
+		margin-left:1rem;
 	}
 	.timeimg img{
 		width: 100%;
@@ -469,6 +476,12 @@
 		font-size: 0.705882rem;
 		margin-left:8rem;
 	}
+	.themelist>p{
+		color: #909090;
+		/*text-align: center;*/
+		font-size: 0.705882rem;
+		margin-left:8rem;
+	}
     </style>
 </head>
 <body>
@@ -527,9 +540,9 @@
 				<div id="swipercontainer1" class="swiper-container swiper-container1">
 			        <div class="swiper-wrapper themelist">
 			            <div class="swiper-slide themeitem">
-			            	<img src="../exam/img/red4.jpg" class="img"/>
+			            	<img src="../images/red1.jpg" class="meetimg"/>
 			            	<div class="mymsg">
-			            		<img src="../exam/img/red1.jpg" class="img"/>
+			            		<img src="../images/red1.jpg" class="launchimg"/>
 			            		<span class="name">龙陈艳</span>
 			            	</div>
 			            	<div class="themeitem-content">
@@ -539,39 +552,17 @@
 			            			
 			            			<span class="startTime">12月27日14:00</span>~
 			            			<span class="endTime">12月28日15:00</span>
+			            			<img src="../images/see2.png" class="easyimg"/>
+			            			<span class="seenum">333</span>
 			            		</div>
-			            		<div class="themeitem-content-bot">
+			            		<!--<div class="themeitem-content-bot">
 			            			<img src="../images/discuss.png"/>
 			            			<span>5</span>
 			            			<img src="../images/loveaction.png"/>
 			            			<span>4</span>
 			            			<img src="../images/see2.png"/>
 			            			<span>3</span>
-			            		</div>
-			            	</div>
-			            </div>
-			             <div class="swiper-slide themeitem">
-			            	<img src="../exam/img/red4.jpg" class="img"/>
-			            	<div class="mymsg">
-			            		<img src="../exam/img/red1.jpg" class="img"/>
-			            		<span class="name">龙陈艳</span>
-			            	</div>
-			            	<div class="themeitem-content">
-			            		<p class="themeitemName">年底一定要算清这笔账 跟你明年一项收入有关</p>
-			            		<div class="time">
-			            			<span class="timeimg"><img src="../images/time2.png"/></span>
-			            			
-			            			<span class="startTime">12月27日14:00</span>~
-			            			<span class="endTime">12月28日15:00</span>
-			            		</div>
-			            		<div class="themeitem-content-bot">
-			            			<img src="../images/discuss.png"/>
-			            			<span>5</span>
-			            			<img src="../images/loveaction.png"/>
-			            			<span>4</span>
-			            			<img src="../images/see2.png"/>
-			            			<span>3</span>
-			            		</div>
+			            		</div>-->
 			            	</div>
 			            </div>
 			        </div>
@@ -612,7 +603,7 @@
 		<script src="../js/jquery.marquee.js"></script>
 		<script src="../js/mui.pullToRefresh.js"></script>
 		<script src="../js/mui.pullToRefresh.material.js"></script>
-		<!--<script type="text/javascript">
+		<script type="text/javascript">
            //	领导接待日
           $(".threeContentItem").eq(0).off('tap').on("tap",function(){
 				osg.open("../funmodule/affair/bespeak/index.html", "../funmodule/affair/bespeak/index.html",{
@@ -652,6 +643,12 @@
 			$(".catalogute-item").eq(4).off('tap').on("tap",function(){
 				osg.open("defer.html","defer.html");
 			})	
+			//主题党日查看更多
+			$(".theme .seeAll").off('tap').on("tap",function(){
+				osg.open("../funmodule/conferActivities/meeting/myagenda.html", "../funmodule/conferActivities/meeting/myagenda.html",{
+					type:2
+				});
+			})
 			//三会一课查看更多
 			$(".threeClass .seeAll").off('tap').on("tap",function(){
 				osg.open("../funmodule/conferActivities/meeting/myagenda.html", "../funmodule/conferActivities/meeting/myagenda.html",{
@@ -660,21 +657,61 @@
 			})
 		</script>
 		<script type="text/javascript">
-						var mySwiper1 = new Swiper ('#swipercontainer1', {
-//			        loop: true,
-			        slidesPerView:'auto',
-		   });
+						
 			var mySwiper2 = new Swiper ('#swipercontainer2', {
 		        direction: 'vertical',
 		        loop: true,
 		        autoplay: true
 		    })
-			var mySwiper3 = new Swiper ('#swipercontainer3', {
-//			        loop: true,
-			        slidesPerView:'auto',
-		   });
+
 		</script>
 		<script type="text/javascript">
+			//主题党日
+			var themeitem = $(".themeitem");
+				themeitem.remove();
+			mui.plusReady(function() {
+			osg.ajax("/app/conference/detail/query",{
+				"page": 1,
+				"size":5,
+				"in:conference.type|array-integer":"201,"+"202"
+			},function(data){
+				var data = data.data.data;
+				if (data.length>0) {
+					$(data).each(function(i,key){
+						var classdata = key.conference;
+						var item = themeitem.clone().attr("id",key._id);
+						item.find(".name").text(classdata.userName);
+						var avatar = classdata.avatar ? (qiniuRoot + classdata.avatar + '!avatar') : '../images/logo.png';
+					    item.find(".launchimg").attr('src', avatar);
+						item.find(".themeitemName").text(classdata.title);
+						var startTime = classdata.formatAttendtime;
+						var endTime = classdata.formatEndTime;
+						item.find(".startTime").text(classdata.formatAttendtime);
+						item.find(".endTime").text(classdata.formatEndTime);
+						item.find(".seenum").text(classdata.toReader);
+						if((classdata.imageUrls).length>0){
+							item.find(".meetimg").attr("src",classdata.imageUrls[0]);
+						}else{
+							item.find(".meetimg").attr("src","../images/red1.jpg")
+						}
+						$(item[0]).off("tap").on("tap",function(){
+							osg.open("../funmodule/conferActivities/meeting/myjoinmeetingdetails.html","../funmodule/conferActivities/meeting/myjoinmeetingdetails.html",{
+								"detailId": $(this).attr("id")
+							});
+						});
+						$(".themelist").append(item)
+					})
+					var mySwiper1 = new Swiper ('#swipercontainer1', {
+				        slidesPerView:'auto',
+				   });
+				} else{
+					$(".themelist").html('<p>暂无数据</p>')
+				}
+			})
+			})
+		</script>
+		<script type="text/javascript">
+			//三会一课
 			var threeClassitem = $(".threeClassitem");
 				threeClassitem.remove();
 			mui.plusReady(function() {
@@ -703,11 +740,14 @@
 						});
 						$(".threeClasslist").append(item)
 					})
+			     var mySwiper3 = new Swiper ('#swipercontainer3', {
+			        slidesPerView:'auto',
+		       });
 				} else{
 					$(".threeClasslist").html('<p>暂无数据</p>')
 				}
 			})
 			})
-		</script>-->
+		</script>
 	</body>
 </html>

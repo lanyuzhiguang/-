@@ -164,7 +164,7 @@
 			<div class="mui-scroll1">
 				<div class="newslist ">
 	    			<div class="newsitem">
-	            		<img src="../exam/img/red1.jpg" class="img"/>
+	            		<img src="../images/red1.jpg" class="img"/>
 		            	<div class="newsitem-content">
 		            		<p class="news-title">灾难面前彰显的中国力量、中国速度和中国精神</p>
 		            		<p class="news-des">站“换心手术”：旅客少迈90厘米 铁路升级又一步湖南岳阳问计民企：如何优化营商环境A股探底回升 沪指2500点失而复得25日中小板指跌0.54%25日创业板指跌0.85%京沈高铁沈阳至承德段将于2客户端</p>
@@ -190,6 +190,7 @@
 		<script type="text/javascript">
 			mui.plusReady(function() {
 				var allnewsitem = $(".newsitem");
+				allnewsitem.remove();
 				//上拉加载下拉刷新
 	 			page1 = 0;
 				ptr1 = mui('.wrap .mui-scroll1').pullToRefresh({
@@ -227,7 +228,8 @@
 					if (data.data.length>0) {
 							$(data.data).each(function(newsindex,newsitem){
 								var item = allnewsitem.clone().attr("id",newsitem.typeId).attr("type",newsitem.type);
-								item.find(".img").attr("src",qiniuRoot + newsitem.logo + '!news_logo')
+								var newsimg = newsitem.logo?qiniuRoot + newsitem.logo + '!news_logo':"../images/red1.jpg";
+								item.find(".img").attr("src",newsimg)
 								item.find(".news-title").text(newsitem.title);
 								var des = newsitem.content==null?"暂无内容":newsitem.content
 								item.find(".news-des").text(des);
@@ -243,7 +245,7 @@
 										openLibraryDetail(goid);
 									}
 								});
-								$(".newslist").prepend(item)
+								$(".newslist").append(item)
 								
 							})
 						}

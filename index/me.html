@@ -517,6 +517,14 @@
    		text-align: center;
    		margin-top: 1.058823rem;
    	}
+   	#btnParty_pay>.seemWidth{
+   		margin-top: 0.294117rem;
+   		margin-bottom: 0.294117rem;
+   	}
+   	#btnParty_pay>span{
+   		display: inline-block;
+   		padding-top: 0.411764rem;
+   	}
     </style>
 </head>
 <body>
@@ -561,11 +569,11 @@
 		</div>
 		<div class="myContent">
 			<div class="myContent-top clearfix">
-				<div class="myContent-top-RANK fll">
+				<div class="myContent-top-RANK fll" id="myScore">
 					<div class="myContent-title">个人排名</div>
 					<div class="rank" id="ranking">NO1</div>
 				</div>
-				<div class="myContent-top-item flr">
+				<div class="myContent-top-item flr" id="bumenScore">
 					<div class="myContent-title">支部排名</div>
 					<div class="rank" id="rankingBumen">NO1</div>
 				</div>
@@ -580,7 +588,7 @@
 					<span class="">我的通知</span>
 					<div class="inform-msg"></div>
 				</div>
-				<div class="">
+				<div id="myworkbtn">
 					<img src="../images/MEwork.png" class="seemheight"/>
 					<span class="">我的工作</span>
 				</div>
@@ -591,7 +599,7 @@
 				<div id="message">
 					<img src="../images/MEmsg.png" class="seemWidth"/>
 					<span class="">我的消息</span>
-					<div class="msg-num">6</div>
+					<!--<div class="msg-num">6</div>-->
 				</div>
 			</div>
 		</div>
@@ -602,25 +610,25 @@
 	    			<div class="left-title">信息统计</div>
 	                <div class="staticlist">
 	            		<div class="staticItem">
-	            			你在本周学习的积分中获得60分
+	            			<span class="studystatic"></span>
 	            			<div class="staticItem-img">新</div>
 	            		</div>
-	            		<div class="staticItem">
-	            			你在本周学习的积分中获得60分
+	            		<div class="staticItem ">
+	            			<span class="collectstatic"></span>
 	            			<div class="staticItem-img">新</div>
 	            		</div>	
 	            		<div class="staticItem">
-	            			你在本周学习的积分中获得60分
+	            			<span class="jifenstatic"></span>
 	            			<div class="staticItem-img">新</div>
 	            		</div>	
 	            		<div class="staticItem">
-	            			你在本周学习的积分中获得60分
+	            			<span class="downstatic"></span>
 	            			<div class="staticItem-img">新</div>
 	            		</div>	
 	                </div>
 	    		</div>
 	    		<div class="studyContent-right flr">
-	    			<div class="">
+	    			<div id="mystudybtn">
 	    				<img src="../images/MEstudy.png"/>
 	    				<div class="">我的学习</div>
 	    			</div>
@@ -628,7 +636,7 @@
 	    				<img src="../images/MEclloect.png"/>
 	    				<div class="">我的收藏</div>
 	    			</div>
-	    			<div class="">
+	    			<div id="myscorebtn">
 	    				<img src="../images/MEscore.png"/>
 	    				<div class="">我的积分</div>
 	    			</div>
@@ -663,8 +671,8 @@
 	    				<div class="myaction-item-title">我的发布</div>
 	    			</div>
 	    			<div class="myaction-item-content fll">
-	    				<div class="title refertitle ">立时代之潮头 通古今之变化 发思想之先声</div>
-	    				<div class="content refer-content">1月2日，习近平总书记向中国社会科学院中国历史研究院致贺信。总书记在贺信中指出，新时代坚持和发展中国特色社会主义，更加需要系统研究中国历史和文化，更加需</div>
+	    				<div class="title refertitle launchtitle">立时代之潮头 通古今之变化 发思想之先声</div>
+	    				<div class="content refer-content launchContent">1月2日，习近平总书记向中国社会科学院中国历史研究院致贺信。总书记在贺信中指出，新时代坚持和发展中国特色社会主义，更加需要系统研究中国历史和文化，更加需</div>
 	    			</div>
 	    			<div class="seeall flr" id="issue">查看更多</div>
 	    		</div>
@@ -706,18 +714,33 @@
 				nw.addEventListener('show', function(e) {
 					initData();
 				}, false);
-
-				function initData() {
-					var user = osg.currentUser();
-					$("#userName").text(user.name);
-
-					if(user.pub == 1) {
-						$("#bumenName").text('所属支部:' + '----');
-					}
-
-					var avatar = user.avatar ? (qiniuRoot + user.avatar + '!avatar') : '../images/logo.png';
-					$("#header").attr('src', avatar);
-				}
+                //信息统计
+                //我的学习
+                osg.ajax("app/curriculumrecord/queryByPersonalBaesId",{},function(data){
+                	$(".studystatic").text("你总共参与了"+data.data.length+"课程的学习")
+                })
+                //收藏
+                osg.ajax("/favor/favorcount",{},function(data){
+                	$(".collectstatic").text("你总共收藏了新闻心得等"+data+"个内容")
+                })
+                //积分
+                osg.ajax('/app/ScorePartyMember/partyMemberScore', null, function(data) {
+                	var myranking = data.data.message[data.data.ranking-1-1];
+                		var jifen = myranking.titleMap["学习积分"]
+                		$(".jifenstatic").text("你恭喜你总共获得了"+jifen+"个学习积分")
+                })
+                //下载
+                var cd = osg.get(cacheKeys.downloads);
+                var downNum;
+                	if(cd){
+                		downNum= cd.length
+                	}else{
+                		downNum = 0;
+                	}
+                $(".downstatic").text("你下载了音频、视频、文档总共"+downNum+"个")
+                //信息统计end
+                
+				
 				initData();
 				//设置
 				var btnSetting = document.getElementById('setting');
@@ -729,21 +752,57 @@
 				btnUser.addEventListener('tap', function(event) {
 					osg.open("../mine/material.html");
 				});
-				//我的发布
-				var issue = document.getElementById('issue');
-				issue.addEventListener('tap', function(event) {
-					osg.open("../mine/publishMessage.html"); //修改我的发布的页面名称
-				});
+				
 				//我的收藏
 				var favor = document.getElementById('favor');
 				favor.addEventListener('tap', function(event) {
 					osg.open("../mine/myfavor.html");
 				});
+				//我的学习
+				var mystudybtn = document.getElementById('mystudybtn');
+			   mystudybtn.addEventListener("tap",function(){
+				osg.open("../funmodule/studys/myStudys.html");
+			  })
+			   //我的积分
+			   var user = osg.currentUser();
+				var myid = user._id;
+				var myname = user.name;
+			   var myscorebtn = document.getElementById('myscorebtn');
+			   myscorebtn.addEventListener("tap",function(){
+				osg.open('../mine/scoreDetailUser.html', '../mine/scoreDetailUser.html', {
+					userId: myid,
+					userName:myname
+				});
+			  })
+			   //我的发布
+				var issue = document.getElementById('issue');
+				issue.addEventListener('tap', function(event) {
+					osg.open("../mine/publishMessage.html"); //修改我的发布的页面名称
+				});
+				//内容
+				osg.ajax('study/gained/gainedList', {
+				'page': 1,
+				'userId': user._id,
+				"size":1
+			     }, function(data) {
+				  var data = data.data[0];
+//				  $(".launchtitle").text();
+//				  $(".launchContent").text(data.content)
+			    })
 				//通知公告
 				var notice = document.getElementById('notice');
 				notice.addEventListener('tap', function(event) {
 					osg.open("../manage/Newnotice.html", "Newnotice.html");
 				});
+				//数目
+				osg.ajax('/notice/findNotUser', {
+				}, function(data) {
+					if (data.data) {
+						$(".inform-msg").css("display","");
+					} else{
+						$(".inform-msg").css("display","none");
+					}	
+				})
 				//通讯录
 				var addressList = document.getElementById('addressList');
 				addressList.addEventListener('tap', function(event) {
@@ -759,12 +818,17 @@
 				messageList.addEventListener('tap', function(event) {
 					osg.open("../mine/myMessage.html");
 				});
-                 //消息的数目
+                 //消息未读的数目
                  osg.ajax('systemMessage/query', {
 					'page': 1
 				}, function(data) {
 					
 				})
+                 //我的工作
+                 var myworkbtn = document.getElementById('myworkbtn');
+                myworkbtn.addEventListener("tap",function(){
+					osg.open("../manage/workPlan/workPlanList.html");
+			    })
                  //党费缴纳
 				var btnParty_pay = document.getElementById('btnParty_pay');
 				btnParty_pay.addEventListener('tap', function(event) {
@@ -790,16 +854,28 @@
 				//				btnNext.addEventListener('tap', function(event) {
 				//					osg.open("myScore.html");
 				//				});
-				mui('#btnNext').on('tap', '#myScore', function(event) {
-					osg.open('scoreRankUser.html', 'scoreRankUser.html');
+				var myScore = document.getElementById('myScore');
+				var bumenScore = document.getElementById('bumenScore');
+				myScore.addEventListener('tap',function(event) {
+					osg.open('../mine/scoreRankUser.html', 'scoreRankUser.html');
 				});
-				mui('#btnNext').on('tap', '#bumenScore', function(event) {
-					osg.open('scoreRankBumen.html', 'scoreRankBumen.html');
+				bumenScore.addEventListener('tap', function(event) {
+					osg.open('../mine/scoreRankBumen.html', 'scoreRankBumen.html');
 				});
 
 				loadMine();
 				document.addEventListener("pause", onAppPause, false);
+                function initData() {
+					var user = osg.currentUser();
+					$("#userName").text(user.name);
 
+					if(user.pub == 1) {
+						$("#bumenName").text('所属支部:' + '----');
+					}
+
+					var avatar = user.avatar ? (qiniuRoot + user.avatar + '!avatar') : '../images/logo.png';
+					$("#header").attr('src', avatar);
+				}
 				function onAppPause() {
 					loadMine();
 				}

@@ -96,7 +96,7 @@
 </head>
 <body>
 	<header class="mui-bar mui-bar-nav">
-	    <h1 class="mui-title" id="muiTitle">支部互动</h1>
+	    <h1 class="mui-title" id="muiTitle">党务</h1>
 	</header>
 		<div class="partWork">
 			<div class="partWorkItem">
@@ -196,10 +196,8 @@
 			})
 			 //党日活动
 			 $(".partWorkItem").eq(1).off('tap').on("tap",function(){
-				
-				btnActivity.addEventListener('tap', function(event) {
 					osg.open("../manage/activityList.html");
-				});
+				
 			})
 			 //通知公告
 			 $(".partWorkItem").eq(2).off('tap').on("tap",function(){
@@ -227,7 +225,7 @@
 			})
 			 //文件学习
 			 $(".partWorkItem").eq(8).off('tap').on("tap",function(){
-				osg.open("../funmodule/studys/tab-webview-subpage-study.html");
+				osg.open("../funmodule/studys/curriculumList.html");
 			})
 			 //工作计划
 			 $(".partWorkItem").eq(9).off('tap').on("tap",function(){
@@ -271,7 +269,7 @@
 			})
 			 //随手拍
 			 $(".partWorkItem").eq(19).off('tap').on("tap",function(){
-				osg.open("defer.html","defer.html");
+				osg.open("../forum/tab-webview-subpage-forum.html")
 			})
 			 
 		</script>
