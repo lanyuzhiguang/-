@@ -1,0 +1,491 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+
+html,body {
+    width: 100%;
+    height:100%;
+    /*background:#000000;*/
+    /*opacity: 0.1;*/
+}
+.socialAnimation{
+    border: 1px solid #00ccff;
+    border-radius: 3px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 10px;
+    bottom: 20px;
+    background-color: rgba(0, 38, 102, 0.4);
+}
+.socialAnimation li{
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    list-style-type: none;
+    -webkit-animation: scaleLi 4s ease-in-out infinite;
+    -moz-animation: scaleLi 4s ease-in-out infinite;
+    -o-animation: scaleLi 4s ease-in-out infinite;
+    -ms-animation: scaleLi 4s ease-in-out infinite;
+    animation: scaleLi 4s ease-in-out infinite;
+}
+@-webkit-keyframes scaleLi {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    45% {
+        -webkit-transform: scale(1);
+    }
+    60% {
+        -webkit-transform: scale(1.2);
+    }
+    75% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+@-moz-keyframes scaleLi {
+    0% {
+        -moz-transform: scale(1);
+    }
+    45% {
+        -moz-transform: scale(1);
+    }
+    60% {
+        -moz-transform: scale(1.2);
+    }
+    75% {
+        -moz-transform: scale(1);
+    }
+    100% {
+        -moz-transform: scale(1);
+    }
+}
+@-o-keyframes scaleLi {
+    0% {
+        -o-transform: scale(1);
+    }
+    45% {
+        -o-transform: scale(1);
+    }
+    60% {
+        -o-transform: scale(1.2);
+    }
+    75% {
+        -o-transform: scale(1);
+    }
+    100% {
+        -o-transform: scale(1);
+    }
+}
+@-ms-keyframes scaleLi {
+    0% {
+        -ms-transform: scale(1);
+    }
+    45% {
+        -ms-transform: scale(1);
+    }
+    60% {
+        -ms-transform: scale(1.2);
+    }
+    75% {
+        -ms-transform: scale(1);
+    }
+    100% {
+        -ms-transform: scale(1);
+    }
+}
+@keyframes scaleLi {
+    0% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    75% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.socialAnimation .person{
+    width: 170px;
+    height: 170px;
+    margin: 410px 0 0 220px;
+    z-index: 9;
+    background: -webkit-linear-gradient(top, #00FCE8, #0EB0FE);
+    background:linear-gradient(#00FCE8, #0EB0FE);
+}
+
+.socialAnimation .person .title{
+    position: absolute;
+    color: white;
+    font-size: 28px;
+    margin: 70px 0 0 35px;
+}
+
+
+.socialAnimation li div.connector{
+    position: absolute;
+    background-color: #fff;
+    height: 5px;
+}
+.socialAnimation li div.connector span{
+    display: block;
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: -5px 0 0 0;
+    position: absolute;
+    -webkit-animation: connections 4s ease-in-out infinite;
+    -moz-animation: connections 4s ease-in-out infinite;
+    -o-animation: connections 4s ease-in-out infinite;
+    -ms-animation: connections 4s ease-in-out infinite;
+    animation: connections 4s ease-in-out infinite;
+
+}
+.socialAnimation li div.connector span.two{
+    -webkit-animation: connections 4s ease-in-out infinite 1s;
+    -moz-animation: connections 4s ease-in-out infinite;
+    -o-animation: connections 4s ease-in-out infinite;
+    -ms-animation: connections 4s ease-in-out infinite;
+    animation: connections 4s ease-in-out infinite 1s;
+}
+
+@-webkit-keyframes connections {
+    0% { left: 0}
+    80% { left: 100%; }
+}
+@-moz-keyframes connections {
+    0% { left: 0}
+    80% { left: 100%; }
+}
+@-o-keyframes connections {
+    0% { left: 0}
+    80% { left: 100%; }
+}
+@-ms-keyframes connections {
+    0% { left: 0}
+    80% { left: 100%; }
+}
+@keyframes connections {
+    0% { left: 0}
+    80% { left: 100%; }
+}
+
+.socialAnimation li .containerImg{
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: background 0.3s linear;
+    -moz-transition: background 0.3s linear;
+    -o-transition: background 0.3s linear;
+    -ms-transition: background 0.3s linear;
+    transition: background 0.3s linear;
+    z-index: 10;
+    background-repeat: no-repeat;
+}
+
+.socialAnimation .facebook{
+    width: 130px;
+    height: 130px;
+    margin: 170px 0 0 30px;
+}
+.socialAnimation .facebook .containerImg{
+    background-color: #C669FF;
+
+}
+
+.socialAnimation .facebook .number:hover{
+    font-size:30px;
+}
+
+
+.socialAnimation .facebook .containerImg{
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+}
+
+.socialAnimation .facebook .title{
+    position: absolute;
+    margin: -30px 0 0 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.socialAnimation .facebook .number{
+    position: absolute;
+    text-align:center;
+    color: white;
+    font-size: 24px;
+    z-index: 215;
+    line-height:130px;
+    width:100%;
+    height:100%;
+}
+
+.socialAnimation .facebook div.connector{
+    position: absolute;
+    background-color: #fff;
+    height: 5px;
+    width: 250px;
+    margin: 200px 0 0 50px;
+
+    transform:rotate(-225deg);
+    -webkit-transform:rotate(-135deg);
+    -moz-transform:rotate(-135deg);
+    -ms-transform:rotate(-135deg);
+    -o-transform:rotate(-115deg);
+
+}
+
+
+.socialAnimation .googlePlus{
+    width: 120px;
+    height: 120px;
+    margin: 170px 0 0 400px;
+}
+.socialAnimation .googlePlus .containerImg{
+    background-color: #FF4342;
+}
+.socialAnimation .googlePlus .number:hover{
+    font-size:30px;
+}
+.socialAnimation .googlePlus .containerImg{
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+}
+.socialAnimation .googlePlus .title{
+    position: absolute;
+    margin: -30px 0 0 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.socialAnimation .googlePlus .number{
+    position: absolute;
+    text-align:center;
+    color: white;
+    font-size: 24px;
+    z-index: 215;
+    line-height:110px;
+    width:100%;
+    height:100%;
+}
+
+.socialAnimation .googlePlus div.connector{
+    position: absolute;
+    background-color: #fff;
+    height: 5px;
+    width: 250px;
+    margin: 160px 0 0 -120px;
+
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-55deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+
+}
+
+
+.socialAnimation .twitter{
+    width: 120px;
+    height: 120px;
+    margin: 420px 0 0 430px;
+}
+.socialAnimation .twitter .containerImg{
+    background-color: #FFA6C0;
+}
+.socialAnimation .twitter .number:hover{
+    font-size:30px;
+}
+.socialAnimation .twitter .containerImg{
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+}
+
+.socialAnimation .twitter .title{
+    position: absolute;
+    margin: -30px 0 0 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.socialAnimation .twitter .number{
+    position: absolute;
+    text-align:center;
+    color: white;
+    font-size: 24px;
+    z-index: 215;
+    line-height:110px;
+    width:100%;
+    height:100%;
+}
+
+
+.socialAnimation .twitter div.connector{
+    position: absolute;
+    background-color: #fff;
+    height: 5px;
+    width: 130px;
+    margin: 60px 0 0 -105px;
+
+    transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+
+}
+
+.socialAnimation .linkedin{
+    width: 90px;
+    height: 90px;
+    margin: 480px 0 0 40px;
+}
+.socialAnimation .linkedin .containerImg{
+    background-color: #009CFF;
+}
+
+.socialAnimation .linkedin .number:hover{
+    font-size:30px;
+}
+
+
+.socialAnimation .linkedin .containerImg{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+}
+.socialAnimation .linkedin .title{
+    position: absolute;
+    margin: -30px 0 0 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.socialAnimation .linkedin .number{
+    position: absolute;
+    text-align:center;
+    color: white;
+    font-size: 24px;
+    z-index: 215;
+    line-height:85px;
+    width:100%;
+    height:100%;
+}
+
+.socialAnimation .linkedin div.connector{
+    position: absolute;
+    background-color: #fff;
+    height: 5px;
+    width: 170px;
+    margin: 15px 0 0 25px;
+
+    transform:rotate(-190deg);
+    -webkit-transform:rotate(-190deg);
+    -moz-transform:rotate(-190deg);
+    -ms-transform:rotate(-190deg);
+    -o-transform:rotate(-190deg);
+
+}
+
+.socialAnimation .yt{
+    width: 130px;
+    height: 130px;
+    margin: 660px 0 0 210px;
+}
+.socialAnimation .yt .containerImg{
+    background-color: #FFB400;
+}
+.socialAnimation .yt .number:hover{
+    font-size:30px;
+}
+.socialAnimation .yt .containerImg{
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+}
+.socialAnimation .yt .title{
+    position: absolute;
+    margin: 130px 0 0 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.socialAnimation .yt .number{
+    position: absolute;
+    text-align:center;
+    color: white;
+    font-size: 24px;
+    z-index: 215;
+    line-height:130px;
+    width:100%;
+    height:100%;
+}
+
+.socialAnimation .yt div.connector{
+    position: absolute;
+    background-color: #fff;
+    height: 5px;
+    width: 200px;
+    margin: -10px 0 0 -20px;
+
+    transform:rotate(100deg);
+    -webkit-transform:rotate(100deg);
+    -moz-transform:rotate(100deg);
+    -ms-transform:rotate(100deg);
+    -o-transform:rotate(100deg);
+
+}
+
+.title_right{
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    background:url(../../images/discussheader.png) no-repeat;
+    background-size: 100% 100%;
+    color: #00FFF0;
+    padding: 7px 35px 7px 8px;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.m-pat-name {
+    top: 10px;
+    width: 134px;
+    height: 48px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-right: 30px;
+    background: url(../../images/discussheader.png) no-repeat;
+    background-size: 100%;
+    line-height: 48px;
+    color: aqua;
+    font-weight: 600;
+    position: absolute;
+    right:10px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #19396C;
+        }
+        .big{
+            width: 1000px;
+            height: 100px;
+            /*display: table-cell;*/
+            margin: 0 auto;
+            display: table;
+            text-align: center;
+            border-spacing:0 15px;
+            color: #fff;
+        }
+        .small{
+            display: table-row;
+            margin:30px 0;
+            background: #154076;
+            border:1px solid #fff;
+            height:50px;
+            line-height: 50px;
+            cursor: pointer;
+            position: relative;
+        }
+        .small:nth-of-type(1){
+            width: 100%;
+            background: #0A4D9A;
+            border: 1px solid #0684D0;
+            height:50px;
+
+        }
+        .cellmy{
+            display: table-cell;
+        }
+        .small:hover{
+           animation:mymove 2s 1 ;
+
+        }
+        @keyframes mymove
+        {
+            from {transform: scale(1)}
+            to {transform: scale(1.2)}
+        }
+    </style>
+</head>
+
+<body>
+<div class="big">
+   <div class="small"><div class="cellmy">wwwwww</div><div class="cellmy">ffffffff</div><div class="cellmy">ffffffff</div></div>
+    <div class="small"><div class="cellmy">122222</div><div class="cellmy">444444</div><div class="cellmy">66666</div></div>
+    <div class="small"><div class="cellmy">4110</div><div class="cellmy">222222</div><div class="cellmy">3333</div></div>
+</div>
+</body>
+</html>

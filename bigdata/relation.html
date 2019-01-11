@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>今日动态数据</title>
+    <link rel="stylesheet" href="css/pminfo_4.css" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="vue.min.js"></script>
+</head>
+
+<body>
+<div class="socialAnimationWrapper" id="x-mian-container" >
+    <ul class="socialAnimation">
+        <div class="m-pat-name">今日动态</div>
+        <li class="person">
+            <div class="title">今日动态</div>
+        </li>
+        <li class="facebook">
+            <div class="containerImg"></div>
+            <div class="title">主题党日</div>
+            <div class="number" onclick="gotoListDetail('Ztdr')">{{basedata[3]}}</div>
+            <div class="connector">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </li>
+        <li class="googlePlus">
+            <div class="containerImg"></div>
+            <div class="title">积分申报</div>
+            <div class="number" onclick="gotoListDetail('Dyjf')">{{basedata[1]}}</div>
+            <div class="connector">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </li>
+        <li class="twitter">
+            <div class="containerImg"></div>
+            <div class="title">志愿活动</div>
+            <div class="number" onclick="gotoListDetail('Zyfw')">{{basedata[4]}}</div>
+            <div class="connector">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </li>
+        <li class="linkedin">
+            <div class="containerImg"></div>
+            <div class="title">三会一课</div>
+            <div class="number" onclick="gotoListDetail('Shyk')">{{basedata[2]}}</div>
+            <div class="connector">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </li>
+        <li class="yt">
+            <div class="containerImg"></div>
+            <div class="title">64</div>
+            <div class="number" onclick="gotoListDetail('Dfjn')">{{basedata[0]}}</div>
+            <div class="connector">
+                <span class="one"></span>
+                <span class="two"></span>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+
+<!--<script type="text/javascript">-->
+    <!--var _orgId = window.parent.getJson().id;-->
+    <!--var _title = window.parent.getJson().title;-->
+    <!--var todayvue = new Vue({-->
+        <!--el: '#x-mian-container',-->
+        <!--data: {-->
+            <!--basedata:''-->
+        <!--}-->
+    <!--});-->
+    <!--initData();-->
+
+    <!--function initData(){-->
+        <!--$.ajax({-->
+            <!--type : "POST",-->
+            <!--url : "/api/yichun/todaycount",-->
+            <!--data : {},-->
+            <!--success : function(msg) {-->
+                <!--if (msg.code == 200) {-->
+                    <!--// dfjn 0;dyjf 1;shyk 2;ztdr 3;zyfw 4-->
+                    <!--todayvue.basedata = msg.data;-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
+    <!--};-->
+
+    <!--function gotoListDetail(type){-->
+        <!--if(type == 'Ztdr'){-->
+            <!--if(todayvue.basedata[3] == 0){-->
+                <!--return;-->
+            <!--}-->
+        <!--}else if(type == 'Dfjn'){-->
+            <!--if(todayvue.basedata[0] == 0){-->
+                <!--return;-->
+            <!--}-->
+        <!--}else if(type == "Dyjf"){-->
+            <!--if(todayvue.basedata[1] == 0){-->
+                <!--return;-->
+            <!--}-->
+        <!--}else if(type == "Shyk"){-->
+            <!--if(todayvue.basedata[2] == 0){-->
+                <!--return;-->
+            <!--}-->
+        <!--}else if(type == "Zyfw"){-->
+            <!--if(todayvue.basedata[4] == 0){-->
+                <!--return;-->
+            <!--}-->
+        <!--}-->
+        <!--window.parent.showpmListDialog('/vdata/pminfo/5?type='+type);-->
+    <!--}-->
+<!--</script>-->
+
+
+</html>
